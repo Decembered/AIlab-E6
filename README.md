@@ -1,6 +1,6 @@
 # Tracking Dexterous Hand–Object Manipulation from Human Demonstration
 
-This repository is used for the **Dexterous HO Tracker 2025** challenge assignment. It provides baseline implementations, data preparation scripts, and evaluation utilities. Participants are expected to set up the environment, run the provided Inspire sample, add Sharpa support, complete the required training and evaluation workflow, and improve the final score.
+This repository is used for the **Video2Motion2Action** challenge assignment. It provides baseline implementations, data preparation scripts, and evaluation utilities. Participants are expected to set up the environment, run the provided Inspire sample, add Sharpa support, complete the required training and evaluation workflow, and improve the final score.
 
 ---
 
@@ -13,8 +13,8 @@ This repository is used for the **Dexterous HO Tracker 2025** challenge assignme
 1. Clone the repository and initialize submodules:
     ```bash
     # Option A: clone from GitHub and initialize submodules
-    git clone https://github.com/KailinLi/HO-Tracker-Baseline.git
-    cd HO-Tracker-Baseline
+    git clone https://github.com/kelvin34501/HO-Tracker-Baseline-Challenge.git
+    cd HO-Tracker-Baseline-Challenge
     git submodule init && git submodule update
 
     # Option B: extract the provided code tarball
@@ -47,7 +47,7 @@ This repository is used for the **Dexterous HO Tracker 2025** challenge assignme
 
 
 ### Download data for `HO-Tracker` dataset
-Download the `HO-Tracker` dataset from [Hugging Face](https://huggingface.co/datasets/LiKailin/HO-Tracker) and extract it to `data/HO-Tracker`.
+Download the `HO-Tracker` dataset from [Hugging Face](https://huggingface.co/datasets/kelvin34501/HO-Tracker-Challenge) and extract it to `data/HO-Tracker` and `data/human_demo`.
 
 ### MISC
 Refer to the [ManipTrans](https://github.com/ManipTrans/ManipTrans?tab=readme-ov-file#misc) README for additional prerequisites and environment notes.
