@@ -1,0 +1,29 @@
+name: v2m2a-task2
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - scipy
+  - matplotlib
+  - tqdm
+  - pillow
+  - pyyaml
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=12.8
+  - pip:
+      - opencv-python
+      - imageio
+      - imageio-ffmpeg
+      - open3d
+      - mediapipe
+      - trimesh
+      - transforms3d
+      - scikit-image
+      - rich

@@ -1,0 +1,2 @@
+sequence_id,view_id,run_id,status,frames,valid,valid_ratio,interpolated,quality_mean,quality_min,temporal_max,bone_mean,risk_frames,mask_nonempty,traj_npz,review_video
+grasp_drink_yykx_2026_0701_0054_45,camera_side_2,grasp_drink_yykx_2026_0701_0054_45_camera_side_2,dry_run,,,,,,,,,,,,

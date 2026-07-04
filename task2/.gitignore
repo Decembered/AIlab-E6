@@ -1,0 +1,29 @@
+# Local data and generated artifacts are intentionally not committed.
+data/
+outputs/
+logs/
+tmp_visualization/
+tmp_visualization_runs/
+third_party/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Model checkpoints and large binaries
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.task
+
+# Videos and raw media
+*.mp4
+*.mkv
+*.avi
+*.mov
+
+# Local secrets
+.env
+.env.*
+!.env.example
