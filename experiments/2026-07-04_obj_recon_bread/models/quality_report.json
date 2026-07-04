@@ -1,0 +1,13 @@
+{
+  "vertices": 34,
+  "faces": 64,
+  "is_watertight": true,
+  "is_manifold": true,
+  "bounding_box_cm": [
+    15.0,
+    8.0,
+    10.0
+  ],
+  "method": "Top-view GrabCut contour extrusion with side-view height estimation",
+  "note": "Watertight extrusion suitable for IsaacGym collision mesh. Geometric detail limited; refine with 3DGS/InstantMesh for final submission."
+}

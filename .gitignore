@@ -189,3 +189,19 @@ make*.py
 runs
 runs/*
 thirdparty/isaac_gym
+
+# Additional ignores for security and hygiene
+.aws/
+.ssh/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+/root/
+/mnt/workspace/TEMP-FILE-STATION/
+.cache/
+
+# Un-ignore experiment validation files (needed because *.txt and *.json are globally ignored above)
+!experiments/2026-07-04_obj_recon_bread/**/*.txt
+!experiments/2026-07-04_obj_recon_bread/**/*.json
+!experiments/2026-07-04_obj_recon_bread/**/*.md

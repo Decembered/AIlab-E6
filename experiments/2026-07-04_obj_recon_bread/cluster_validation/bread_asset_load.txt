@@ -1,0 +1,14 @@
+Not connected to PVD
++++ Using GPU PhysX
+Physics Engine: PhysX
+Physics Device: cuda:0
+GPU Pipeline: disabled
+Importing module 'gym_38' (/root/opt/isaac_gym/isaacgym/python/isaacgym/_bindings/linux-x86_64/gym_38.so)
+Setting GYM_USD_PLUG_INFO_PATH to /root/opt/isaac_gym/isaacgym/python/isaacgym/_bindings/linux-x86_64/usd/plugInfo.json
+asset_root: /mnt/workspace/Hackthon/experiments/2026-07-04_obj_recon_bread/models
+urdf exists: True
+mesh exists: True
+BREAD_ASSET_LOAD_OK
+Using VHACD cache directory '/root/.isaacgym/vhacd'
+Started convex decomposition for mesh '/mnt/workspace/Hackthon/experiments/2026-07-04_obj_recon_bread/models/bread_extruded.obj'
+Finished convex decomposition for mesh '/mnt/workspace/Hackthon/experiments/2026-07-04_obj_recon_bread/models/bread_extruded.obj': 14 hulls

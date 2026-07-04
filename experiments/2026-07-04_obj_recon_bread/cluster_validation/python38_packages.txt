@@ -1,0 +1,13 @@
+pip 23.0.1 from /usr/local/lib/python3.8/dist-packages/pip (python 3.8)
+
+[notice] A new release of pip is available: 23.0.1 -> 25.0.1
+[notice] To update, run: python3.8 -m pip install --upgrade pip
+isaacgym            1.0rc4          /root/opt/isaac_gym/isaacgym/python
+numpy               1.23.5
+torch               1.13.1+cu117
+torchaudio          0.13.1+cu117
+torchvision         0.14.1+cu117
+torch 1.13.1+cu117
+cuda available True
+cuda build 11.7
+gpu count 2

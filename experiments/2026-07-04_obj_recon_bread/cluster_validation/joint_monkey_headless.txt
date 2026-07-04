@@ -1,0 +1,9 @@
+usage: joint_monkey.py [-h] [--sim_device SIM_DEVICE] [--pipeline PIPELINE]
+                       [--graphics_device_id GRAPHICS_DEVICE_ID]
+                       [--flex | --physx] [--num_threads NUM_THREADS]
+                       [--subscenes SUBSCENES] [--slices SLICES]
+                       [--asset_id ASSET_ID] [--speed_scale SPEED_SCALE]
+                       [--show_axis]
+joint_monkey.py: error: unrecognized arguments: --headless
+Importing module 'gym_38' (/root/opt/isaac_gym/isaacgym/python/isaacgym/_bindings/linux-x86_64/gym_38.so)
+Setting GYM_USD_PLUG_INFO_PATH to /root/opt/isaac_gym/isaacgym/python/isaacgym/_bindings/linux-x86_64/usd/plugInfo.json
