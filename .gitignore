@@ -205,3 +205,7 @@ thirdparty/isaac_gym
 !experiments/2026-07-04_obj_recon_bread/**/*.txt
 !experiments/2026-07-04_obj_recon_bread/**/*.json
 !experiments/2026-07-04_obj_recon_bread/**/*.md
+!experiments/2026-07-04_obj_recon_bread/**/test*.py
+!experiments/2026-07-04_obj_recon_bread/**/validate*.py
+!experiments/2026-07-04_obj_recon_bread/**/*.npz
+!experiments/2026-07-04_obj_recon_bread/**/*.npy
