@@ -1,0 +1,22 @@
+{
+  "object_name": "drink_ad",
+  "method": "Multi-view SAM mask contour extrusion",
+  "vertices": 76,
+  "faces": 148,
+  "collision_vertices": 8,
+  "collision_faces": 12,
+  "dimensions_cm": [
+    26.7,
+    19.1,
+    21.5
+  ],
+  "mass_kg": 0.55,
+  "inertia": {
+    "ixx": 0.003787886937459311,
+    "iyy": 0.0053875706990559906,
+    "izz": 0.004944322586059571
+  },
+  "watertight": true,
+  "manifold": true,
+  "mask_definition": "Visible region mask including hand occlusion where present"
+}

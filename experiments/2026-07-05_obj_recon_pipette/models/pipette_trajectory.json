@@ -1,0 +1,39 @@
+{
+  "object": "pipette",
+  "frames_processed": 3,
+  "views": {
+    "camera_side_1": {
+      "centroid": [
+        613.2318479741233,
+        352.6826339235047
+      ],
+      "theta_deg": -177.7069526293477,
+      "area": 140976
+    },
+    "camera_side_2": {
+      "centroid": [
+        699.656473286483,
+        423.0243053309418
+      ],
+      "theta_deg": -175.02872292045893,
+      "area": 170045
+    },
+    "camera_top": {
+      "centroid": [
+        503.98951417528156,
+        349.45114320763906
+      ],
+      "theta_deg": -172.51522389503378,
+      "area": 162219
+    }
+  },
+  "quality_gates": {
+    "area_range": [
+      4000,
+      25000
+    ],
+    "max_theta_jump_deg": 25.0,
+    "max_centroid_jump_px": 40.0
+  },
+  "mask_definition": "Visible region mask including hand occlusion"
+}
