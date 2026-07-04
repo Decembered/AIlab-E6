@@ -7499,5 +7499,11 @@
     "source_keypoints": 11,
     "dense_frames": 234,
     "target_hz": 10
+  },
+  "rotation_estimation": {
+    "method": "yaw=pca_top_mask, pitch/roll=side_mask_vertical_deviation",
+    "pitch_deg": -0.0,
+    "roll_deg": 0.0,
+    "note": "Pitch measured as deviation from expected vertical in side-camera mask. Clamped to \u00b130\u00b0. For table-top objects, pitch/roll \u2248 0."
   }
 }
