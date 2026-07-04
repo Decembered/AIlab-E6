@@ -1,0 +1,11 @@
+name: visual_mesh
+vertices: 245
+faces: 472
+is_watertight: True
+is_winding_consistent: True
+bounds:
+[[-0.1075 -0.01   -0.0575]
+ [ 0.15    0.01    0.027 ]]
+extents: [0.2575 0.02   0.0845]
+center_mass: [-2.445724e-02  1.173077e-20 -9.803615e-03]
+volume: 9.401837562218199e-05
