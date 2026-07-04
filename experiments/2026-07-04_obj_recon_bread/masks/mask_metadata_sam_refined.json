@@ -1,0 +1,56 @@
+{
+  "method": "SAM vit_b, point+box prompt, connected-component filtering",
+  "positive_points": [
+    [
+      545,
+      375
+    ],
+    [
+      585,
+      385
+    ],
+    [
+      620,
+      365
+    ],
+    [
+      640,
+      300
+    ]
+  ],
+  "negative_points": [
+    [
+      500,
+      350
+    ],
+    [
+      470,
+      390
+    ],
+    [
+      560,
+      290
+    ],
+    [
+      585,
+      320
+    ],
+    [
+      680,
+      340
+    ]
+  ],
+  "box": [
+    520,
+    255,
+    665,
+    405
+  ],
+  "sam_score": 0.8892935514450073,
+  "mask_pixels_raw": 20317,
+  "mask_pixels_refined": 20291,
+  "mask_ratio_refined": 0.022017144097222222,
+  "components_found": 7,
+  "selected_component": 1,
+  "postprocess": "Keep only connected component nearest to positive point centroid (dist<300px, area>1000px)"
+}
