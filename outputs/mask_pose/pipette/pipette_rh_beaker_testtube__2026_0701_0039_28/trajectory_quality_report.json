@@ -1,31 +1,27 @@
 {
   "status": "valid",
   "method": "multi_view_mask_centroid_triangulation",
-  "postprocessing": "cubic_spline_interpolation",
+  "postprocessing": "gaussian_smooth_sigma1.0 + linear_interpolation",
   "num_frames": 351,
+  "num_source_keypoints": 11,
   "duration_s": 35.0,
   "position_stats_m": {
     "x": [
-      -0.1074,
-      0.0527
+      -0.063,
+      0.0367
     ],
     "y": [
-      0.161,
-      0.5617
+      0.2668,
+      0.533
     ],
     "z": [
-      0.1423,
-      0.2986
+      0.1823,
+      0.2604
     ]
   },
   "velocity_stats_m_per_s": {
-    "max": 0.2725,
-    "mean": 0.0598,
-    "std": 0.0583
-  },
-  "trajectory_smoothness": {
-    "max_jump_m": 0.0272,
-    "mean_jump_m": 0.006
+    "max": 0.0214,
+    "mean": 0.0122
   },
   "quality_flag": "GOOD"
 }
