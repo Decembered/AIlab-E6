@@ -1,0 +1,6 @@
+{
+  "object_name": "bread",
+  "sequence_name": "weigh_bread__left__2026_0701_0046_02",
+  "method": "need_segmentation_or_manual",
+  "limitation": "No valid GT pose, mask/depth pair, or mask-only track was discovered."
+}

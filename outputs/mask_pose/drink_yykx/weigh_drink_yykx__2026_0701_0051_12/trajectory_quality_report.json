@@ -1,0 +1,6 @@
+{
+  "object_name": "drink_yykx",
+  "sequence_name": "weigh_drink_yykx__2026_0701_0051_12",
+  "method": "need_segmentation_or_manual",
+  "limitation": "No valid GT pose, mask/depth pair, or mask-only track was discovered."
+}

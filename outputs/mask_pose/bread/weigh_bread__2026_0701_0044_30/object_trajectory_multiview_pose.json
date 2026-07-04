@@ -1,0 +1,369 @@
+{
+  "object_name": "bread",
+  "sequence_name": "weigh_bread__2026_0701_0044_30",
+  "method": "multi_view_mask_pose",
+  "transform_name": "T_world_object",
+  "num_frames": 3,
+  "num_valid": 1,
+  "yaw_ambiguous": false,
+  "limitation": "Depth-free calibrated multi-view mask fitting. This is an approximate video-derived pose, not RGB-D ICP or GT.",
+  "canonical_mesh": "runs/object_asset_v1/bread/mesh/visual_mesh.obj",
+  "external_references": [
+    {
+      "name": "Calibrated multi-view silhouette fitting",
+      "url": "https://en.wikipedia.org/wiki/Visual_hull",
+      "role": "Depth-free pose evidence from synchronized masks and calibrated cameras; used here as the current-data fallback."
+    },
+    {
+      "name": "3D Gaussian Splatting",
+      "url": "https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/",
+      "role": "Future multi-view video reconstruction/tracking option; not used in this lightweight baseline."
+    },
+    {
+      "name": "Nerfstudio",
+      "url": "https://docs.nerf.studio/",
+      "role": "Future NeRF/3DGS tooling option for longer multi-view fitting jobs."
+    }
+  ],
+  "poses": [
+    [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        -0.9396926207859083,
+        0.0,
+        -0.3420201433256689,
+        0.014663917589360934
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.020000000000000018
+      ],
+      [
+        0.3420201433256689,
+        0.0,
+        -0.9396926207859083,
+        0.27726779275151403
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        -0.9396926207859083,
+        0.0,
+        -0.3420201433256689,
+        0.014663917589360934
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.020000000000000018
+      ],
+      [
+        0.3420201433256689,
+        0.0,
+        -0.9396926207859083,
+        0.27726779275151403
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  ],
+  "timestamps": [
+    0.0,
+    115.0,
+    230.0
+  ],
+  "frames": [
+    {
+      "frame_id": 0,
+      "valid": false,
+      "invalid_reason": "insufficient_valid_views (0<2)",
+      "mask_area": 160442,
+      "max_mask_area_ratio": 0.17409071180555555,
+      "valid_view_count": 0,
+      "view_count": 1,
+      "views": [
+        {
+          "camera": "camera_top",
+          "mask_path": "experiments/2026-07-04_obj_recon_bread/masks/camera_top_frame_000000_mask_sam.png",
+          "view_valid": false,
+          "view_invalid_reason": "mask_area_ratio_too_large (0.174>0.100)",
+          "mask_area": 160442,
+          "mask_area_ratio": 0.17409071180555555,
+          "centroid_2d": [
+            642.1007217561487,
+            476.5307650116553
+          ],
+          "bbox_xyxy": [
+            430,
+            216,
+            843,
+            692
+          ],
+          "theta_2d_deg": -85.90042023088462
+        }
+      ],
+      "silhouette_score": 0.0,
+      "per_view_scores": [],
+      "plane_axis": 1,
+      "plane_value": 0.02,
+      "translation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "theta_rad": 0.0,
+      "theta_deg": 0.0,
+      "centroid_jump_m": 0.0,
+      "theta_jump_deg": 0.0,
+      "pose_jump_m": 0.0
+    },
+    {
+      "frame_id": 115,
+      "valid": true,
+      "invalid_reason": null,
+      "mask_area": 217606,
+      "max_mask_area_ratio": 0.21951822916666666,
+      "valid_view_count": 2,
+      "view_count": 3,
+      "views": [
+        {
+          "camera": "camera_top",
+          "mask_path": "experiments/2026-07-04_obj_recon_bread/masks/camera_top_frame_000115_mask_sam_v41.png",
+          "view_valid": true,
+          "view_invalid_reason": null,
+          "mask_area": 12030,
+          "mask_area_ratio": 0.013053385416666667,
+          "centroid_2d": [
+            578.2296758104739,
+            334.6785536159601
+          ],
+          "bbox_xyxy": [
+            503,
+            262,
+            668,
+            388
+          ],
+          "theta_2d_deg": -2.384109430579553
+        },
+        {
+          "camera": "camera_side_1",
+          "mask_path": "experiments/2026-07-04_obj_recon_bread/masks/camera_side_1_frame_000115_mask_sam.png",
+          "view_valid": true,
+          "view_invalid_reason": null,
+          "mask_area": 3268,
+          "mask_area_ratio": 0.0035460069444444445,
+          "centroid_2d": [
+            497.01101591187273,
+            400.5128518971848
+          ],
+          "bbox_xyxy": [
+            467,
+            366,
+            556,
+            449
+          ],
+          "theta_2d_deg": -65.39632022296898
+        },
+        {
+          "camera": "camera_side_2",
+          "mask_path": "experiments/2026-07-04_obj_recon_bread/masks/camera_side_2_frame_000115_mask_sam.png",
+          "view_valid": false,
+          "view_invalid_reason": "mask_area_ratio_too_large (0.220>0.100)",
+          "mask_area": 202308,
+          "mask_area_ratio": 0.21951822916666666,
+          "centroid_2d": [
+            690.0416938529371,
+            510.0575014334579
+          ],
+          "bbox_xyxy": [
+            338,
+            274,
+            1008,
+            717
+          ],
+          "theta_2d_deg": 4.618561454992021
+        }
+      ],
+      "silhouette_score": 0.16822970927917164,
+      "per_view_scores": [
+        {
+          "coverage": 0.448,
+          "bbox_iou": 0.07619806186114429,
+          "projected_points": 2500,
+          "camera": "camera_top",
+          "score": 0.33645941855834327
+        },
+        {
+          "coverage": 0.0,
+          "bbox_iou": 0.0,
+          "projected_points": 2500,
+          "camera": "camera_side_1",
+          "score": 0.0
+        }
+      ],
+      "plane_axis": 1,
+      "plane_value": 0.02,
+      "translation": [
+        0.014663917589360934,
+        0.020000000000000018,
+        0.27726779275151403
+      ],
+      "rotation_matrix": [
+        [
+          -0.9396926207859083,
+          0.0,
+          -0.3420201433256689
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.3420201433256689,
+          0.0,
+          -0.9396926207859083
+        ]
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.984807753012208,
+        0.0,
+        -0.17364817766693044
+      ],
+      "theta_rad": -2.792526803190927,
+      "theta_deg": -160.0,
+      "centroid_jump_m": 0.0,
+      "theta_jump_deg": 0.0,
+      "pose_jump_m": 0.0
+    },
+    {
+      "frame_id": 230,
+      "valid": false,
+      "invalid_reason": "insufficient_valid_views (0<2)",
+      "mask_area": 164428,
+      "max_mask_area_ratio": 0.17841579861111112,
+      "valid_view_count": 0,
+      "view_count": 1,
+      "views": [
+        {
+          "camera": "camera_top",
+          "mask_path": "experiments/2026-07-04_obj_recon_bread/masks/camera_top_frame_000230_mask_sam.png",
+          "view_valid": false,
+          "view_invalid_reason": "mask_area_ratio_too_large (0.178>0.100)",
+          "mask_area": 164428,
+          "mask_area_ratio": 0.17841579861111112,
+          "centroid_2d": [
+            639.0943695720923,
+            473.8315676162211
+          ],
+          "bbox_xyxy": [
+            429,
+            216,
+            844,
+            692
+          ],
+          "theta_2d_deg": 88.88328046189042
+        }
+      ],
+      "silhouette_score": 0.0,
+      "per_view_scores": [],
+      "plane_axis": 1,
+      "plane_value": 0.02,
+      "translation": [
+        0.014663917589360934,
+        0.020000000000000018,
+        0.27726779275151403
+      ],
+      "rotation_matrix": [
+        [
+          -0.9396926207859083,
+          0.0,
+          -0.3420201433256689
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.3420201433256689,
+          0.0,
+          -0.9396926207859083
+        ]
+      ],
+      "quaternion_xyzw": [
+        0.0,
+        0.984807753012208,
+        0.0,
+        -0.17364817766693044
+      ],
+      "theta_rad": 0.0,
+      "theta_deg": 0.0,
+      "centroid_jump_m": 0.0,
+      "theta_jump_deg": 0.0,
+      "pose_jump_m": 0.0
+    }
+  ]
+}

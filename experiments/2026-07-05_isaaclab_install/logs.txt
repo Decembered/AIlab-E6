@@ -1,0 +1,72 @@
+Sun Jul  5 02:04:39 CST 2026
+Name: isaaclab
+Version: 2.3.2.post1
+Summary: Isaac Lab
+Home-page: https://developer.nvidia.com/isaac/lab
+Author: Isaac Lab team
+Author-email: 
+License: NVIDIA Proprietary Software
+Location: /home/ruan/research/Hackthon/.venvs/isaaclab-py311/lib/python3.11/site-packages
+Requires: einops, flaky, flatdict, gymnasium, h5py, hidapi, hydra-core, junitparser, moviepy, numba, numpy, onnx, packaging, pillow, prettytable, protobuf, pyglet, pytest, pytest-mock, starlette, tensorboard, toml, torch, torchvision, transformers, trimesh, warp-lang
+Required-by: 
+---
+Name: isaacsim
+Version: 5.1.0.0
+Summary: A metapackage to manage the Isaac Sim installation
+Home-page: https://developer.nvidia.com/isaac-sim
+Author: Isaac Sim team
+Author-email: 
+License: NVIDIA Proprietary Software
+Location: /home/ruan/research/Hackthon/.venvs/isaaclab-py311/lib/python3.11/site-packages
+Requires: isaacsim-kernel
+Required-by: 
+---
+Name: torch
+Version: 2.7.0
+Summary: Tensors and Dynamic neural networks in Python with strong GPU acceleration
+Home-page: https://pytorch.org/
+Author: PyTorch Team
+Author-email: packages@pytorch.org
+License: BSD-3-Clause
+Location: /home/ruan/research/Hackthon/.venvs/isaaclab-py311/lib/python3.11/site-packages
+Requires: filelock, fsspec, jinja2, networkx, nvidia-cublas-cu12, nvidia-cuda-cupti-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-runtime-cu12, nvidia-cudnn-cu12, nvidia-cufft-cu12, nvidia-cufile-cu12, nvidia-curand-cu12, nvidia-cusolver-cu12, nvidia-cusparse-cu12, nvidia-cusparselt-cu12, nvidia-nccl-cu12, nvidia-nvjitlink-cu12, nvidia-nvtx-cu12, sympy, triton, typing-extensions
+Required-by: isaaclab, isaacsim-core, rsl-rl-lib, stable_baselines3, tensordict, torchaudio, torchvision
+---
+Name: isaacsim-extscache-kit
+Version: 5.1.0.0
+Summary: Kit extensions cache for Isaac Sim
+Home-page: https://developer.nvidia.com/isaac-sim
+Author: Isaac Sim team
+Author-email: 
+License: NVIDIA Proprietary Software
+Location: /home/ruan/research/Hackthon/.venvs/isaaclab-py311/lib/python3.11/site-packages
+Requires: 
+Required-by: 
+---
+Name: isaacsim-kernel
+Version: 5.1.0.0
+Summary: Isaac Sim kernel
+Home-page: https://developer.nvidia.com/isaac-sim
+Author: Isaac Sim team
+Author-email: 
+License: NVIDIA Proprietary Software
+Location: /home/ruan/research/Hackthon/.venvs/isaaclab-py311/lib/python3.11/site-packages
+Requires: aiodns, aiofiles, aiohappyeyeballs, aiohttp, aioitertools, aiosignal, asteval, async_timeout, attrs, charset_normalizer, click, coverage, fastapi, frozenlist, httptools, idna, idna-ssl, Jinja2, multidict, numpy, Pillow, propcache, psutil, pycares, python-multipart, pytz, qrcode, requests, sentry-sdk, toml, typing_extensions, uvicorn, watchdog, websockets, wrapt, yarl
+Required-by: isaacsim, isaacsim-app, isaacsim-code-editor, isaacsim-core, isaacsim-storage
+文件系统        大小  已用  可用 已用% 挂载点
+/dev/nvme0n1p4  192G  138G   44G   77% /
+/dev/nvme0n1p4  192G  138G   44G   77% /
+/dev/nvme0n1p4  192G  138G   44G   77% /
+文件系统       Inodes 已用I 可用I 已用I% 挂载点
+/dev/nvme0n1p4    13M  918K   12M     8% /
+               total        used        free      shared  buff/cache   available
+内存：       22Gi        14Gi       2.3Gi       5.0Gi       6.2Gi       2.9Gi
+交换：         0B          0B          0B
+inotify max_user_watches=65536
+inotify max_user_instances=128
+inotify max_queued_events=16384
+ulimit -n=1048576
+17G	.venvs/isaaclab-py311
+9.4G	/home/ruan/.cache/pip
+12K	/home/ruan/.cache/ov
+160K	/home/ruan/.nvidia-omniverse

@@ -1,0 +1,30 @@
+[
+  {
+    "object": "bread",
+    "urdf": "/home/ruan/research/Hackthon/runs/object_asset_v1/bread/asset/object.urdf",
+    "status": "failed_local_env",
+    "reason": "FAIL: isaacgym import failed: No module named 'isaacgym'",
+    "log": "/home/ruan/research/Hackthon/runs/object_asset_v1/bread/report/asset_check_local.log"
+  },
+  {
+    "object": "pipette",
+    "urdf": "/home/ruan/research/Hackthon/runs/object_asset_v1/pipette/asset/object.urdf",
+    "status": "failed_local_env",
+    "reason": "FAIL: isaacgym import failed: No module named 'isaacgym'",
+    "log": "/home/ruan/research/Hackthon/runs/object_asset_v1/pipette/report/asset_check_local.log"
+  },
+  {
+    "object": "drink_ad",
+    "urdf": "/home/ruan/research/Hackthon/runs/object_asset_v1/drink_ad/asset/object.urdf",
+    "status": "failed_local_env",
+    "reason": "FAIL: isaacgym import failed: No module named 'isaacgym'",
+    "log": "/home/ruan/research/Hackthon/runs/object_asset_v1/drink_ad/report/asset_check_local.log"
+  },
+  {
+    "object": "drink_yykx",
+    "urdf": "/home/ruan/research/Hackthon/runs/object_asset_v1/drink_yykx/asset/object.urdf",
+    "status": "failed_local_env",
+    "reason": "FAIL: isaacgym import failed: No module named 'isaacgym'",
+    "log": "/home/ruan/research/Hackthon/runs/object_asset_v1/drink_yykx/report/asset_check_local.log"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "object_name": "pipette",
+  "sequence_name": "pipette_rh_beaker_testtube__2026_0701_0039_28",
+  "method": "need_segmentation_or_manual",
+  "limitation": "No valid GT pose, mask/depth pair, or mask-only track was discovered."
+}

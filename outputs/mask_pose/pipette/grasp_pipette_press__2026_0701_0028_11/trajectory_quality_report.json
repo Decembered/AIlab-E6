@@ -1,0 +1,6 @@
+{
+  "object_name": "pipette",
+  "sequence_name": "grasp_pipette_press__2026_0701_0028_11",
+  "method": "need_segmentation_or_manual",
+  "limitation": "No valid GT pose, mask/depth pair, or mask-only track was discovered."
+}

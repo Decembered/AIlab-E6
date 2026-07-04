@@ -1,0 +1,6 @@
+{
+  "object_name": "drink_ad",
+  "sequence_name": "weigh_drink_ad__2026_0701_0047_56",
+  "method": "need_segmentation_or_manual",
+  "limitation": "No valid GT pose, mask/depth pair, or mask-only track was discovered."
+}

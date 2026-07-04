@@ -1,0 +1,213 @@
+{
+  "object_name": "bread",
+  "sequence_name": "weigh_bread__2026_0701_0044_30",
+  "method": "image_plane_pose",
+  "transform_name": "T_image_object",
+  "num_frames": 3,
+  "num_valid": 1,
+  "yaw_ambiguous": false,
+  "limitation": "No depth was available; this is not a full 6D pose. Translation is reported in image pixels.",
+  "canonical_mesh": null,
+  "external_references": [
+    {
+      "name": "SAM2",
+      "url": "https://github.com/facebookresearch/sam2",
+      "role": "Future mask propagation option; current fallback only consumes existing masks."
+    },
+    {
+      "name": "Track-Anything",
+      "url": "https://github.com/gaomingqi/Track-Anything",
+      "role": "Future video mask propagation option, not direct pose estimation."
+    },
+    {
+      "name": "CoTracker",
+      "url": "https://github.com/facebookresearch/co-tracker",
+      "role": "Future dynamic prompt/point tracking option, not direct 6D pose."
+    },
+    {
+      "name": "TAPIR",
+      "url": "https://deepmind-tapir.github.io/",
+      "role": "Future point tracking option, not direct 6D pose."
+    }
+  ],
+  "poses": [
+    [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        1.0,
+        0.0,
+        0.0,
+        578.2296758104739
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        334.6785536159601
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    [
+      [
+        1.0,
+        0.0,
+        0.0,
+        578.2296758104739
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        334.6785536159601
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  ],
+  "timestamps": [
+    0.0,
+    115.0,
+    230.0
+  ],
+  "frames": [
+    {
+      "frame_id": 0,
+      "mask_path": "experiments/2026-07-04_obj_recon_bread/masks/camera_top_frame_000000_mask_sam.png",
+      "valid": false,
+      "invalid_reason": "mask_area_ratio_too_large (0.174>0.100)",
+      "mask_area": 160442,
+      "mask_area_ratio": 0.17409071180555555,
+      "depth_valid_ratio": null,
+      "centroid": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "raw_centroid": [
+        642.1007217561487,
+        476.5307650116553,
+        0.0
+      ],
+      "bbox_xyxy": [
+        430,
+        216,
+        843,
+        692
+      ],
+      "theta_rad": -1.4992451618756841,
+      "theta_deg": -85.90042023088462,
+      "centroid_jump_px": 0.0,
+      "theta_jump_deg": 0.0,
+      "icp_fitness": null,
+      "icp_rmse": null
+    },
+    {
+      "frame_id": 115,
+      "mask_path": "experiments/2026-07-04_obj_recon_bread/masks/camera_top_frame_000115_mask_sam_v41.png",
+      "valid": true,
+      "invalid_reason": null,
+      "mask_area": 12030,
+      "mask_area_ratio": 0.013053385416666667,
+      "depth_valid_ratio": null,
+      "centroid": [
+        578.2296758104739,
+        334.6785536159601,
+        0.0
+      ],
+      "raw_centroid": [
+        578.2296758104739,
+        334.6785536159601,
+        0.0
+      ],
+      "bbox_xyxy": [
+        503,
+        262,
+        668,
+        388
+      ],
+      "theta_rad": -0.04161055929146038,
+      "theta_deg": -2.384109430579553,
+      "centroid_jump_px": 0.0,
+      "theta_jump_deg": 0.0,
+      "icp_fitness": null,
+      "icp_rmse": null
+    },
+    {
+      "frame_id": 230,
+      "mask_path": "experiments/2026-07-04_obj_recon_bread/masks/camera_top_frame_000230_mask_sam.png",
+      "valid": false,
+      "invalid_reason": "mask_area_ratio_too_large (0.178>0.100)",
+      "mask_area": 164428,
+      "mask_area_ratio": 0.17841579861111112,
+      "depth_valid_ratio": null,
+      "centroid": [
+        578.2296758104739,
+        334.6785536159601,
+        0.0
+      ],
+      "raw_centroid": [
+        639.0943695720923,
+        473.8315676162211,
+        0.0
+      ],
+      "bbox_xyxy": [
+        429,
+        216,
+        844,
+        692
+      ],
+      "theta_rad": 1.5513058940335342,
+      "theta_deg": 88.88328046189042,
+      "centroid_jump_px": 0.0,
+      "theta_jump_deg": 0.0,
+      "icp_fitness": null,
+      "icp_rmse": null
+    }
+  ]
+}

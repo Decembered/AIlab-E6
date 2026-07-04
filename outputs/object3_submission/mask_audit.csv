@@ -1,0 +1,28 @@
+object,mask_path,width,height,mask_area,mask_area_ratio,usable_for_pose,invalid_reason
+bread,/home/ruan/research/Hackthon/experiments/2026-07-04_obj_recon_bread/masks/camera_side_1_frame_000115_mask.png,1280,720,108240,0.11744791666666667,False,mask_area_ratio_too_large (0.117>0.100)
+bread,/home/ruan/research/Hackthon/experiments/2026-07-04_obj_recon_bread/masks/camera_side_1_frame_000115_mask_sam.png,1280,720,3268,0.0035460069444444445,True,
+bread,/home/ruan/research/Hackthon/experiments/2026-07-04_obj_recon_bread/masks/camera_side_2_frame_000115_mask.png,1280,720,117096,0.12705729166666666,False,mask_area_ratio_too_large (0.127>0.100)
+bread,/home/ruan/research/Hackthon/experiments/2026-07-04_obj_recon_bread/masks/camera_side_2_frame_000115_mask_sam.png,1280,720,202308,0.21951822916666666,False,mask_area_ratio_too_large (0.220>0.100)
+bread,/home/ruan/research/Hackthon/experiments/2026-07-04_obj_recon_bread/masks/camera_top_frame_000000_mask.png,1280,720,121403,0.13173068576388888,False,mask_area_ratio_too_large (0.132>0.100)
+bread,/home/ruan/research/Hackthon/experiments/2026-07-04_obj_recon_bread/masks/camera_top_frame_000000_mask_sam.png,1280,720,160442,0.17409071180555555,False,mask_area_ratio_too_large (0.174>0.100)
+bread,/home/ruan/research/Hackthon/experiments/2026-07-04_obj_recon_bread/masks/camera_top_frame_000115_mask.png,1280,720,99996,0.10850260416666667,False,mask_area_ratio_too_large (0.109>0.100)
+bread,/home/ruan/research/Hackthon/experiments/2026-07-04_obj_recon_bread/masks/camera_top_frame_000115_mask_sam.png,1280,720,157994,0.17143446180555555,False,mask_area_ratio_too_large (0.171>0.100)
+bread,/home/ruan/research/Hackthon/experiments/2026-07-04_obj_recon_bread/masks/camera_top_frame_000115_mask_sam_refined.png,1280,720,20291,0.022017144097222222,True,
+bread,/home/ruan/research/Hackthon/experiments/2026-07-04_obj_recon_bread/masks/camera_top_frame_000115_mask_sam_v4.png,1280,720,7455,0.008089192708333333,True,
+bread,/home/ruan/research/Hackthon/experiments/2026-07-04_obj_recon_bread/masks/camera_top_frame_000115_mask_sam_v41.png,1280,720,12030,0.013053385416666667,True,
+bread,/home/ruan/research/Hackthon/experiments/2026-07-04_obj_recon_bread/masks/camera_top_frame_000230_mask.png,1280,720,125343,0.136005859375,False,mask_area_ratio_too_large (0.136>0.100)
+bread,/home/ruan/research/Hackthon/experiments/2026-07-04_obj_recon_bread/masks/camera_top_frame_000230_mask_sam.png,1280,720,164428,0.17841579861111112,False,mask_area_ratio_too_large (0.178>0.100)
+bread,/home/ruan/research/Hackthon/experiments/2026-07-05_obj_recon_bread/mask_debug/mask_camera_side_1.png,1280,720,137428,0.14911892361111112,False,mask_area_ratio_too_large (0.149>0.100)
+bread,/home/ruan/research/Hackthon/experiments/2026-07-05_obj_recon_bread/mask_debug/mask_camera_side_2.png,1280,720,113301,0.122939453125,False,mask_area_ratio_too_large (0.123>0.100)
+bread,/home/ruan/research/Hackthon/experiments/2026-07-05_obj_recon_bread/mask_debug/mask_camera_top.png,1280,720,8439,0.009156901041666667,True,
+pipette,/home/ruan/research/Hackthon/experiments/2026-07-05_obj_recon_pipette/mask_debug/mask_camera_side_1.png,1280,720,140976,0.15296875,False,mask_area_ratio_too_large (0.153>0.100)
+pipette,/home/ruan/research/Hackthon/experiments/2026-07-05_obj_recon_pipette/mask_debug/mask_camera_side_2.png,1280,720,170045,0.18451063368055556,False,mask_area_ratio_too_large (0.185>0.100)
+pipette,/home/ruan/research/Hackthon/experiments/2026-07-05_obj_recon_pipette/mask_debug/mask_camera_top.png,1280,720,162219,0.17601888020833334,False,mask_area_ratio_too_large (0.176>0.100)
+pipette,/home/ruan/research/Hackthon/experiments/2026-07-05_obj_recon_pipette/mask_debug/pipette_mask_best.png,1280,720,122417,0.13283094618055555,False,mask_area_ratio_too_large (0.133>0.100)
+pipette,/home/ruan/research/Hackthon/experiments/2026-07-05_obj_recon_pipette/mask_debug/pipette_mask_v1.png,1280,720,130468,0.14156684027777777,False,mask_area_ratio_too_large (0.142>0.100)
+drink_ad,/home/ruan/research/Hackthon/experiments/2026-07-05_obj_recon_drink_ad/mask_debug/mask_camera_side_1.png,1280,720,205892,0.22340711805555555,False,mask_area_ratio_too_large (0.223>0.100)
+drink_ad,/home/ruan/research/Hackthon/experiments/2026-07-05_obj_recon_drink_ad/mask_debug/mask_camera_side_2.png,1280,720,139016,0.15084201388888888,False,mask_area_ratio_too_large (0.151>0.100)
+drink_ad,/home/ruan/research/Hackthon/experiments/2026-07-05_obj_recon_drink_ad/mask_debug/mask_camera_top.png,1280,720,117552,0.12755208333333334,False,mask_area_ratio_too_large (0.128>0.100)
+drink_yykx,/home/ruan/research/Hackthon/experiments/2026-07-05_obj_recon_drink_yykx/mask_debug/mask_camera_side_1.png,1280,720,211669,0.2296755642361111,False,mask_area_ratio_too_large (0.230>0.100)
+drink_yykx,/home/ruan/research/Hackthon/experiments/2026-07-05_obj_recon_drink_yykx/mask_debug/mask_camera_side_2.png,1280,720,135777,0.14732747395833334,False,mask_area_ratio_too_large (0.147>0.100)
+drink_yykx,/home/ruan/research/Hackthon/experiments/2026-07-05_obj_recon_drink_yykx/mask_debug/mask_camera_top.png,1280,720,124115,0.13467339409722223,False,mask_area_ratio_too_large (0.135>0.100)

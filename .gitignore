@@ -9,5 +9,11 @@ __pycache__/
 data/
 data.zip
 
+# Generated heavy/intermediate artifacts
+runs/*.tar.gz
+experiments/*/frames/
+experiments/*/pose_tracking/mask_sequence/
+experiments/*/pose_tracking/mask_sequence_debug/
+
 # Claude workspace config
 .claude/
