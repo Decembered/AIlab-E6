@@ -2,93 +2,57 @@
   {
     "name": "bread",
     "visual_faces": 588,
-    "visual_vertices": 296,
-    "collision_faces": 144,
-    "collision_vertices": 74,
     "visual_watertight": true,
+    "collision_faces": 144,
     "collision_watertight": true,
-    "visual_extents_m": [
+    "extents_m": [
       0.12,
       0.0627,
       0.04
     ],
-    "collision_extents_m": [
-      0.12,
-      0.0627,
-      0.04
-    ],
-    "visual_volume_m3": 0.000258,
-    "mass_kg": 0.0775,
-    "isaacgym_validated": true,
-    "validated_at": "2026-07-05T06:33"
+    "mass_kg": 0.4,
+    "isaacgym_validated": true
   },
   {
     "name": "pipette",
     "visual_faces": 3196,
-    "visual_vertices": 1600,
-    "collision_faces": 76,
-    "collision_vertices": 40,
     "visual_watertight": true,
+    "collision_faces": 76,
     "collision_watertight": true,
-    "visual_extents_m": [
+    "extents_m": [
       0.258,
-      0.1044,
+      0.02,
       0.085
     ],
-    "collision_extents_m": [
-      0.258,
-      0.1044,
-      0.085
-    ],
-    "visual_volume_m3": 0.00101,
-    "mass_kg": 1.2116,
-    "isaacgym_validated": true,
-    "validated_at": "2026-07-05T06:33"
+    "mass_kg": 0.15,
+    "isaacgym_validated": true
   },
   {
     "name": "drink_ad",
     "visual_faces": 460,
-    "visual_vertices": 232,
-    "collision_faces": 112,
-    "collision_vertices": 58,
     "visual_watertight": true,
+    "collision_faces": 112,
     "collision_watertight": true,
-    "visual_extents_m": [
+    "extents_m": [
       0.07,
       0.1182,
       0.2
     ],
-    "collision_extents_m": [
-      0.07,
-      0.1182,
-      0.2
-    ],
-    "visual_volume_m3": 0.00147,
-    "mass_kg": 1.4695,
-    "isaacgym_validated": true,
-    "validated_at": "2026-07-05T06:33"
+    "mass_kg": 0.55,
+    "isaacgym_validated": true
   },
   {
     "name": "drink_yykx",
     "visual_faces": 284,
-    "visual_vertices": 144,
-    "collision_faces": 68,
-    "collision_vertices": 36,
     "visual_watertight": true,
+    "collision_faces": 68,
     "collision_watertight": true,
-    "visual_extents_m": [
+    "extents_m": [
       0.07,
       0.0663,
       0.2
     ],
-    "collision_extents_m": [
-      0.07,
-      0.0663,
-      0.2
-    ],
-    "visual_volume_m3": 0.000857,
-    "mass_kg": 0.8571,
-    "isaacgym_validated": true,
-    "validated_at": "2026-07-05T06:33"
+    "mass_kg": 0.55,
+    "isaacgym_validated": true
   }
 ]
