@@ -77,6 +77,15 @@ See [AGENTS.md](AGENTS.md) for the full per-member deliverable checklist.
 - **README**: Environment dependencies, reproduction steps, main result screenshots
 - **Report**: Method description, external resources, member contributions, failure analysis
 
+### Member C Object Handoff
+
+For object reconstruction, IsaacGym asset evidence, and object pose tracking,
+start with:
+
+- [Member C Object Task Handoff](docs/member_c_object_task_handoff.md)
+- [Object 3.3 Evidence README](outputs/object3_submission/README.md)
+- [Object Asset v1 README](runs/object_asset_v1/README.md)
+
 ## Project Structure
 
 ```text
