@@ -1,0 +1,7 @@
+name: drink_ad_multiview_contour
+method: multi-view mask contour fitting + extrusion
+vertices: 60
+faces: 116
+is_watertight: True
+extents: [2498.9992065060887, 1581.36730349745, 0.22]
+volume: 106886.53876560468

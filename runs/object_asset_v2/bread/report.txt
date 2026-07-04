@@ -1,0 +1,7 @@
+name: bread_multiview_contour
+method: multi-view mask contour fitting + extrusion
+vertices: 26
+faces: 48
+is_watertight: True
+extents: [0.4300409242521246, 0.3220233088042425, 0.05]
+volume: 0.004328036195107699

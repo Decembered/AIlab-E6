@@ -1,0 +1,7 @@
+name: pipette_multiview_contour
+method: multi-view mask contour fitting + extrusion
+vertices: 60
+faces: 116
+is_watertight: True
+extents: [508.5692609315432, 707.5476570534948, 0.09]
+volume: 2141.731002344557

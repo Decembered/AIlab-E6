@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot name="drink_ad">
+  <link name="base">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="/mnt/workspace/AIlab-E6/runs/object_asset_v2/drink_ad/drink_ad_visual.obj"/></geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="/mnt/workspace/AIlab-E6/runs/object_asset_v2/drink_ad/drink_ad_collision.obj"/></geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.3"/>
+      <inertia ixx="62518.064924" ixy="0" ixz="0"
+               iyy="156124.927063" iyz="0"
+               izz="218642.989567"/>
+    </inertial>
+  </link>
+</robot>

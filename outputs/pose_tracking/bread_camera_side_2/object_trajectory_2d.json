@@ -1,0 +1,20 @@
+{
+  "object": "bread",
+  "method": "SAM_dynamic_tracking",
+  "num_valid_frames": 2,
+  "num_total_frames": 26,
+  "keypoints": [
+    {
+      "frame": 10,
+      "cx": 660.6766774891775,
+      "cy": 333.147490530303,
+      "area": 7539840.0
+    },
+    {
+      "frame": 14,
+      "cx": 667.5058935500402,
+      "cy": 314.1687898089172,
+      "area": 6966090.0
+    }
+  ]
+}

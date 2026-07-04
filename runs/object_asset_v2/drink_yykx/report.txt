@@ -1,0 +1,7 @@
+name: drink_yykx_multiview_contour
+method: multi-view mask contour fitting + extrusion
+vertices: 30
+faces: 56
+is_watertight: True
+extents: [0.4311488099872053, 0.32260927616836155, 0.22]
+volume: 0.019250475781048795

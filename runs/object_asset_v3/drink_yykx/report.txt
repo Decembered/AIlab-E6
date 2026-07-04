@@ -1,0 +1,10 @@
+name: drink_yykx_scaledv3
+method: top-camera pixel-to-meter + contour extrusion
+vertices: 10
+faces: 16
+is_watertight: True
+extents: [0.06051269353980703, 0.0646658157877219, 0.09918258511418546]
+pixel_width: 76
+pixel_height: 82
+object_depth: 0.7342852422781342
+estimated_height: 0.09918258511418546

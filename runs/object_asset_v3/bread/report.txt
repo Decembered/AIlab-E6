@@ -1,0 +1,10 @@
+name: bread_scaledv3
+method: top-camera pixel-to-meter + contour extrusion
+vertices: 12
+faces: 20
+is_watertight: True
+extents: [0.08804422761650407, 0.06035179502705988, 0.07352276511246518]
+pixel_width: 119
+pixel_height: 81
+object_depth: 0.7028709839814923
+estimated_height: 0.07352276511246518

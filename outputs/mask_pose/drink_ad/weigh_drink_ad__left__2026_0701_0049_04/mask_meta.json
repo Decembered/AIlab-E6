@@ -1,125 +1,650 @@
 {
   "object": "drink_ad",
   "sequence": "weigh_drink_ad__left__2026_0701_0049_04",
-  "frame_stride": 30,
+  "frame_stride": 5,
   "cameras": {
     "camera_top": {
-      "num_masks": 7,
+      "num_masks": 42,
       "masks": {
         "camera_top_frame_000000": {
           "frame": 0,
           "mask_pixels": 6082,
           "sam_score": 0.9042429327964783
         },
+        "camera_top_frame_000005": {
+          "frame": 5,
+          "mask_pixels": 147702,
+          "sam_score": 0.736910879611969
+        },
+        "camera_top_frame_000010": {
+          "frame": 10,
+          "mask_pixels": 168267,
+          "sam_score": 0.9651802182197571
+        },
+        "camera_top_frame_000015": {
+          "frame": 15,
+          "mask_pixels": 168508,
+          "sam_score": 0.9699854850769043
+        },
+        "camera_top_frame_000020": {
+          "frame": 20,
+          "mask_pixels": 137378,
+          "sam_score": 0.9665265679359436
+        },
+        "camera_top_frame_000025": {
+          "frame": 25,
+          "mask_pixels": 165900,
+          "sam_score": 0.9659732580184937
+        },
         "camera_top_frame_000030": {
           "frame": 30,
-          "mask_pixels": 142115,
-          "sam_score": 0.7369478344917297
+          "mask_pixels": 139294,
+          "sam_score": 0.9587588906288147
+        },
+        "camera_top_frame_000035": {
+          "frame": 35,
+          "mask_pixels": 122817,
+          "sam_score": 0.9427596926689148
+        },
+        "camera_top_frame_000040": {
+          "frame": 40,
+          "mask_pixels": 135053,
+          "sam_score": 0.9614126086235046
+        },
+        "camera_top_frame_000045": {
+          "frame": 45,
+          "mask_pixels": 127482,
+          "sam_score": 0.9506696462631226
+        },
+        "camera_top_frame_000050": {
+          "frame": 50,
+          "mask_pixels": 167094,
+          "sam_score": 0.9713265895843506
+        },
+        "camera_top_frame_000055": {
+          "frame": 55,
+          "mask_pixels": 150686,
+          "sam_score": 0.9661080241203308
         },
         "camera_top_frame_000060": {
           "frame": 60,
-          "mask_pixels": 168433,
-          "sam_score": 0.9708386659622192
+          "mask_pixels": 151976,
+          "sam_score": 0.9681667685508728
+        },
+        "camera_top_frame_000065": {
+          "frame": 65,
+          "mask_pixels": 166384,
+          "sam_score": 0.9720693826675415
+        },
+        "camera_top_frame_000070": {
+          "frame": 70,
+          "mask_pixels": 136120,
+          "sam_score": 0.9627029299736023
+        },
+        "camera_top_frame_000075": {
+          "frame": 75,
+          "mask_pixels": 165303,
+          "sam_score": 0.9715324640274048
+        },
+        "camera_top_frame_000080": {
+          "frame": 80,
+          "mask_pixels": 139212,
+          "sam_score": 0.95132976770401
+        },
+        "camera_top_frame_000085": {
+          "frame": 85,
+          "mask_pixels": 126311,
+          "sam_score": 0.9653223156929016
         },
         "camera_top_frame_000090": {
           "frame": 90,
-          "mask_pixels": 124467,
-          "sam_score": 0.9379608035087585
+          "mask_pixels": 117039,
+          "sam_score": 0.9625095129013062
+        },
+        "camera_top_frame_000095": {
+          "frame": 95,
+          "mask_pixels": 117844,
+          "sam_score": 0.9618179798126221
+        },
+        "camera_top_frame_000100": {
+          "frame": 100,
+          "mask_pixels": 118492,
+          "sam_score": 0.955706000328064
+        },
+        "camera_top_frame_000105": {
+          "frame": 105,
+          "mask_pixels": 166983,
+          "sam_score": 0.958109438419342
+        },
+        "camera_top_frame_000110": {
+          "frame": 110,
+          "mask_pixels": 169100,
+          "sam_score": 0.9633147716522217
+        },
+        "camera_top_frame_000115": {
+          "frame": 115,
+          "mask_pixels": 148741,
+          "sam_score": 0.9596497416496277
         },
         "camera_top_frame_000120": {
           "frame": 120,
-          "mask_pixels": 170059,
-          "sam_score": 0.9736809134483337
+          "mask_pixels": 155737,
+          "sam_score": 0.9653905630111694
+        },
+        "camera_top_frame_000125": {
+          "frame": 125,
+          "mask_pixels": 170273,
+          "sam_score": 0.9765031933784485
+        },
+        "camera_top_frame_000130": {
+          "frame": 130,
+          "mask_pixels": 170342,
+          "sam_score": 0.9732866287231445
+        },
+        "camera_top_frame_000135": {
+          "frame": 135,
+          "mask_pixels": 169792,
+          "sam_score": 0.9658127427101135
+        },
+        "camera_top_frame_000140": {
+          "frame": 140,
+          "mask_pixels": 135245,
+          "sam_score": 0.9658907055854797
+        },
+        "camera_top_frame_000145": {
+          "frame": 145,
+          "mask_pixels": 165365,
+          "sam_score": 0.9706569910049438
         },
         "camera_top_frame_000150": {
           "frame": 150,
-          "mask_pixels": 170386,
-          "sam_score": 0.9547768831253052
+          "mask_pixels": 170310,
+          "sam_score": 0.9549351930618286
+        },
+        "camera_top_frame_000155": {
+          "frame": 155,
+          "mask_pixels": 128013,
+          "sam_score": 0.9547039270401001
+        },
+        "camera_top_frame_000160": {
+          "frame": 160,
+          "mask_pixels": 166090,
+          "sam_score": 0.9600652456283569
+        },
+        "camera_top_frame_000165": {
+          "frame": 165,
+          "mask_pixels": 170269,
+          "sam_score": 0.952372670173645
+        },
+        "camera_top_frame_000170": {
+          "frame": 170,
+          "mask_pixels": 170400,
+          "sam_score": 0.9625416994094849
+        },
+        "camera_top_frame_000175": {
+          "frame": 175,
+          "mask_pixels": 128474,
+          "sam_score": 0.9524539113044739
         },
         "camera_top_frame_000180": {
           "frame": 180,
-          "mask_pixels": 132883,
-          "sam_score": 0.9568622708320618
+          "mask_pixels": 166310,
+          "sam_score": 0.9689525961875916
+        },
+        "camera_top_frame_000185": {
+          "frame": 185,
+          "mask_pixels": 145800,
+          "sam_score": 0.9561553597450256
+        },
+        "camera_top_frame_000190": {
+          "frame": 190,
+          "mask_pixels": 170992,
+          "sam_score": 0.9578373432159424
+        },
+        "camera_top_frame_000195": {
+          "frame": 195,
+          "mask_pixels": 167669,
+          "sam_score": 0.9596579074859619
+        },
+        "camera_top_frame_000200": {
+          "frame": 200,
+          "mask_pixels": 167963,
+          "sam_score": 0.9539237022399902
+        },
+        "camera_top_frame_000205": {
+          "frame": 205,
+          "mask_pixels": 125774,
+          "sam_score": 0.95654296875
         }
       }
     },
     "camera_side_1": {
-      "num_masks": 7,
+      "num_masks": 42,
       "masks": {
         "camera_side_1_frame_000000": {
           "frame": 0,
           "mask_pixels": 20514,
           "sam_score": 0.8275700807571411
         },
+        "camera_side_1_frame_000005": {
+          "frame": 5,
+          "mask_pixels": 132418,
+          "sam_score": 0.7171579599380493
+        },
+        "camera_side_1_frame_000010": {
+          "frame": 10,
+          "mask_pixels": 127167,
+          "sam_score": 0.9845883250236511
+        },
+        "camera_side_1_frame_000015": {
+          "frame": 15,
+          "mask_pixels": 125881,
+          "sam_score": 0.9785479307174683
+        },
+        "camera_side_1_frame_000020": {
+          "frame": 20,
+          "mask_pixels": 126942,
+          "sam_score": 0.9848935008049011
+        },
+        "camera_side_1_frame_000025": {
+          "frame": 25,
+          "mask_pixels": 126252,
+          "sam_score": 0.9813228249549866
+        },
         "camera_side_1_frame_000030": {
           "frame": 30,
-          "mask_pixels": 127587,
-          "sam_score": 0.7026164531707764
+          "mask_pixels": 126738,
+          "sam_score": 0.9824363589286804
+        },
+        "camera_side_1_frame_000035": {
+          "frame": 35,
+          "mask_pixels": 125651,
+          "sam_score": 0.9811080694198608
+        },
+        "camera_side_1_frame_000040": {
+          "frame": 40,
+          "mask_pixels": 126626,
+          "sam_score": 0.9810210466384888
+        },
+        "camera_side_1_frame_000045": {
+          "frame": 45,
+          "mask_pixels": 125862,
+          "sam_score": 0.9799039363861084
+        },
+        "camera_side_1_frame_000050": {
+          "frame": 50,
+          "mask_pixels": 125891,
+          "sam_score": 0.9821811318397522
+        },
+        "camera_side_1_frame_000055": {
+          "frame": 55,
+          "mask_pixels": 126910,
+          "sam_score": 0.9853459000587463
         },
         "camera_side_1_frame_000060": {
           "frame": 60,
-          "mask_pixels": 126104,
-          "sam_score": 0.9809086918830872
+          "mask_pixels": 126069,
+          "sam_score": 0.9809803366661072
+        },
+        "camera_side_1_frame_000065": {
+          "frame": 65,
+          "mask_pixels": 126300,
+          "sam_score": 0.9813361763954163
+        },
+        "camera_side_1_frame_000070": {
+          "frame": 70,
+          "mask_pixels": 126751,
+          "sam_score": 0.9833517670631409
+        },
+        "camera_side_1_frame_000075": {
+          "frame": 75,
+          "mask_pixels": 126375,
+          "sam_score": 0.9811155200004578
+        },
+        "camera_side_1_frame_000080": {
+          "frame": 80,
+          "mask_pixels": 126755,
+          "sam_score": 0.9821007251739502
+        },
+        "camera_side_1_frame_000085": {
+          "frame": 85,
+          "mask_pixels": 125915,
+          "sam_score": 0.981482744216919
         },
         "camera_side_1_frame_000090": {
           "frame": 90,
-          "mask_pixels": 126731,
-          "sam_score": 0.9829109311103821
+          "mask_pixels": 126719,
+          "sam_score": 0.9826288223266602
+        },
+        "camera_side_1_frame_000095": {
+          "frame": 95,
+          "mask_pixels": 125957,
+          "sam_score": 0.9819852113723755
+        },
+        "camera_side_1_frame_000100": {
+          "frame": 100,
+          "mask_pixels": 126830,
+          "sam_score": 0.9814552664756775
+        },
+        "camera_side_1_frame_000105": {
+          "frame": 105,
+          "mask_pixels": 127315,
+          "sam_score": 0.9860407710075378
+        },
+        "camera_side_1_frame_000110": {
+          "frame": 110,
+          "mask_pixels": 126376,
+          "sam_score": 0.9822058081626892
+        },
+        "camera_side_1_frame_000115": {
+          "frame": 115,
+          "mask_pixels": 127021,
+          "sam_score": 0.9850785136222839
         },
         "camera_side_1_frame_000120": {
           "frame": 120,
-          "mask_pixels": 127418,
-          "sam_score": 0.9821562170982361
+          "mask_pixels": 127425,
+          "sam_score": 0.9820043444633484
+        },
+        "camera_side_1_frame_000125": {
+          "frame": 125,
+          "mask_pixels": 126977,
+          "sam_score": 0.9801502823829651
+        },
+        "camera_side_1_frame_000130": {
+          "frame": 130,
+          "mask_pixels": 126998,
+          "sam_score": 0.9845272898674011
+        },
+        "camera_side_1_frame_000135": {
+          "frame": 135,
+          "mask_pixels": 127070,
+          "sam_score": 0.986030638217926
+        },
+        "camera_side_1_frame_000140": {
+          "frame": 140,
+          "mask_pixels": 126447,
+          "sam_score": 0.9827849268913269
+        },
+        "camera_side_1_frame_000145": {
+          "frame": 145,
+          "mask_pixels": 125832,
+          "sam_score": 0.9823616743087769
         },
         "camera_side_1_frame_000150": {
           "frame": 150,
-          "mask_pixels": 126630,
-          "sam_score": 0.9851574301719666
+          "mask_pixels": 126572,
+          "sam_score": 0.9850658774375916
+        },
+        "camera_side_1_frame_000155": {
+          "frame": 155,
+          "mask_pixels": 126227,
+          "sam_score": 0.9841533303260803
+        },
+        "camera_side_1_frame_000160": {
+          "frame": 160,
+          "mask_pixels": 126162,
+          "sam_score": 0.9806233048439026
+        },
+        "camera_side_1_frame_000165": {
+          "frame": 165,
+          "mask_pixels": 126800,
+          "sam_score": 0.9820577502250671
+        },
+        "camera_side_1_frame_000170": {
+          "frame": 170,
+          "mask_pixels": 126247,
+          "sam_score": 0.9828755259513855
+        },
+        "camera_side_1_frame_000175": {
+          "frame": 175,
+          "mask_pixels": 126362,
+          "sam_score": 0.97878098487854
         },
         "camera_side_1_frame_000180": {
           "frame": 180,
-          "mask_pixels": 126159,
-          "sam_score": 0.9831758737564087
+          "mask_pixels": 126182,
+          "sam_score": 0.9832327365875244
+        },
+        "camera_side_1_frame_000185": {
+          "frame": 185,
+          "mask_pixels": 126980,
+          "sam_score": 0.9821597933769226
+        },
+        "camera_side_1_frame_000190": {
+          "frame": 190,
+          "mask_pixels": 126843,
+          "sam_score": 0.9843849539756775
+        },
+        "camera_side_1_frame_000195": {
+          "frame": 195,
+          "mask_pixels": 127002,
+          "sam_score": 0.9818532466888428
+        },
+        "camera_side_1_frame_000200": {
+          "frame": 200,
+          "mask_pixels": 126786,
+          "sam_score": 0.9805170297622681
+        },
+        "camera_side_1_frame_000205": {
+          "frame": 205,
+          "mask_pixels": 127120,
+          "sam_score": 0.9837241768836975
         }
       }
     },
     "camera_side_2": {
-      "num_masks": 7,
+      "num_masks": 42,
       "masks": {
         "camera_side_2_frame_000000": {
           "frame": 0,
           "mask_pixels": 22931,
           "sam_score": 0.9451445937156677
         },
+        "camera_side_2_frame_000005": {
+          "frame": 5,
+          "mask_pixels": 157365,
+          "sam_score": 0.8511262536048889
+        },
+        "camera_side_2_frame_000010": {
+          "frame": 10,
+          "mask_pixels": 156341,
+          "sam_score": 0.9873383045196533
+        },
+        "camera_side_2_frame_000015": {
+          "frame": 15,
+          "mask_pixels": 156280,
+          "sam_score": 0.9859593510627747
+        },
+        "camera_side_2_frame_000020": {
+          "frame": 20,
+          "mask_pixels": 156117,
+          "sam_score": 0.9884485602378845
+        },
+        "camera_side_2_frame_000025": {
+          "frame": 25,
+          "mask_pixels": 155772,
+          "sam_score": 0.9883727431297302
+        },
         "camera_side_2_frame_000030": {
           "frame": 30,
-          "mask_pixels": 156676,
-          "sam_score": 0.895263135433197
+          "mask_pixels": 154852,
+          "sam_score": 0.9886723160743713
+        },
+        "camera_side_2_frame_000035": {
+          "frame": 35,
+          "mask_pixels": 154415,
+          "sam_score": 0.9916135668754578
+        },
+        "camera_side_2_frame_000040": {
+          "frame": 40,
+          "mask_pixels": 155261,
+          "sam_score": 0.988220751285553
+        },
+        "camera_side_2_frame_000045": {
+          "frame": 45,
+          "mask_pixels": 155429,
+          "sam_score": 0.9851917028427124
+        },
+        "camera_side_2_frame_000050": {
+          "frame": 50,
+          "mask_pixels": 154665,
+          "sam_score": 0.9887460470199585
+        },
+        "camera_side_2_frame_000055": {
+          "frame": 55,
+          "mask_pixels": 154728,
+          "sam_score": 0.9896538257598877
         },
         "camera_side_2_frame_000060": {
           "frame": 60,
-          "mask_pixels": 156121,
-          "sam_score": 0.9844263792037964
+          "mask_pixels": 156182,
+          "sam_score": 0.9851755499839783
+        },
+        "camera_side_2_frame_000065": {
+          "frame": 65,
+          "mask_pixels": 156005,
+          "sam_score": 0.9888819456100464
+        },
+        "camera_side_2_frame_000070": {
+          "frame": 70,
+          "mask_pixels": 155666,
+          "sam_score": 0.9848322868347168
+        },
+        "camera_side_2_frame_000075": {
+          "frame": 75,
+          "mask_pixels": 154843,
+          "sam_score": 0.9911925792694092
+        },
+        "camera_side_2_frame_000080": {
+          "frame": 80,
+          "mask_pixels": 155529,
+          "sam_score": 0.9872891902923584
+        },
+        "camera_side_2_frame_000085": {
+          "frame": 85,
+          "mask_pixels": 154678,
+          "sam_score": 0.9907954931259155
         },
         "camera_side_2_frame_000090": {
           "frame": 90,
           "mask_pixels": 155835,
           "sam_score": 0.989967942237854
         },
+        "camera_side_2_frame_000095": {
+          "frame": 95,
+          "mask_pixels": 155191,
+          "sam_score": 0.9874343872070312
+        },
+        "camera_side_2_frame_000100": {
+          "frame": 100,
+          "mask_pixels": 156207,
+          "sam_score": 0.9870492219924927
+        },
+        "camera_side_2_frame_000105": {
+          "frame": 105,
+          "mask_pixels": 155213,
+          "sam_score": 0.9906477928161621
+        },
+        "camera_side_2_frame_000110": {
+          "frame": 110,
+          "mask_pixels": 154281,
+          "sam_score": 0.9903274774551392
+        },
+        "camera_side_2_frame_000115": {
+          "frame": 115,
+          "mask_pixels": 156288,
+          "sam_score": 0.9844199419021606
+        },
         "camera_side_2_frame_000120": {
           "frame": 120,
           "mask_pixels": 156332,
           "sam_score": 0.9896937012672424
+        },
+        "camera_side_2_frame_000125": {
+          "frame": 125,
+          "mask_pixels": 154825,
+          "sam_score": 0.9885573983192444
+        },
+        "camera_side_2_frame_000130": {
+          "frame": 130,
+          "mask_pixels": 155637,
+          "sam_score": 0.9851827621459961
+        },
+        "camera_side_2_frame_000135": {
+          "frame": 135,
+          "mask_pixels": 155861,
+          "sam_score": 0.9891209602355957
+        },
+        "camera_side_2_frame_000140": {
+          "frame": 140,
+          "mask_pixels": 154521,
+          "sam_score": 0.9910334348678589
+        },
+        "camera_side_2_frame_000145": {
+          "frame": 145,
+          "mask_pixels": 155987,
+          "sam_score": 0.9860962629318237
         },
         "camera_side_2_frame_000150": {
           "frame": 150,
           "mask_pixels": 156307,
           "sam_score": 0.9898390769958496
         },
+        "camera_side_2_frame_000155": {
+          "frame": 155,
+          "mask_pixels": 155910,
+          "sam_score": 0.987920343875885
+        },
+        "camera_side_2_frame_000160": {
+          "frame": 160,
+          "mask_pixels": 155836,
+          "sam_score": 0.986767590045929
+        },
+        "camera_side_2_frame_000165": {
+          "frame": 165,
+          "mask_pixels": 156075,
+          "sam_score": 0.9863081574440002
+        },
+        "camera_side_2_frame_000170": {
+          "frame": 170,
+          "mask_pixels": 156240,
+          "sam_score": 0.989303708076477
+        },
+        "camera_side_2_frame_000175": {
+          "frame": 175,
+          "mask_pixels": 155612,
+          "sam_score": 0.9907681941986084
+        },
         "camera_side_2_frame_000180": {
           "frame": 180,
           "mask_pixels": 155038,
           "sam_score": 0.9897767305374146
+        },
+        "camera_side_2_frame_000185": {
+          "frame": 185,
+          "mask_pixels": 154909,
+          "sam_score": 0.9896343946456909
+        },
+        "camera_side_2_frame_000190": {
+          "frame": 190,
+          "mask_pixels": 154621,
+          "sam_score": 0.9902346134185791
+        },
+        "camera_side_2_frame_000195": {
+          "frame": 195,
+          "mask_pixels": 155307,
+          "sam_score": 0.9894521236419678
+        },
+        "camera_side_2_frame_000200": {
+          "frame": 200,
+          "mask_pixels": 155281,
+          "sam_score": 0.9882878661155701
+        },
+        "camera_side_2_frame_000205": {
+          "frame": 205,
+          "mask_pixels": 155389,
+          "sam_score": 0.9872721433639526
         }
       }
     }
