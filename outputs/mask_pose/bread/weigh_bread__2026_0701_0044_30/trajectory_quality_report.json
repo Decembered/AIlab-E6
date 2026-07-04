@@ -1,78 +1,31 @@
 {
-  "object_name": "bread",
-  "sequence_name": "weigh_bread__2026_0701_0044_30",
-  "method": "multi_view_mask_pose",
-  "num_frames": 3,
-  "num_valid": 1,
-  "valid_ratio": 0.3333333333333333,
-  "invalid_reasons": {
-    "insufficient_valid_views": 2
+  "status": "valid",
+  "method": "multi_view_mask_centroid_triangulation",
+  "postprocessing": "cubic_spline_interpolation",
+  "num_frames": 154,
+  "duration_s": 15.33,
+  "position_stats_m": {
+    "x": [
+      0.0246,
+      0.1365
+    ],
+    "y": [
+      0.3421,
+      0.6518
+    ],
+    "z": [
+      -0.1643,
+      0.1524
+    ]
   },
-  "yaw_ambiguity": null,
-  "limitation": "Depth-free calibrated multi-view mask fitting. This is an approximate video-derived pose, not RGB-D ICP or GT.",
-  "external_references": [
-    {
-      "name": "Calibrated multi-view silhouette fitting",
-      "url": "https://en.wikipedia.org/wiki/Visual_hull",
-      "role": "Depth-free pose evidence from synchronized masks and calibrated cameras; used here as the current-data fallback."
-    },
-    {
-      "name": "3D Gaussian Splatting",
-      "url": "https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/",
-      "role": "Future multi-view video reconstruction/tracking option; not used in this lightweight baseline."
-    },
-    {
-      "name": "Nerfstudio",
-      "url": "https://docs.nerf.studio/",
-      "role": "Future NeRF/3DGS tooling option for longer multi-view fitting jobs."
-    }
-  ],
-  "metrics": {
-    "mask_area": {
-      "min": 160442.0,
-      "max": 217606.0,
-      "mean": 180825.33333333334
-    },
-    "mask_area_ratio": null,
-    "max_mask_area_ratio": {
-      "min": 0.17409071180555555,
-      "max": 0.21951822916666666,
-      "mean": 0.19067491319444443
-    },
-    "depth_valid_ratio": null,
-    "point_count": null,
-    "centroid_jump_m": {
-      "min": 0.0,
-      "max": 0.0,
-      "mean": 0.0
-    },
-    "centroid_jump_px": null,
-    "theta_jump_deg": {
-      "min": 0.0,
-      "max": 0.0,
-      "mean": 0.0
-    },
-    "pose_jump_m": {
-      "min": 0.0,
-      "max": 0.0,
-      "mean": 0.0
-    },
-    "icp_fitness": null,
-    "icp_rmse": null,
-    "valid_view_count": {
-      "min": 0.0,
-      "max": 2.0,
-      "mean": 0.6666666666666666
-    },
-    "view_count": {
-      "min": 1.0,
-      "max": 3.0,
-      "mean": 1.6666666666666667
-    },
-    "silhouette_score": {
-      "min": 0.0,
-      "max": 0.16822970927917164,
-      "mean": 0.05607656975972388
-    }
-  }
+  "velocity_stats_m_per_s": {
+    "max": 2.0632,
+    "mean": 0.0526,
+    "std": 0.2057
+  },
+  "trajectory_smoothness": {
+    "max_jump_m": 0.2063,
+    "mean_jump_m": 0.0053
+  },
+  "quality_flag": "SUSPICIOUS_FAST"
 }

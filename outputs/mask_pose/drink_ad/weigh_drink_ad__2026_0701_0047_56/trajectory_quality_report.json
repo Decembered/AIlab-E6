@@ -1,6 +1,31 @@
 {
-  "object_name": "drink_ad",
-  "sequence_name": "weigh_drink_ad__2026_0701_0047_56",
-  "method": "need_segmentation_or_manual",
-  "limitation": "No valid GT pose, mask/depth pair, or mask-only track was discovered."
+  "status": "valid",
+  "method": "multi_view_mask_centroid_triangulation",
+  "postprocessing": "cubic_spline_interpolation",
+  "num_frames": 161,
+  "duration_s": 16.0,
+  "position_stats_m": {
+    "x": [
+      0.0565,
+      0.1385
+    ],
+    "y": [
+      0.3728,
+      0.6511
+    ],
+    "z": [
+      -0.1709,
+      0.1492
+    ]
+  },
+  "velocity_stats_m_per_s": {
+    "max": 1.9506,
+    "mean": 0.0521,
+    "std": 0.1897
+  },
+  "trajectory_smoothness": {
+    "max_jump_m": 0.1951,
+    "mean_jump_m": 0.0052
+  },
+  "quality_flag": "GOOD"
 }

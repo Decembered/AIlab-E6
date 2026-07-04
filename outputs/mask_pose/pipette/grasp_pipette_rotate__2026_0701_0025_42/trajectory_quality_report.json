@@ -1,6 +1,31 @@
 {
-  "object_name": "pipette",
-  "sequence_name": "grasp_pipette_rotate__2026_0701_0025_42",
-  "method": "need_segmentation_or_manual",
-  "limitation": "No valid GT pose, mask/depth pair, or mask-only track was discovered."
+  "status": "valid",
+  "method": "multi_view_mask_centroid_triangulation",
+  "postprocessing": "cubic_spline_interpolation",
+  "num_frames": 234,
+  "duration_s": 23.33,
+  "position_stats_m": {
+    "x": [
+      0.0099,
+      0.1396
+    ],
+    "y": [
+      0.2427,
+      0.65
+    ],
+    "z": [
+      -0.1712,
+      0.1858
+    ]
+  },
+  "velocity_stats_m_per_s": {
+    "max": 2.5427,
+    "mean": 0.044,
+    "std": 0.2066
+  },
+  "trajectory_smoothness": {
+    "max_jump_m": 0.2543,
+    "mean_jump_m": 0.0044
+  },
+  "quality_flag": "SUSPICIOUS_FAST"
 }

@@ -1,6 +1,31 @@
 {
-  "object_name": "drink_yykx",
-  "sequence_name": "weigh_drink_yykx__left__2026_0701_0052_53",
-  "method": "need_segmentation_or_manual",
-  "limitation": "No valid GT pose, mask/depth pair, or mask-only track was discovered."
+  "status": "valid",
+  "method": "multi_view_mask_centroid_triangulation",
+  "postprocessing": "cubic_spline_interpolation",
+  "num_frames": 121,
+  "duration_s": 12.0,
+  "position_stats_m": {
+    "x": [
+      0.0363,
+      0.1397
+    ],
+    "y": [
+      0.3776,
+      0.6446
+    ],
+    "z": [
+      -0.1703,
+      0.1551
+    ]
+  },
+  "velocity_stats_m_per_s": {
+    "max": 1.9726,
+    "mean": 0.0592,
+    "std": 0.2207
+  },
+  "trajectory_smoothness": {
+    "max_jump_m": 0.1973,
+    "mean_jump_m": 0.0059
+  },
+  "quality_flag": "GOOD"
 }

@@ -1,6 +1,31 @@
 {
-  "object_name": "drink_yykx",
-  "sequence_name": "grasp_drink_yykx__2026_0701_0054_45",
-  "method": "need_segmentation_or_manual",
-  "limitation": "No valid GT pose, mask/depth pair, or mask-only track was discovered."
+  "status": "valid",
+  "method": "multi_view_mask_centroid_triangulation",
+  "postprocessing": "cubic_spline_interpolation",
+  "num_frames": 174,
+  "duration_s": 17.33,
+  "position_stats_m": {
+    "x": [
+      0.0388,
+      0.1812
+    ],
+    "y": [
+      0.3811,
+      0.7324
+    ],
+    "z": [
+      0.0875,
+      0.1719
+    ]
+  },
+  "velocity_stats_m_per_s": {
+    "max": 1.7789,
+    "mean": 0.0483,
+    "std": 0.1657
+  },
+  "trajectory_smoothness": {
+    "max_jump_m": 0.1779,
+    "mean_jump_m": 0.0048
+  },
+  "quality_flag": "GOOD"
 }

@@ -1,6 +1,31 @@
 {
-  "object_name": "pipette",
-  "sequence_name": "pipette_rh_beaker_testtube__2026_0701_0039_28",
-  "method": "need_segmentation_or_manual",
-  "limitation": "No valid GT pose, mask/depth pair, or mask-only track was discovered."
+  "status": "valid",
+  "method": "multi_view_mask_centroid_triangulation",
+  "postprocessing": "cubic_spline_interpolation",
+  "num_frames": 351,
+  "duration_s": 35.0,
+  "position_stats_m": {
+    "x": [
+      -0.1074,
+      0.0527
+    ],
+    "y": [
+      0.161,
+      0.5617
+    ],
+    "z": [
+      0.1423,
+      0.2986
+    ]
+  },
+  "velocity_stats_m_per_s": {
+    "max": 0.2725,
+    "mean": 0.0598,
+    "std": 0.0583
+  },
+  "trajectory_smoothness": {
+    "max_jump_m": 0.0272,
+    "mean_jump_m": 0.006
+  },
+  "quality_flag": "GOOD"
 }
