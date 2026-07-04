@@ -1,0 +1,20 @@
+{
+  "object": "pipette",
+  "method": "SAM_dynamic_tracking",
+  "num_valid_frames": 2,
+  "num_total_frames": 29,
+  "keypoints": [
+    {
+      "frame": 0,
+      "cx": 639.43901080029,
+      "cy": 275.3279777124757,
+      "area": 33408825.0
+    },
+    {
+      "frame": 26,
+      "cx": 637.7937179250246,
+      "cy": 255.45561036634774,
+      "area": 35874930.0
+    }
+  ]
+}

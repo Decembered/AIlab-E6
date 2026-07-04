@@ -1,0 +1,39 @@
+{
+  "object": "bread",
+  "frames_processed": 3,
+  "views": {
+    "camera_side_1": {
+      "centroid": [
+        611.8687167098408,
+        366.2089239456297
+      ],
+      "theta_deg": -175.43948736093256,
+      "area": 137428
+    },
+    "camera_side_2": {
+      "centroid": [
+        678.9677937529236,
+        344.3022479942807
+      ],
+      "theta_deg": 169.24771058417653,
+      "area": 113301
+    },
+    "camera_top": {
+      "centroid": [
+        596.2736106173717,
+        318.6208081526247
+      ],
+      "theta_deg": -171.24058163653703,
+      "area": 8439
+    }
+  },
+  "quality_gates": {
+    "area_range": [
+      4000,
+      25000
+    ],
+    "max_theta_jump_deg": 25.0,
+    "max_centroid_jump_px": 40.0
+  },
+  "mask_definition": "Visible region mask including hand occlusion"
+}

@@ -1,0 +1,8 @@
+{
+  "object": "bread",
+  "method": "SAM_dynamic_tracking + image_plane_backprojection",
+  "num_frames_total": 26,
+  "num_masks_valid": 12,
+  "mask_valid_ratio": 0.46153846153846156,
+  "mode": "image_plane_pose"
+}

@@ -1,0 +1,19 @@
+{
+  "object_name": "Pipette #1",
+  "unit": "meter",
+  "mesh_file": "../mesh/visual_mesh.obj",
+  "collision_file": "../mesh/collision_mesh.obj",
+  "urdf_file": "object.urdf",
+  "mass_kg": 0.08,
+  "scale": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "coordinate": "mesh centered near origin; x-axis is pipette length direction",
+  "method": "parametric pipette asset v1; simplified collision box for IsaacGym stability",
+  "visual_faces": 472,
+  "collision_faces": 12,
+  "visual_watertight": true,
+  "collision_watertight": true
+}

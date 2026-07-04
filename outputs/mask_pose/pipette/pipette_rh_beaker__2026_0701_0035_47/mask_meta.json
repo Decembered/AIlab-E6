@@ -1,0 +1,11 @@
+{
+  "object": "pipette",
+  "sequence": "pipette_rh_beaker__2026_0701_0035_47",
+  "cameras": [
+    "camera_top",
+    "camera_side_1",
+    "camera_side_2"
+  ],
+  "stride": 15,
+  "mask_definition": "visible-region mask via SAM vit_b with bbox + motion propagation"
+}

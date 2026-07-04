@@ -1,0 +1,39 @@
+{
+  "object": "drink_ad",
+  "frames_processed": 3,
+  "views": {
+    "camera_side_1": {
+      "centroid": [
+        604.3440395935734,
+        341.3427476541099
+      ],
+      "theta_deg": -157.08570689953166,
+      "area": 205892
+    },
+    "camera_side_2": {
+      "centroid": [
+        674.2484390286011,
+        365.80231052540717
+      ],
+      "theta_deg": 160.58370456126178,
+      "area": 139016
+    },
+    "camera_top": {
+      "centroid": [
+        644.712306043283,
+        406.9220430107527
+      ],
+      "theta_deg": 168.17141046289404,
+      "area": 117552
+    }
+  },
+  "quality_gates": {
+    "area_range": [
+      4000,
+      25000
+    ],
+    "max_theta_jump_deg": 25.0,
+    "max_centroid_jump_px": 40.0
+  },
+  "mask_definition": "Visible region mask including hand occlusion"
+}

@@ -1,0 +1,7 @@
+=== IsaacGym Asset Validation ===
+Time: 2026-07-05T02:12:51.757262
+URDF: /home/ruan/research/Hackthon/runs/object_asset_v1/pipette/asset/object.urdf
+Asset dir: /home/ruan/research/Hackthon/runs/object_asset_v1/pipette/asset
+
+[1/5] Importing isaacgym...
+FAIL: isaacgym import failed: No module named 'isaacgym'

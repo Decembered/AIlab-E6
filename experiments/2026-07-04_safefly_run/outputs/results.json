@@ -1,0 +1,1694 @@
+{
+  "open_hall/noise_0.3/vla_only": {
+    "scene": "open_hall",
+    "noise_level": 0.3,
+    "condition": "vla_only",
+    "num_episodes": 10,
+    "success_rate": 0.0,
+    "collision_rate": 1.0,
+    "avg_steps": 58.6,
+    "avg_path_length_m": 5.76,
+    "avg_min_obstacle_distance_m": 0.05679428682758704,
+    "avg_interventions_per_episode": 0.0,
+    "results": [
+      {
+        "success": false,
+        "collision": true,
+        "steps": 58,
+        "path_length": 5.699999999999991,
+        "min_obstacle_dist": 0.11044892407605177,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.800000000000001,
+        "min_obstacle_dist": 0.010172756907741136,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 58,
+        "path_length": 5.700000000000012,
+        "min_obstacle_dist": 0.11068374742754736,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.800000000000004,
+        "min_obstacle_dist": 0.00828094481300441,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 58,
+        "path_length": 5.700000000000005,
+        "min_obstacle_dist": 0.10859784692484772,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.800000000000005,
+        "min_obstacle_dist": 0.03468884527048308,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.8,
+        "min_obstacle_dist": 0.0066915573874266315,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.799999999999993,
+        "min_obstacle_dist": 0.017248907956076042,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 58,
+        "path_length": 5.699999999999991,
+        "min_obstacle_dist": 0.1105735265313862,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.799999999999999,
+        "min_obstacle_dist": 0.050555810981306,
+        "interventions": 0
+      }
+    ]
+  },
+  "open_hall/noise_0.3/safefly": {
+    "scene": "open_hall",
+    "noise_level": 0.3,
+    "condition": "safefly",
+    "num_episodes": 10,
+    "success_rate": 1.0,
+    "collision_rate": 0.0,
+    "avg_steps": 167.7,
+    "avg_path_length_m": 16.410000000000007,
+    "avg_min_obstacle_distance_m": 0.105850881391541,
+    "avg_interventions_per_episode": 71.0,
+    "results": [
+      {
+        "success": true,
+        "collision": false,
+        "steps": 173,
+        "path_length": 16.400000000000002,
+        "min_obstacle_dist": 0.1101935194044665,
+        "interventions": 74
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 168,
+        "path_length": 16.49999999999999,
+        "min_obstacle_dist": 0.10189990784472969,
+        "interventions": 72
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 172,
+        "path_length": 16.649999999999974,
+        "min_obstacle_dist": 0.10594347740334494,
+        "interventions": 70
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 167,
+        "path_length": 16.399999999999988,
+        "min_obstacle_dist": 0.10382284734666841,
+        "interventions": 69
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 167,
+        "path_length": 16.400000000000016,
+        "min_obstacle_dist": 0.10656806115586871,
+        "interventions": 70
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 167,
+        "path_length": 16.400000000000013,
+        "min_obstacle_dist": 0.10079139077958967,
+        "interventions": 74
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 167,
+        "path_length": 16.400000000000023,
+        "min_obstacle_dist": 0.10630706124403916,
+        "interventions": 74
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 165,
+        "path_length": 16.300000000000004,
+        "min_obstacle_dist": 0.10939073044214544,
+        "interventions": 69
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 165,
+        "path_length": 16.300000000000033,
+        "min_obstacle_dist": 0.10783138778336943,
+        "interventions": 69
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 166,
+        "path_length": 16.350000000000023,
+        "min_obstacle_dist": 0.10576043051118805,
+        "interventions": 69
+      }
+    ]
+  },
+  "open_hall/noise_0.6/vla_only": {
+    "scene": "open_hall",
+    "noise_level": 0.6,
+    "condition": "vla_only",
+    "num_episodes": 10,
+    "success_rate": 0.0,
+    "collision_rate": 1.0,
+    "avg_steps": 58.6,
+    "avg_path_length_m": 5.76,
+    "avg_min_obstacle_distance_m": 0.07478884979014747,
+    "avg_interventions_per_episode": 0.0,
+    "results": [
+      {
+        "success": false,
+        "collision": true,
+        "steps": 58,
+        "path_length": 5.700000000000002,
+        "min_obstacle_dist": 0.12711466234520788,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.799999999999995,
+        "min_obstacle_dist": 0.022440108632537075,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 58,
+        "path_length": 5.699999999999999,
+        "min_obstacle_dist": 0.12890610457086749,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.799999999999995,
+        "min_obstacle_dist": 0.014546479234401602,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 58,
+        "path_length": 5.699999999999994,
+        "min_obstacle_dist": 0.11935710051721216,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.799999999999993,
+        "min_obstacle_dist": 0.06712664286881889,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.8000000000000105,
+        "min_obstacle_dist": 0.014159325161846658,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.799999999999993,
+        "min_obstacle_dist": 0.029586714577700582,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 58,
+        "path_length": 5.700000000000002,
+        "min_obstacle_dist": 0.12640071854924917,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.800000000000012,
+        "min_obstacle_dist": 0.09825064144363317,
+        "interventions": 0
+      }
+    ]
+  },
+  "open_hall/noise_0.6/safefly": {
+    "scene": "open_hall",
+    "noise_level": 0.6,
+    "condition": "safefly",
+    "num_episodes": 10,
+    "success_rate": 1.0,
+    "collision_rate": 0.0,
+    "avg_steps": 185.7,
+    "avg_path_length_m": 18.100000000000005,
+    "avg_min_obstacle_distance_m": 0.10949574143965135,
+    "avg_interventions_per_episode": 82.8,
+    "results": [
+      {
+        "success": true,
+        "collision": false,
+        "steps": 179,
+        "path_length": 17.15,
+        "min_obstacle_dist": 0.10456221779292217,
+        "interventions": 92
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 190,
+        "path_length": 18.499999999999996,
+        "min_obstacle_dist": 0.10262732799588631,
+        "interventions": 78
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 167,
+        "path_length": 16.45000000000001,
+        "min_obstacle_dist": 0.10418872457864767,
+        "interventions": 69
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 179,
+        "path_length": 17.65000000000002,
+        "min_obstacle_dist": 0.10930983577403663,
+        "interventions": 78
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 224,
+        "path_length": 21.850000000000026,
+        "min_obstacle_dist": 0.10262604522037369,
+        "interventions": 144
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 178,
+        "path_length": 17.600000000000012,
+        "min_obstacle_dist": 0.12480629355750253,
+        "interventions": 67
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 201,
+        "path_length": 18.650000000000002,
+        "min_obstacle_dist": 0.11169018809761745,
+        "interventions": 83
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 189,
+        "path_length": 18.599999999999977,
+        "min_obstacle_dist": 0.11392642236039983,
+        "interventions": 76
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 164,
+        "path_length": 16.250000000000014,
+        "min_obstacle_dist": 0.11420750774953,
+        "interventions": 67
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 186,
+        "path_length": 18.30000000000001,
+        "min_obstacle_dist": 0.10701285126959717,
+        "interventions": 74
+      }
+    ]
+  },
+  "open_hall/noise_1.0/vla_only": {
+    "scene": "open_hall",
+    "noise_level": 1.0,
+    "condition": "vla_only",
+    "num_episodes": 10,
+    "success_rate": 0.0,
+    "collision_rate": 1.0,
+    "avg_steps": 58.7,
+    "avg_path_length_m": 5.770000000000004,
+    "avg_min_obstacle_distance_m": 0.07311181081901921,
+    "avg_interventions_per_episode": 0.0,
+    "results": [
+      {
+        "success": false,
+        "collision": true,
+        "steps": 58,
+        "path_length": 5.699999999999999,
+        "min_obstacle_dist": 0.10551383411168822,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.799999999999999,
+        "min_obstacle_dist": 0.0312564704996954,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.800000000000013,
+        "min_obstacle_dist": 0.08390965210269495,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.800000000000009,
+        "min_obstacle_dist": 0.03223231466282893,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 58,
+        "path_length": 5.700000000000006,
+        "min_obstacle_dist": 0.12501616451017444,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.800000000000001,
+        "min_obstacle_dist": 0.09995281358344951,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.799999999999999,
+        "min_obstacle_dist": 0.02504927848410937,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.8000000000000025,
+        "min_obstacle_dist": 0.04697907994779747,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 58,
+        "path_length": 5.700000000000013,
+        "min_obstacle_dist": 0.11808618358729721,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 59,
+        "path_length": 5.799999999999999,
+        "min_obstacle_dist": 0.06312231670045669,
+        "interventions": 0
+      }
+    ]
+  },
+  "open_hall/noise_1.0/safefly": {
+    "scene": "open_hall",
+    "noise_level": 1.0,
+    "condition": "safefly",
+    "num_episodes": 10,
+    "success_rate": 1.0,
+    "collision_rate": 0.0,
+    "avg_steps": 202.8,
+    "avg_path_length_m": 19.849999999999998,
+    "avg_min_obstacle_distance_m": 0.11780903937888146,
+    "avg_interventions_per_episode": 88.3,
+    "results": [
+      {
+        "success": true,
+        "collision": false,
+        "steps": 275,
+        "path_length": 26.55000000000009,
+        "min_obstacle_dist": 0.1058257447142603,
+        "interventions": 124
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 167,
+        "path_length": 16.399999999999977,
+        "min_obstacle_dist": 0.10932539066736228,
+        "interventions": 89
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 172,
+        "path_length": 17.00000000000001,
+        "min_obstacle_dist": 0.11705416107970794,
+        "interventions": 100
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 210,
+        "path_length": 20.299999999999986,
+        "min_obstacle_dist": 0.10996930443417365,
+        "interventions": 105
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 175,
+        "path_length": 17.250000000000004,
+        "min_obstacle_dist": 0.10564620085564616,
+        "interventions": 73
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 183,
+        "path_length": 18.09999999999997,
+        "min_obstacle_dist": 0.14826172062683313,
+        "interventions": 67
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 174,
+        "path_length": 17.199999999999978,
+        "min_obstacle_dist": 0.12580702570626778,
+        "interventions": 89
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 166,
+        "path_length": 16.449999999999974,
+        "min_obstacle_dist": 0.10130815838185342,
+        "interventions": 68
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 226,
+        "path_length": 22.000000000000007,
+        "min_obstacle_dist": 0.1310765790703203,
+        "interventions": 93
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 280,
+        "path_length": 27.249999999999996,
+        "min_obstacle_dist": 0.12381610825238933,
+        "interventions": 75
+      }
+    ]
+  },
+  "narrow_gap/noise_0.3/vla_only": {
+    "scene": "narrow_gap",
+    "noise_level": 0.3,
+    "condition": "vla_only",
+    "num_episodes": 10,
+    "success_rate": 0.0,
+    "collision_rate": 1.0,
+    "avg_steps": 68.6,
+    "avg_path_length_m": 6.759999999999996,
+    "avg_min_obstacle_distance_m": 0.09781858629400539,
+    "avg_interventions_per_episode": 0.0,
+    "results": [
+      {
+        "success": false,
+        "collision": true,
+        "steps": 69,
+        "path_length": 6.800000000000009,
+        "min_obstacle_dist": 0.057881967533299536,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 68,
+        "path_length": 6.699999999999998,
+        "min_obstacle_dist": 0.09719387787201927,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 69,
+        "path_length": 6.800000000000004,
+        "min_obstacle_dist": 0.11259759006910641,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 68,
+        "path_length": 6.699999999999998,
+        "min_obstacle_dist": 0.09636222034490746,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 69,
+        "path_length": 6.799999999999994,
+        "min_obstacle_dist": 0.11156619347390458,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 68,
+        "path_length": 6.69999999999999,
+        "min_obstacle_dist": 0.1013133885073238,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 69,
+        "path_length": 6.799999999999997,
+        "min_obstacle_dist": 0.07389952523337422,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 68,
+        "path_length": 6.6999999999999975,
+        "min_obstacle_dist": 0.09701265347303127,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 69,
+        "path_length": 6.800000000000001,
+        "min_obstacle_dist": 0.11569397715158654,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 69,
+        "path_length": 6.799999999999989,
+        "min_obstacle_dist": 0.11466446928150076,
+        "interventions": 0
+      }
+    ]
+  },
+  "narrow_gap/noise_0.3/safefly": {
+    "scene": "narrow_gap",
+    "noise_level": 0.3,
+    "condition": "safefly",
+    "num_episodes": 10,
+    "success_rate": 1.0,
+    "collision_rate": 0.0,
+    "avg_steps": 184.8,
+    "avg_path_length_m": 18.110000000000003,
+    "avg_min_obstacle_distance_m": 0.12482469699894874,
+    "avg_interventions_per_episode": 83.0,
+    "results": [
+      {
+        "success": true,
+        "collision": false,
+        "steps": 183,
+        "path_length": 18.000000000000014,
+        "min_obstacle_dist": 0.11898893368997311,
+        "interventions": 82
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 182,
+        "path_length": 18.000000000000032,
+        "min_obstacle_dist": 0.13990828876657307,
+        "interventions": 78
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 185,
+        "path_length": 18.050000000000026,
+        "min_obstacle_dist": 0.14658200082307787,
+        "interventions": 81
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 181,
+        "path_length": 17.9,
+        "min_obstacle_dist": 0.11153466750999624,
+        "interventions": 101
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 186,
+        "path_length": 18.099999999999994,
+        "min_obstacle_dist": 0.12871971336346705,
+        "interventions": 80
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 193,
+        "path_length": 18.849999999999984,
+        "min_obstacle_dist": 0.1439306268600906,
+        "interventions": 78
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 186,
+        "path_length": 18.04999999999999,
+        "min_obstacle_dist": 0.10474277761759958,
+        "interventions": 77
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 182,
+        "path_length": 18.05000000000002,
+        "min_obstacle_dist": 0.11199426082027418,
+        "interventions": 86
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 186,
+        "path_length": 18.099999999999994,
+        "min_obstacle_dist": 0.1251330350074772,
+        "interventions": 91
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 184,
+        "path_length": 17.99999999999996,
+        "min_obstacle_dist": 0.1167126655309584,
+        "interventions": 76
+      }
+    ]
+  },
+  "narrow_gap/noise_0.6/vla_only": {
+    "scene": "narrow_gap",
+    "noise_level": 0.6,
+    "condition": "vla_only",
+    "num_episodes": 10,
+    "success_rate": 0.0,
+    "collision_rate": 1.0,
+    "avg_steps": 68.7,
+    "avg_path_length_m": 6.769999999999999,
+    "avg_min_obstacle_distance_m": 0.08673150752063172,
+    "avg_interventions_per_episode": 0.0,
+    "results": [
+      {
+        "success": false,
+        "collision": true,
+        "steps": 69,
+        "path_length": 6.800000000000006,
+        "min_obstacle_dist": 0.03393095719927196,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 68,
+        "path_length": 6.700000000000003,
+        "min_obstacle_dist": 0.09891873839189234,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 69,
+        "path_length": 6.79999999999999,
+        "min_obstacle_dist": 0.10881945289429683,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 68,
+        "path_length": 6.700000000000002,
+        "min_obstacle_dist": 0.09669133398187688,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 70,
+        "path_length": 6.900000000000001,
+        "min_obstacle_dist": 0.030518695052825316,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 68,
+        "path_length": 6.7,
+        "min_obstacle_dist": 0.0991817906428394,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 69,
+        "path_length": 6.799999999999997,
+        "min_obstacle_dist": 0.06324631027145065,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 68,
+        "path_length": 6.700000000000009,
+        "min_obstacle_dist": 0.1122701012749106,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 69,
+        "path_length": 6.7999999999999945,
+        "min_obstacle_dist": 0.10916373508163728,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 69,
+        "path_length": 6.79999999999999,
+        "min_obstacle_dist": 0.11457396041531595,
+        "interventions": 0
+      }
+    ]
+  },
+  "narrow_gap/noise_0.6/safefly": {
+    "scene": "narrow_gap",
+    "noise_level": 0.6,
+    "condition": "safefly",
+    "num_episodes": 10,
+    "success_rate": 1.0,
+    "collision_rate": 0.0,
+    "avg_steps": 194.4,
+    "avg_path_length_m": 18.995000000000008,
+    "avg_min_obstacle_distance_m": 0.14165156653618544,
+    "avg_interventions_per_episode": 100.0,
+    "results": [
+      {
+        "success": true,
+        "collision": false,
+        "steps": 188,
+        "path_length": 18.450000000000053,
+        "min_obstacle_dist": 0.16252454561791735,
+        "interventions": 100
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 198,
+        "path_length": 19.599999999999994,
+        "min_obstacle_dist": 0.1498374420192373,
+        "interventions": 99
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 192,
+        "path_length": 18.350000000000012,
+        "min_obstacle_dist": 0.1489814501040148,
+        "interventions": 102
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 185,
+        "path_length": 18.20000000000001,
+        "min_obstacle_dist": 0.12252903575628737,
+        "interventions": 125
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 203,
+        "path_length": 19.85000000000002,
+        "min_obstacle_dist": 0.15131574322013017,
+        "interventions": 89
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 191,
+        "path_length": 18.69999999999999,
+        "min_obstacle_dist": 0.1122104441761832,
+        "interventions": 110
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 186,
+        "path_length": 18.200000000000006,
+        "min_obstacle_dist": 0.125682834903666,
+        "interventions": 102
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 186,
+        "path_length": 18.149999999999995,
+        "min_obstacle_dist": 0.13904507428707924,
+        "interventions": 98
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 187,
+        "path_length": 18.199999999999978,
+        "min_obstacle_dist": 0.13726238058804455,
+        "interventions": 88
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 228,
+        "path_length": 22.25000000000001,
+        "min_obstacle_dist": 0.16712671468929421,
+        "interventions": 87
+      }
+    ]
+  },
+  "narrow_gap/noise_1.0/vla_only": {
+    "scene": "narrow_gap",
+    "noise_level": 1.0,
+    "condition": "vla_only",
+    "num_episodes": 10,
+    "success_rate": 0.0,
+    "collision_rate": 1.0,
+    "avg_steps": 68.5,
+    "avg_path_length_m": 6.750000000000004,
+    "avg_min_obstacle_distance_m": 0.08785341542360392,
+    "avg_interventions_per_episode": 0.0,
+    "results": [
+      {
+        "success": false,
+        "collision": true,
+        "steps": 68,
+        "path_length": 6.699999999999986,
+        "min_obstacle_dist": 0.10189590376846532,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 67,
+        "path_length": 6.600000000000007,
+        "min_obstacle_dist": 0.10548873284622724,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 70,
+        "path_length": 6.900000000000018,
+        "min_obstacle_dist": 0.07780602267940723,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 67,
+        "path_length": 6.6,
+        "min_obstacle_dist": 0.0946017231459987,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 70,
+        "path_length": 6.900000000000009,
+        "min_obstacle_dist": 0.10932146937291472,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 68,
+        "path_length": 6.700000000000003,
+        "min_obstacle_dist": 0.08267135871306165,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 69,
+        "path_length": 6.800000000000009,
+        "min_obstacle_dist": 0.047677463945498835,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 67,
+        "path_length": 6.600000000000009,
+        "min_obstacle_dist": 0.09688348374419105,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 70,
+        "path_length": 6.900000000000001,
+        "min_obstacle_dist": 0.04385354323668537,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 69,
+        "path_length": 6.800000000000006,
+        "min_obstacle_dist": 0.11833445278358912,
+        "interventions": 0
+      }
+    ]
+  },
+  "narrow_gap/noise_1.0/safefly": {
+    "scene": "narrow_gap",
+    "noise_level": 1.0,
+    "condition": "safefly",
+    "num_episodes": 10,
+    "success_rate": 1.0,
+    "collision_rate": 0.0,
+    "avg_steps": 217.3,
+    "avg_path_length_m": 20.860000000000007,
+    "avg_min_obstacle_distance_m": 0.13830546194991933,
+    "avg_interventions_per_episode": 103.2,
+    "results": [
+      {
+        "success": true,
+        "collision": false,
+        "steps": 223,
+        "path_length": 21.300000000000026,
+        "min_obstacle_dist": 0.15255057233840955,
+        "interventions": 112
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 245,
+        "path_length": 23.400000000000006,
+        "min_obstacle_dist": 0.14124961276317471,
+        "interventions": 125
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 225,
+        "path_length": 21.40000000000003,
+        "min_obstacle_dist": 0.11317641174645318,
+        "interventions": 125
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 206,
+        "path_length": 19.399999999999967,
+        "min_obstacle_dist": 0.15483219358057126,
+        "interventions": 113
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 191,
+        "path_length": 18.400000000000023,
+        "min_obstacle_dist": 0.10970743175753125,
+        "interventions": 89
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 222,
+        "path_length": 21.800000000000026,
+        "min_obstacle_dist": 0.14280273973161117,
+        "interventions": 96
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 215,
+        "path_length": 21.299999999999947,
+        "min_obstacle_dist": 0.1568832606442868,
+        "interventions": 95
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 216,
+        "path_length": 20.850000000000005,
+        "min_obstacle_dist": 0.1031109495517306,
+        "interventions": 114
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 242,
+        "path_length": 22.400000000000016,
+        "min_obstacle_dist": 0.1421985247960099,
+        "interventions": 86
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 188,
+        "path_length": 18.35000000000003,
+        "min_obstacle_dist": 0.16654292258941508,
+        "interventions": 77
+      }
+    ]
+  },
+  "scattered_pillars/noise_0.3/vla_only": {
+    "scene": "scattered_pillars",
+    "noise_level": 0.3,
+    "condition": "vla_only",
+    "num_episodes": 10,
+    "success_rate": 0.0,
+    "collision_rate": 1.0,
+    "avg_steps": 19.0,
+    "avg_path_length_m": 1.7999999999999994,
+    "avg_min_obstacle_distance_m": 0.01639506630221858,
+    "avg_interventions_per_episode": 0.0,
+    "results": [
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.7999999999999994,
+        "min_obstacle_dist": 0.002686432355642039,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.8000000000000005,
+        "min_obstacle_dist": 0.01930512190478241,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.7999999999999994,
+        "min_obstacle_dist": 0.021595241040556108,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.7999999999999987,
+        "min_obstacle_dist": 0.013854804768874678,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.8000000000000014,
+        "min_obstacle_dist": 0.007634800799759256,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.7999999999999987,
+        "min_obstacle_dist": 0.0032918708118866583,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.7999999999999996,
+        "min_obstacle_dist": 0.061067591260025485,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.7999999999999994,
+        "min_obstacle_dist": 0.0023561508387550134,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.7999999999999996,
+        "min_obstacle_dist": 0.010341106887416721,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.7999999999999987,
+        "min_obstacle_dist": 0.02181754235448743,
+        "interventions": 0
+      }
+    ]
+  },
+  "scattered_pillars/noise_0.3/safefly": {
+    "scene": "scattered_pillars",
+    "noise_level": 0.3,
+    "condition": "safefly",
+    "num_episodes": 10,
+    "success_rate": 1.0,
+    "collision_rate": 0.0,
+    "avg_steps": 187.6,
+    "avg_path_length_m": 17.440000000000026,
+    "avg_min_obstacle_distance_m": 0.10625238999870276,
+    "avg_interventions_per_episode": 48.3,
+    "results": [
+      {
+        "success": true,
+        "collision": false,
+        "steps": 162,
+        "path_length": 16.099999999999984,
+        "min_obstacle_dist": 0.10926750028777497,
+        "interventions": 54
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 193,
+        "path_length": 17.7,
+        "min_obstacle_dist": 0.10336447594581982,
+        "interventions": 43
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 203,
+        "path_length": 18.300000000000058,
+        "min_obstacle_dist": 0.1019438242640746,
+        "interventions": 58
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 194,
+        "path_length": 17.750000000000025,
+        "min_obstacle_dist": 0.10365270559983665,
+        "interventions": 56
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 190,
+        "path_length": 17.55000000000003,
+        "min_obstacle_dist": 0.10640996907063528,
+        "interventions": 36
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 192,
+        "path_length": 17.650000000000034,
+        "min_obstacle_dist": 0.10477375340126359,
+        "interventions": 40
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 195,
+        "path_length": 17.850000000000005,
+        "min_obstacle_dist": 0.10677705711149595,
+        "interventions": 55
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 193,
+        "path_length": 17.70000000000003,
+        "min_obstacle_dist": 0.10658871474945444,
+        "interventions": 46
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 163,
+        "path_length": 16.20000000000004,
+        "min_obstacle_dist": 0.1055010779906322,
+        "interventions": 59
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 191,
+        "path_length": 17.60000000000006,
+        "min_obstacle_dist": 0.11424482156604003,
+        "interventions": 36
+      }
+    ]
+  },
+  "scattered_pillars/noise_0.6/vla_only": {
+    "scene": "scattered_pillars",
+    "noise_level": 0.6,
+    "condition": "vla_only",
+    "num_episodes": 10,
+    "success_rate": 0.0,
+    "collision_rate": 1.0,
+    "avg_steps": 19.0,
+    "avg_path_length_m": 1.8000000000000012,
+    "avg_min_obstacle_distance_m": 0.028363042882263784,
+    "avg_interventions_per_episode": 0.0,
+    "results": [
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.8000000000000014,
+        "min_obstacle_dist": 0.005647341502709557,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.8000000000000005,
+        "min_obstacle_dist": 0.038847819316206,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.800000000000002,
+        "min_obstacle_dist": 0.04403781933825002,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.8000000000000005,
+        "min_obstacle_dist": 0.02770836959963547,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.8000000000000012,
+        "min_obstacle_dist": 0.015476070530847376,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.7999999999999996,
+        "min_obstacle_dist": 0.007572132554171365,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.8000000000000016,
+        "min_obstacle_dist": 0.07629735368651058,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.800000000000003,
+        "min_obstacle_dist": 0.004768268426792493,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.7999999999999998,
+        "min_obstacle_dist": 0.020430068767083896,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.7999999999999998,
+        "min_obstacle_dist": 0.04284518510043109,
+        "interventions": 0
+      }
+    ]
+  },
+  "scattered_pillars/noise_0.6/safefly": {
+    "scene": "scattered_pillars",
+    "noise_level": 0.6,
+    "condition": "safefly",
+    "num_episodes": 10,
+    "success_rate": 1.0,
+    "collision_rate": 0.0,
+    "avg_steps": 200.9,
+    "avg_path_length_m": 18.435000000000016,
+    "avg_min_obstacle_distance_m": 0.10763301861293373,
+    "avg_interventions_per_episode": 65.3,
+    "results": [
+      {
+        "success": true,
+        "collision": false,
+        "steps": 163,
+        "path_length": 16.20000000000002,
+        "min_obstacle_dist": 0.10426346191012745,
+        "interventions": 58
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 225,
+        "path_length": 19.59999999999999,
+        "min_obstacle_dist": 0.11264285372909658,
+        "interventions": 76
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 179,
+        "path_length": 17.19999999999999,
+        "min_obstacle_dist": 0.11004542142318308,
+        "interventions": 76
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 196,
+        "path_length": 17.950000000000042,
+        "min_obstacle_dist": 0.10599016653664355,
+        "interventions": 55
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 193,
+        "path_length": 17.90000000000001,
+        "min_obstacle_dist": 0.10885041494587137,
+        "interventions": 76
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 191,
+        "path_length": 17.65000000000001,
+        "min_obstacle_dist": 0.10252735783834964,
+        "interventions": 57
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 235,
+        "path_length": 20.55000000000003,
+        "min_obstacle_dist": 0.10398949690785915,
+        "interventions": 111
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 194,
+        "path_length": 17.94999999999998,
+        "min_obstacle_dist": 0.1156967281509303,
+        "interventions": 37
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 216,
+        "path_length": 19.100000000000048,
+        "min_obstacle_dist": 0.10957251319606812,
+        "interventions": 70
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 217,
+        "path_length": 20.250000000000032,
+        "min_obstacle_dist": 0.10275177149120801,
+        "interventions": 37
+      }
+    ]
+  },
+  "scattered_pillars/noise_1.0/vla_only": {
+    "scene": "scattered_pillars",
+    "noise_level": 1.0,
+    "condition": "vla_only",
+    "num_episodes": 10,
+    "success_rate": 0.0,
+    "collision_rate": 1.0,
+    "avg_steps": 19.0,
+    "avg_path_length_m": 1.8000000000000003,
+    "avg_min_obstacle_distance_m": 0.036776835215286206,
+    "avg_interventions_per_episode": 0.0,
+    "results": [
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.8000000000000018,
+        "min_obstacle_dist": 0.010047330452579016,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.8000000000000005,
+        "min_obstacle_dist": 0.06527429971230858,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.7999999999999996,
+        "min_obstacle_dist": 0.075390755017583,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.8000000000000005,
+        "min_obstacle_dist": 0.04613034314298359,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.7999999999999996,
+        "min_obstacle_dist": 0.026267684151620663,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.8000000000000016,
+        "min_obstacle_dist": 0.011948281337795543,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.7999999999999992,
+        "min_obstacle_dist": 0.021481629718656494,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.799999999999999,
+        "min_obstacle_dist": 0.008078696245053581,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.8000000000000007,
+        "min_obstacle_dist": 0.033492091498020266,
+        "interventions": 0
+      },
+      {
+        "success": false,
+        "collision": true,
+        "steps": 19,
+        "path_length": 1.800000000000002,
+        "min_obstacle_dist": 0.06965724087626132,
+        "interventions": 0
+      }
+    ]
+  },
+  "scattered_pillars/noise_1.0/safefly": {
+    "scene": "scattered_pillars",
+    "noise_level": 1.0,
+    "condition": "safefly",
+    "num_episodes": 10,
+    "success_rate": 1.0,
+    "collision_rate": 0.0,
+    "avg_steps": 214.7,
+    "avg_path_length_m": 19.910000000000014,
+    "avg_min_obstacle_distance_m": 0.10638761902346217,
+    "avg_interventions_per_episode": 98.3,
+    "results": [
+      {
+        "success": true,
+        "collision": false,
+        "steps": 283,
+        "path_length": 24.05000000000002,
+        "min_obstacle_dist": 0.10251846317137539,
+        "interventions": 182
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 226,
+        "path_length": 20.35000000000003,
+        "min_obstacle_dist": 0.10562773794056611,
+        "interventions": 97
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 223,
+        "path_length": 21.300000000000036,
+        "min_obstacle_dist": 0.10394383282205191,
+        "interventions": 89
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 232,
+        "path_length": 20.900000000000055,
+        "min_obstacle_dist": 0.10683629441018606,
+        "interventions": 146
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 213,
+        "path_length": 19.699999999999974,
+        "min_obstacle_dist": 0.11362007245209242,
+        "interventions": 98
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 205,
+        "path_length": 18.850000000000048,
+        "min_obstacle_dist": 0.10529586314574928,
+        "interventions": 81
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 224,
+        "path_length": 20.250000000000032,
+        "min_obstacle_dist": 0.10353242116432394,
+        "interventions": 71
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 182,
+        "path_length": 18.099999999999945,
+        "min_obstacle_dist": 0.10816347615208623,
+        "interventions": 60
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 180,
+        "path_length": 17.84999999999999,
+        "min_obstacle_dist": 0.10932305245622281,
+        "interventions": 80
+      },
+      {
+        "success": true,
+        "collision": false,
+        "steps": 179,
+        "path_length": 17.750000000000014,
+        "min_obstacle_dist": 0.10501497651996744,
+        "interventions": 79
+      }
+    ]
+  }
+}

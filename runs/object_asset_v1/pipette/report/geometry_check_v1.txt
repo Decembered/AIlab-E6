@@ -1,0 +1,10 @@
+name: pipette_scaledv3
+method: top-camera pixel-to-meter + contour extrusion
+vertices: 14
+faces: 24
+is_watertight: True
+extents: [0.15911711443686338, 0.10202260790866342, 0.18042155767952447]
+pixel_width: 202
+pixel_height: 131
+object_depth: 0.7240465311299362
+estimated_height: 0.18042155767952447

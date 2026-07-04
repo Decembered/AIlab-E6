@@ -1,0 +1,19 @@
+{
+  "object_name": "Drink YYKX",
+  "unit": "meter",
+  "mesh_file": "../mesh/visual_mesh.obj",
+  "collision_file": "../mesh/collision_mesh.obj",
+  "urdf_file": "object.urdf",
+  "mass_kg": 0.3,
+  "scale": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "coordinate": "mesh centered at origin; z-axis is bottle vertical axis",
+  "method": "parametric bottle asset v1; to be refined by video masks / visual hull",
+  "visual_faces": 512,
+  "collision_faces": 64,
+  "visual_watertight": true,
+  "collision_watertight": true
+}

@@ -1,0 +1,14 @@
+name: bread_multiview_v4
+method: multi-view mask contour extrusion (top camera XY + side camera height)
+object: Bread #1
+vertices: 296
+faces: 588
+is_watertight: True
+extents_m: [0.12, 0.06267301791271603, 0.04]
+target_size_m: [0.12, 0.07, 0.04]
+mass_kg: 0.0775
+density_kgm3: 300
+inertia_ixx_iyy_izz: [0.000036, 0.000103, 0.000118]
+contour_points: 37
+z_slices: 8
+cameras_used: 3

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<robot name="pipette">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.2116"/>
+      <inertia ixx="0.001830" ixy="0.0" ixz="0.0"
+               iyy="0.007450" iyz="0.0"
+               izz="0.007822"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="../mesh/visual_mesh.obj" scale="1 1 1"/></geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="../mesh/collision_mesh.obj" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+</robot>
