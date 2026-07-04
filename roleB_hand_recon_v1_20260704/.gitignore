@@ -1,0 +1,8 @@
+# Keep this package code-only; generated data stays on xmu75.
+data/
+outputs/
+*.mp4
+*.mkv
+*.npz
+*.hdf5
+*.pkl
