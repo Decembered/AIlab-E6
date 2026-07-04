@@ -1,0 +1,11 @@
+name: collision_mesh
+vertices: 34
+faces: 64
+is_watertight: True
+is_winding_consistent: True
+bounds:
+[[-0.035 -0.035 -0.1  ]
+ [ 0.035  0.035  0.1  ]]
+extents: [0.07 0.07 0.2 ]
+center_mass: [-1.12928763e-18  7.09480836e-19  1.50571684e-18]
+volume: 0.0007500595274355762

@@ -1,0 +1,478 @@
+{
+  "version": "v4.1_filtered",
+  "gating_config": {
+    "area_range": [
+      4000,
+      14000
+    ],
+    "theta_jump_threshold_deg": 20.0,
+    "centroid_jump_threshold_px": 30.0
+  },
+  "statistics": {
+    "total": 47,
+    "valid": 23,
+    "area_gate": 24,
+    "theta_gate": 0,
+    "centroid_gate": 0,
+    "low_px": 0
+  },
+  "anomaly_frames": [
+    {
+      "frame_id": 15,
+      "frame_name": "frame_000075.jpg",
+      "fg_pixels": 3339,
+      "centroid_2d": [
+        627.0688828990716,
+        321.83887391434564
+      ],
+      "centroid_3d": [
+        0.11056021335329412,
+        0.050000000000000044,
+        0.3040660213132216
+      ],
+      "theta_rad": 1.5639939253172077,
+      "theta_deg": 89.61025110477487,
+      "sam_score": 0.8877013921737671,
+      "valid": false,
+      "invalid_reason": "area_too_small (3339<4000)"
+    },
+    {
+      "frame_id": 24,
+      "frame_name": "frame_000120.jpg",
+      "fg_pixels": 15465,
+      "centroid_2d": [
+        572.2864532816036,
+        323.7756870352409
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.19177521569676761,
+      "theta_deg": 10.987910474635802,
+      "sam_score": 0.8910176753997803,
+      "valid": false,
+      "invalid_reason": "area_too_large (15465>14000)"
+    },
+    {
+      "frame_id": 25,
+      "frame_name": "frame_000125.jpg",
+      "fg_pixels": 17596,
+      "centroid_2d": [
+        579.8712207319845,
+        321.1565128438281
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.1543689399480829,
+      "theta_deg": 8.844688746933604,
+      "sam_score": 0.8323716521263123,
+      "valid": false,
+      "invalid_reason": "area_too_large (17596>14000)"
+    },
+    {
+      "frame_id": 26,
+      "frame_name": "frame_000130.jpg",
+      "fg_pixels": 18752,
+      "centroid_2d": [
+        576.8638545221843,
+        322.3764931740614
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.6689568993524803,
+      "theta_deg": 38.328407009054914,
+      "sam_score": 0.8500860929489136,
+      "valid": false,
+      "invalid_reason": "area_too_large (18752>14000)"
+    },
+    {
+      "frame_id": 27,
+      "frame_name": "frame_000135.jpg",
+      "fg_pixels": 18093,
+      "centroid_2d": [
+        578.4184491239706,
+        319.35113027137567
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.6436577306411506,
+      "theta_deg": 36.878871416706296,
+      "sam_score": 0.8525682687759399,
+      "valid": false,
+      "invalid_reason": "area_too_large (18093>14000)"
+    },
+    {
+      "frame_id": 28,
+      "frame_name": "frame_000140.jpg",
+      "fg_pixels": 20108,
+      "centroid_2d": [
+        577.3788541873881,
+        318.3314103839268
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 1.0335604689472926,
+      "theta_deg": 59.21865274224204,
+      "sam_score": 0.8716310262680054,
+      "valid": false,
+      "invalid_reason": "area_too_large (20108>14000)"
+    },
+    {
+      "frame_id": 29,
+      "frame_name": "frame_000145.jpg",
+      "fg_pixels": 21133,
+      "centroid_2d": [
+        579.1281408224105,
+        318.2023848956608
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.9527652095640172,
+      "theta_deg": 54.589425374915606,
+      "sam_score": 0.8721153736114502,
+      "valid": false,
+      "invalid_reason": "area_too_large (21133>14000)"
+    },
+    {
+      "frame_id": 30,
+      "frame_name": "frame_000150.jpg",
+      "fg_pixels": 21042,
+      "centroid_2d": [
+        578.5140671038874,
+        318.4690618762475
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.9971955639946217,
+      "theta_deg": 57.13509716605962,
+      "sam_score": 0.8779147863388062,
+      "valid": false,
+      "invalid_reason": "area_too_large (21042>14000)"
+    },
+    {
+      "frame_id": 31,
+      "frame_name": "frame_000155.jpg",
+      "fg_pixels": 20875,
+      "centroid_2d": [
+        578.682491017964,
+        318.74170059880237
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.9179499268895247,
+      "theta_deg": 52.59465661511224,
+      "sam_score": 0.8752277493476868,
+      "valid": false,
+      "invalid_reason": "area_too_large (20875>14000)"
+    },
+    {
+      "frame_id": 32,
+      "frame_name": "frame_000160.jpg",
+      "fg_pixels": 20772,
+      "centroid_2d": [
+        578.3065665318699,
+        318.486761024456
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 1.0369382669853862,
+      "theta_deg": 59.412186313872375,
+      "sam_score": 0.8662172555923462,
+      "valid": false,
+      "invalid_reason": "area_too_large (20772>14000)"
+    },
+    {
+      "frame_id": 33,
+      "frame_name": "frame_000165.jpg",
+      "fg_pixels": 20694,
+      "centroid_2d": [
+        578.5169131149125,
+        319.49695563931573
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 1.0131618803530253,
+      "theta_deg": 58.04989970776683,
+      "sam_score": 0.8675840497016907,
+      "valid": false,
+      "invalid_reason": "area_too_large (20694>14000)"
+    },
+    {
+      "frame_id": 34,
+      "frame_name": "frame_000170.jpg",
+      "fg_pixels": 20791,
+      "centroid_2d": [
+        578.4125342696359,
+        318.8171805107979
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.9111960126888615,
+      "theta_deg": 52.207685836220776,
+      "sam_score": 0.8723440170288086,
+      "valid": false,
+      "invalid_reason": "area_too_large (20791>14000)"
+    },
+    {
+      "frame_id": 35,
+      "frame_name": "frame_000175.jpg",
+      "fg_pixels": 20714,
+      "centroid_2d": [
+        578.3291493675774,
+        318.0432074925171
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.9636652261057891,
+      "theta_deg": 55.213950319381915,
+      "sam_score": 0.8722682595252991,
+      "valid": false,
+      "invalid_reason": "area_too_large (20714>14000)"
+    },
+    {
+      "frame_id": 36,
+      "frame_name": "frame_000180.jpg",
+      "fg_pixels": 20869,
+      "centroid_2d": [
+        578.455843595764,
+        318.11797402846327
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.9954992150514522,
+      "theta_deg": 57.03790353103453,
+      "sam_score": 0.8714585304260254,
+      "valid": false,
+      "invalid_reason": "area_too_large (20869>14000)"
+    },
+    {
+      "frame_id": 37,
+      "frame_name": "frame_000185.jpg",
+      "fg_pixels": 20874,
+      "centroid_2d": [
+        579.6438152725879,
+        317.8487113155121
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 1.194376589285219,
+      "theta_deg": 68.43273771527319,
+      "sam_score": 0.869016170501709,
+      "valid": false,
+      "invalid_reason": "area_too_large (20874>14000)"
+    },
+    {
+      "frame_id": 38,
+      "frame_name": "frame_000190.jpg",
+      "fg_pixels": 20678,
+      "centroid_2d": [
+        579.2753167617758,
+        317.6436792726569
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 1.0749941725102024,
+      "theta_deg": 61.59262908599294,
+      "sam_score": 0.869839072227478,
+      "valid": false,
+      "invalid_reason": "area_too_large (20678>14000)"
+    },
+    {
+      "frame_id": 39,
+      "frame_name": "frame_000195.jpg",
+      "fg_pixels": 20172,
+      "centroid_2d": [
+        575.8869224667857,
+        319.00788221296847
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.9760703076026355,
+      "theta_deg": 55.924709133667044,
+      "sam_score": 0.8656402230262756,
+      "valid": false,
+      "invalid_reason": "area_too_large (20172>14000)"
+    },
+    {
+      "frame_id": 40,
+      "frame_name": "frame_000200.jpg",
+      "fg_pixels": 18764,
+      "centroid_2d": [
+        572.8320720528671,
+        321.99936047751015
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.8238979792905868,
+      "theta_deg": 47.20587696270753,
+      "sam_score": 0.8629525899887085,
+      "valid": false,
+      "invalid_reason": "area_too_large (18764>14000)"
+    },
+    {
+      "frame_id": 41,
+      "frame_name": "frame_000205.jpg",
+      "fg_pixels": 18235,
+      "centroid_2d": [
+        574.2156841239375,
+        325.4851658897724
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.7212003754537532,
+      "theta_deg": 41.32173769675043,
+      "sam_score": 0.8481205701828003,
+      "valid": false,
+      "invalid_reason": "area_too_large (18235>14000)"
+    },
+    {
+      "frame_id": 42,
+      "frame_name": "frame_000210.jpg",
+      "fg_pixels": 17911,
+      "centroid_2d": [
+        577.9005080676679,
+        326.24063424711073
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.3888010813619276,
+      "theta_deg": 22.276661032160984,
+      "sam_score": 0.8450914025306702,
+      "valid": false,
+      "invalid_reason": "area_too_large (17911>14000)"
+    },
+    {
+      "frame_id": 43,
+      "frame_name": "frame_000215.jpg",
+      "fg_pixels": 19206,
+      "centroid_2d": [
+        579.9131521399563,
+        324.76772883473916
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": -0.03379230939442027,
+      "theta_deg": -1.936156708300564,
+      "sam_score": 0.859565258026123,
+      "valid": false,
+      "invalid_reason": "area_too_large (19206>14000)"
+    },
+    {
+      "frame_id": 44,
+      "frame_name": "frame_000220.jpg",
+      "fg_pixels": 19634,
+      "centroid_2d": [
+        581.1529998981359,
+        322.94570642762557
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.019814887806136754,
+      "theta_deg": 1.135309442816875,
+      "sam_score": 0.8557357788085938,
+      "valid": false,
+      "invalid_reason": "area_too_large (19634>14000)"
+    },
+    {
+      "frame_id": 45,
+      "frame_name": "frame_000225.jpg",
+      "fg_pixels": 19994,
+      "centroid_2d": [
+        580.4707412223667,
+        321.9970991297389
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.2047223971222524,
+      "theta_deg": 11.729729326906252,
+      "sam_score": 0.8493145704269409,
+      "valid": false,
+      "invalid_reason": "area_too_large (19994>14000)"
+    },
+    {
+      "frame_id": 46,
+      "frame_name": "frame_000230.jpg",
+      "fg_pixels": 20139,
+      "centroid_2d": [
+        581.2421172848701,
+        321.13823923730075
+      ],
+      "centroid_3d": [
+        0.14204275388565388,
+        0.050000000000000044,
+        0.28183376866522747
+      ],
+      "theta_rad": 0.013166417737613248,
+      "theta_deg": 0.7543801676714248,
+      "sam_score": 0.8467751741409302,
+      "valid": false,
+      "invalid_reason": "area_too_large (20139>14000)"
+    }
+  ],
+  "displacement_cm": 3.512903371271524
+}
