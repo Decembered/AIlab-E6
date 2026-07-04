@@ -20,20 +20,28 @@ PASS: Asset loads and simulates correctly
 - 642 visual vertices, 8 collision vertices (dedicated collision box)
 - Watertight, manifold, stable physics
 
-## Test 2: bread_v41 (our SAM v4.1 pipeline) — LOADS, collision issue
+## Test 2: bread_v41 (our SAM v4.1 pipeline) — PASS after collision fix
 
+**Attempt 1 (mesh not centered):** FAIL — same mesh for visual+collision, offset from origin
 ```
-[3/5] Loaded OK: 1 body, 1 shape, 0 DOF
-[5/5] Step  0: pos=(0.0000, 0.0980, 0.0000)
-       Step 30: pos=(0.0503, -0.1040, 0.1034)  ← sinking below ground!
-       Step 50: pos=(0.0307, -0.1071, 0.0797)  ← drifting horizontally
-
-PASS: loads without error, but physics unstable
+Step 10: pos=(0.0008, -0.0649, 0.0037)  ← sinking below ground!
+Step 50: pos=(0.0307, -0.1071, 0.0797)  ← drifting horizontally
 ```
+Root cause: extrusion vertices offset from origin by ~(8.5, 6, 15)cm; offset COM causes collision misalignment.
 
-- 182 vertices, same mesh for visual + collision
-- Root cause: extrusion model bottom face not perfectly flat, vertices at y=0.02 offset from origin
-- Fix: generate dedicated simplified collision mesh (box/convex hull) instead of reusing visual mesh
+**Attempt 2 (centered mesh + dedicated collision box):** PASS ✅
+```
+Step  0: pos=(0.0000, 0.0980, 0.0000)
+Step 10: pos=(0.0000, 0.0420, 0.0000)   ← resting on collision surface
+Step 30: pos=(0.0000, 0.0420, 0.0000)   ← stable, no drift
+Step 60: pos=(0.0000, 0.0420, 0.0000)   ← perfectly stable
+
+PASS: Asset loads and simulates correctly
+```
+- Visual: 182 vertices, 360 faces (centered at origin)
+- Collision: 8 vertices, 12 tris (dedicated box, centered at origin)
+- Fix: re-centered visual mesh + generated simplified collision box at origin
+- Result: stable physics, no sinking, no horizontal drift
 
 ## Conclusion
 

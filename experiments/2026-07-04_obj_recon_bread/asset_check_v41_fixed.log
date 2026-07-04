@@ -1,0 +1,27 @@
+=== IsaacGym Asset Validation ===
+Time: 2026-07-05T00:03:52.774741
+URDF: /root/bread_v41.urdf
+Asset dir: /root
+
+[1/5] Importing isaacgym...
+  isaacgym import OK
+[2/5] Creating simulation...
+  Sim created OK
+  Ground plane added
+[3/5] Loading asset...
+  Loaded OK: 1 body(s), 1 shape(s), 0 DOF(s)
+[4/5] Creating environment and spawning actor...
+  Actor spawned, handle=0
+[5/5] Simulating 60 steps...
+  Step 0: pos=(0.0000, 0.0980, 0.0000), dist=0.098m
+  Step 10: pos=(0.0000, 0.0420, 0.0000), dist=0.042m
+  Step 20: pos=(0.0000, 0.0420, 0.0000), dist=0.042m
+  Step 30: pos=(0.0000, 0.0420, 0.0000), dist=0.042m
+  Step 40: pos=(0.0000, 0.0420, 0.0000), dist=0.042m
+  Step 50: pos=(0.0000, 0.0420, 0.0000), dist=0.042m
+
+=== PASS: Asset loads and simulates correctly ===
+Body count: 1, Shape count: 1
+Position range X: [0.0000, 0.0000]
+Position range Y: [0.0420, 0.0980]
+Position range Z: [0.0000, 0.0000]
