@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot name="drink_ad_articulated">
+  <link name="body_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.520000"/>
+      <inertia ixx="0.00187864" ixy="0" ixz="0" iyy="0.00148580" iyz="0" izz="0.00081751"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="drink_ad_body.obj" scale="1 1 1"/></geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="drink_ad_body_collision.obj" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <link name="cap_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.030000"/>
+      <inertia ixx="0.00003695" ixy="0" ixz="0" iyy="0.00001429" iyz="0" izz="0.00004716"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="drink_ad_cap.obj" scale="1 1 1"/></geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="drink_ad_cap_collision.obj" scale="1 1 1"/></geometry>
+    </collision>
+  </link>
+  <joint name="cap_joint" type="revolute">
+    <parent link="body_link"/>
+    <child link="cap_link"/>
+    <origin xyz="0.000000 0.000000 0.084286" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-6.283" upper="6.283" effort="5" velocity="0.5"/>
+    <dynamics damping="3.0" friction="1.5"/>
+  </joint>
+</robot>

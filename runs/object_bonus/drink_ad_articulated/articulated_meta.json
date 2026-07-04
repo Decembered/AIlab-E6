@@ -1,0 +1,33 @@
+{
+  "object": "drink_ad (Articulated)",
+  "type": "articulated",
+  "links": [
+    "body_link",
+    "cap_link"
+  ],
+  "joint": {
+    "name": "cap_joint",
+    "type": "revolute",
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "range_rad": [
+      -6.283,
+      6.283
+    ],
+    "effort_N": 5.0,
+    "velocity_rads": 0.5
+  },
+  "dynamics": {
+    "damping": 3.0,
+    "friction": 1.5
+  },
+  "mass_kg": {
+    "body": 0.52,
+    "cap": 0.03,
+    "total": 0.55
+  },
+  "collision_optimization": "convex_hull_per_link"
+}

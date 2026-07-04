@@ -1,0 +1,34 @@
+{
+  "object": "Pipette #1 (Articulated)",
+  "type": "articulated",
+  "links": [
+    "base_link",
+    "plunger_link"
+  ],
+  "joint": {
+    "name": "plunger_joint",
+    "type": "prismatic",
+    "axis": [
+      1,
+      0,
+      0
+    ],
+    "range_m": [
+      0.0,
+      0.03
+    ],
+    "effort_N": 10.0,
+    "velocity_ms": 0.1
+  },
+  "dynamics": {
+    "damping": 5.0,
+    "friction": 2.0
+  },
+  "mass_kg": {
+    "base": 0.12,
+    "plunger": 0.03,
+    "total": 0.15
+  },
+  "collision_optimization": "convex_hull_per_link",
+  "notes": "Prismatic joint models pipette plunger press action. Damping and friction tuned for stable simulation contact."
+}

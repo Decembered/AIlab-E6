@@ -1,0 +1,17 @@
+{
+  "object": "Bread #1 (Optimized)",
+  "type": "rigid_body_optimized",
+  "mass_kg": 0.4,
+  "collision": {
+    "coarse_faces": 144,
+    "fine_faces": 588,
+    "strategy": "coarse_convex_hull + fine_visual"
+  },
+  "physics_notes": "Convex hull for stable collision detection. Fine mesh available for narrow-phase if needed.",
+  "surface_properties": {
+    "lateral_friction": 1.0,
+    "rolling_friction": 0.01,
+    "restitution": 0.1,
+    "recommended_for_deformable": "Not applicable (rigid body)"
+  }
+}
