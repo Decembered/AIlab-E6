@@ -1,0 +1,39 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Video2Motion2Action IsaacGym readiness check
+
+== Python ==
+executable: /home/ruan/research/Hackthon/.venvs/isaacgym-py38/bin/python
+version: 3.8.20
+
+== Python Packages ==
+[OK] numpy: 1.23.5
+[OK] torch: 1.13.1+cpu
+[OK] torchvision: 0.14.1+cpu
+[OK] gym: 0.23.1
+[OK] cv2: 4.8.1
+[OK] trimesh: 4.12.2
+[OK] yaml: 6.0.3
+[OK] scipy: 1.10.1
+[OK] tensorboard: 2.14.0
+
+== Torch ==
+cuda available: False
+torch CUDA build: CPU-only
+[INFO] CPU torch is enough for imports and asset checks, but training/rollout needs a GPU torch build.
+
+== Isaac Gym Package ==
+[MISSING] isaacgym: ModuleNotFoundError: No module named 'isaacgym'
+missing: /home/ruan/opt/isaac_gym/isaacgym/python/examples/joint_monkey.py
+missing: /home/ruan/research/Hackthon/.tools/isaacgym/isaacgym/python/examples/joint_monkey.py
+missing: /home/ruan/research/Hackthon/.tools/isaacgym/python/examples/joint_monkey.py
+
+== NVIDIA Driver ==
+NVIDIA GeForce RTX 4060 Laptop GPU, 8.9, 580.159.03, 8188 MiB
+
+== Challenge Mapping ==
+- Environment setup: this checker covers the IsaacGym Python 3.8 baseline layer.
+- Inspire sample: run joint_monkey.py only after Isaac Gym Preview 4 is installed.
+- Sharpa URDF / object asset: trimesh, lxml, scipy, and OpenCV are installed for preflight checks.
+- Training/evaluation: install a CUDA torch wheel and run on a GPU that supports classic Isaac Gym PhysX.

@@ -1,0 +1,38 @@
+Isaac stack diagnostic
+
+== Current Python ==
+executable: /usr/bin/python3
+version: 3.10.12
+platform: Linux-6.8.0-85-generic-x86_64-with-glibc2.35
+glibc: 2.35
+cwd: /home/ruan/research/Hackthon
+
+== GPU / Driver ==
+NVIDIA GeForce RTX 4060 Laptop GPU, 580.159.03, 8188 MiB
+compute capability:
+  NVIDIA GeForce RTX 4060 Laptop GPU, 8.9
+[WARN] Classic Isaac Gym Preview 4 GPU PhysX is likely incompatible with Ada/Blackwell GPUs.
+       Prefer Isaac Sim + Isaac Lab for this machine.
+
+== Project Environments ==
+isaacgym-py38: /home/ruan/research/Hackthon/.venvs/isaacgym-py38/bin/python
+  python: Python 3.8.20
+  pip: OK 25.0.1
+  torch: missing
+  isaacgym: missing
+  isaacsim: missing
+isaaclab-py310: /home/ruan/research/Hackthon/.venvs/isaaclab-py310/bin/python
+  python: Python 3.10.12
+  pip: OK 26.1.2
+  torch: missing
+  isaacgym: missing
+  isaacsim: missing
+
+== Local Isaac Packages ==
+[MISSING] No Isaac Gym Preview 4 archive/extracted directory found.
+          Download requires accepting NVIDIA's Isaac Gym license manually.
+
+== Recommendation ==
+- For this RTX 4060 Laptop GPU, use Isaac Sim 4.5 + Isaac Lab as the main hackathon path.
+- Use classic Isaac Gym Preview 4 only for reading/running old code on compatible GPUs, or CPU-only smoke tests.
+- Do not claim raw VLA or learned actions are directly safe on real robots without a safety filter/controller layer.

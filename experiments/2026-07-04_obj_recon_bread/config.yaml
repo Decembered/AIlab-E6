@@ -1,0 +1,12 @@
+task: object_reconstruction
+object: bread
+sequence: weigh_bread__2026_0701_0044_30
+model_or_algorithm: 3DGS (primary) / InstantMesh (fallback)
+simulator: IsaacGym Preview 4
+dataset: HO-Tracker-Challenge (human_demo)
+seed: 42
+hardware: RTX 4060 Laptop 8GB
+notes: GT poses masked — need video-based tracking
+num_cameras: 3
+frame_step: 5
+total_frames_per_camera: 47

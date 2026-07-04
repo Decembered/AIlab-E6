@@ -1,0 +1,22 @@
+{
+  "object": "bread",
+  "mass_kg": 0.24000000000000002,
+  "density_kg_m3": 200,
+  "dimensions_cm": [
+    15.0,
+    8.0,
+    10.0
+  ],
+  "volume_cm3": 1200.0,
+  "inertia": {
+    "Ixx": 0.00032800000000000006,
+    "Iyy": 0.0006500000000000001,
+    "Izz": 0.000578
+  },
+  "mesh_file": "bread_extruded.obj",
+  "urdf_file": "bread.urdf",
+  "collision_mesh": "bread_extruded.obj",
+  "is_watertight": true,
+  "is_manifold": true,
+  "note": "Convex extrusion from top-view mask contour. Mass estimated from volume \u00d7 bread density (200 kg/m^3). Same mesh used for visual and collision (34 verts, low-poly)."
+}

@@ -1,0 +1,10 @@
+{
+  "isaacgym_py38_env_created": 1,
+  "baseline_dependencies_installed": 1,
+  "cpu_torch_installed": 1,
+  "cuda_torch_installed": 0,
+  "isaacgym_package_installed": 0,
+  "isaacgym_importable": 0,
+  "local_joint_monkey_found": 0,
+  "large_downloads_started": 0
+}

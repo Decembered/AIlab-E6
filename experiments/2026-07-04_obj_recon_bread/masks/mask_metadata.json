@@ -1,0 +1,36 @@
+{
+  "mask_definition": "Visible-region mask: pixels belonging to the object in the current frame. Generated using OpenCV GrabCut with center-region initialization. Occluded portions are not hallucinated.",
+  "method": "OpenCV GrabCut, GC_INIT_WITH_RECT, 5 iterations, center-rect init",
+  "results": {
+    "camera_side_1": {
+      "mask_pixels": 108240,
+      "mask_ratio": 0.11744791666666667,
+      "rect": [
+        384,
+        216,
+        512,
+        288
+      ]
+    },
+    "camera_side_2": {
+      "mask_pixels": 117096,
+      "mask_ratio": 0.12705729166666666,
+      "rect": [
+        384,
+        216,
+        512,
+        288
+      ]
+    },
+    "camera_top": {
+      "mask_pixels": 99996,
+      "mask_ratio": 0.10850260416666667,
+      "rect": [
+        384,
+        216,
+        512,
+        288
+      ]
+    }
+  }
+}

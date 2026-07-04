@@ -1,0 +1,13 @@
+.tools/
+.venvs/
+.uv-cache/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Large data files — 4.33 GB HO-Tracker dataset
+data/
+data.zip
+
+# Claude workspace config
+.claude/

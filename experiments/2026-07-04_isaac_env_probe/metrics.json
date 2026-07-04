@@ -1,0 +1,11 @@
+{
+  "large_downloads_started": 0,
+  "system_python_suitable": 0,
+  "isaacgym_env_created": 1,
+  "isaaclab_env_created": 1,
+  "isaacgym_package_installed": 0,
+  "isaacsim_package_installed": 0,
+  "gpu_vram_gb": 8,
+  "failure_reason": "Classic Isaac Gym package is not locally available and is likely incompatible with RTX 4060/Ada GPU PhysX; Isaac Sim 4.5 download exceeds the no-approval threshold.",
+  "next_step": "User should either provide the Isaac Gym Preview 4 archive or approve Isaac Sim 4.5 RL bundle download."
+}

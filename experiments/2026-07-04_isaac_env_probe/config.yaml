@@ -1,0 +1,34 @@
+task: isaac_environment_probe
+date_local: "2026-07-04"
+local_time: "2026-07-04 12:53:20 CST +0800"
+timezone: Asia/Shanghai
+git_commit: "N/A"
+git_status: "N/A"
+simulator_candidates:
+  legacy_isaacgym:
+    version: "Preview 4"
+    python: "3.8"
+    python_resolved: "Python 3.8.20"
+    venv: ".venvs/isaacgym-py38"
+    status: "environment prepared; package not installed"
+  isaacsim_isaaclab:
+    version: "Isaac Sim 4.5 / Isaac Lab compatible path"
+    python: "3.10"
+    python_resolved: "Python 3.10.12"
+    venv: ".venvs/isaaclab-py310"
+    status: "environment prepared; large package download pending approval"
+hardware_assumptions:
+  gpu: "NVIDIA GeForce RTX 4060 Laptop GPU"
+  vram_gb: 8
+  compute_capability: "8.9"
+  nvidia_driver: "580.159.03"
+  os: "Ubuntu 22.04.5 LTS"
+cuda_availability:
+  nvidia_smi: true
+  torch_cuda_checked: false
+  reason: "PyTorch is intentionally not installed before selecting Isaac Gym vs Isaac Sim path."
+seed: 0
+config_path: "experiments/2026-07-04_isaac_env_probe/config.yaml"
+command: "scripts/setup_isaac_stack.sh prepare && scripts/setup_isaac_stack.sh check"
+large_downloads_started: false
+real_robot_safety_note: "VLA or learned actions are proposals only; real execution needs safety filter, planner, controller, state estimator, and emergency stop."
