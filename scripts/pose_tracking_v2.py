@@ -14,7 +14,7 @@ import os, sys, json, argparse
 import numpy as np
 import cv2
 
-DATA_ROOT = '/mnt/workspace/Hackthon/data/human_demo'
+DATA_ROOT = os.environ.get('HO_TRACKER_DATA', '/mnt/workspace/Hackthon/data/human_demo')
 MASK_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'outputs', 'mask_pose')
 
 OBJECT_SEQUENCES = {
@@ -23,6 +23,8 @@ OBJECT_SEQUENCES = {
         'grasp_pipette_stand__2026_0701_0019_19',
         'grasp_pipette_rotate__2026_0701_0025_42',
         'grasp_pipette_press__2026_0701_0028_11',
+        'pipette_rh_beaker__2026_0701_0035_47',
+        'pipette_rh_beaker_testtube__2026_0701_0039_28',
     ],
     'drink_ad': ['weigh_drink_ad__2026_0701_0047_56', 'weigh_drink_ad__left__2026_0701_0049_04'],
     'drink_yykx': [

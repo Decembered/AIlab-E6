@@ -1,8 +1,0 @@
-{
-  "object": "drink_ad",
-  "method": "SAM_dynamic_tracking + image_plane_backprojection",
-  "num_frames_total": 27,
-  "num_masks_valid": 27,
-  "mask_valid_ratio": 1.0,
-  "mode": "image_plane_pose"
-}

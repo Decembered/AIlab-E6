@@ -1,8 +1,0 @@
-{
-  "object": "pipette",
-  "method": "SAM_dynamic_tracking + image_plane_backprojection",
-  "num_frames_total": 29,
-  "num_masks_valid": 11,
-  "mask_valid_ratio": 0.3793103448275862,
-  "mode": "image_plane_pose"
-}

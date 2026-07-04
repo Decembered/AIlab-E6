@@ -1,9 +1,0 @@
-# SafeFly Experiment Config
-# Generated: 2026-07-04T07:51:09.046000
-task: safe_navigation
-model_or_algorithm: directional_sampling_safety_wrapper
-simulator: 2d_grid_world
-dataset_or_asset: synthetic_obstacles
-seed: 42
-hardware: cpu
-notes: Full experiment with 3 scenes × 3 noise levels × 2 conditions

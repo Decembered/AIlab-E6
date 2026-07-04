@@ -24,7 +24,7 @@ MODEL_TYPE = 'vit_b'
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 FRAME_STRIDE = 15  # process ~1 frame per second at 15fps
 
-DATA_ROOT = '/mnt/workspace/Hackthon/data/human_demo'
+DATA_ROOT = os.environ.get('HO_TRACKER_DATA', '/mnt/workspace/Hackthon/data/human_demo')
 OUT_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'outputs', 'mask_pose')
 
 OBJECT_CONFIGS = {
@@ -42,6 +42,8 @@ OBJECT_CONFIGS = {
             'grasp_pipette_stand__2026_0701_0019_19',
             'grasp_pipette_rotate__2026_0701_0025_42',
             'grasp_pipette_press__2026_0701_0028_11',
+            'pipette_rh_beaker__2026_0701_0035_47',
+            'pipette_rh_beaker_testtube__2026_0701_0039_28',
         ],
         'cameras': ['camera_top', 'camera_side_1', 'camera_side_2'],
         'prompts': {

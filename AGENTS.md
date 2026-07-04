@@ -156,49 +156,58 @@ Pipeline: reconstruction → post-process (scale/orient/cleanup) → decimate �
 ## Project Directory Layout
 
 ```text
-AGENTS.md                          # This file — rules, roles, deliverables
+AGENTS.md                          # Rules, roles, deliverables (this file)
 README.md                          # Competition overview & quick start
-docs/
-  isaac_stack_deployment.md        # IsaacGym/IsaacLab setup notes
-requirements.txt                   # Python dependencies
-src/
-  object_recon/                    # Member C: object reconstruction pipeline
-    recon_pipeline.py              # Main reconstruction script
-    mask_extraction.py             # 2D mask extraction
-    pose_tracking.py               # Object pose trajectory recovery
-    asset_generator.py             # URDF + collision mesh generation
-    utils.py                       # Shared utilities
-  hand_recon/                      # Member B: hand reconstruction
-  sharpa_tracking/                 # Member A: Sharpa tracking
-experiments/
-  README.md                        # Experiment logging rules
-scripts/
+requirements.txt                   # Python 3.8 dependencies
+docs/                              # Setup guides & strategy docs
+src/object_recon/                  # Core reconstruction library
+  recon_pipeline.py                # Reconstruction orchestrator
+  mask_extraction.py               # 2D mask extraction library
+  pose_tracking.py                 # Pose tracking library
+  asset_generator.py               # URDF + collision mesh generator
+  utils.py                         # Shared utilities
+scripts/                           # Pipeline entry points
+  mask_extraction_v2.py            # SAM-based multi-view mask extraction
+  pose_tracking_v2.py              # Multi-view mask centroid triangulation
+  recon_scaled_v3.py               # Top-camera pixel-to-meter reconstruction
+  viz_trajectory_overlay.py        # Trajectory replay on video
+  viz_geometry_consistency.py      # 3D model overlay on video (geometry evidence)
+  validate_asset_isaacgym.py       # IsaacGym asset load validation
   check_isaac_env.py               # IsaacGym environment diagnostics
-  download_ho_tracker_data.sh      # HO-Tracker data download script
-  setup_isaac_stack.sh             # Isaac stack setup
-demos/                             # Final demos & visualizations
-runs/                              # Sharpa tracking checkpoints (must be here!)
+runs/                              # Object assets (URDF + meshes + renders)
+outputs/                           # Generated outputs
+  mask_pose/                       # Masks + trajectories per object
+  trajectory_viz/                  # Trajectory replay overlay frames
+  geometry_viz/                    # Geometry consistency overlay frames
+  object3_submission/              # Submission evidence bundle
 ```
 
 ## Common Commands (Object Reconstruction)
 
 ```bash
-# Environment check
-python scripts/check_isaac_env.py
+# Set data path (default: /mnt/workspace/Hackthon/data/human_demo)
+export HO_TRACKER_DATA=/mnt/workspace/Hackthon/data/human_demo
 
-# Create new object reconstruction experiment
-EXP=experiments/$(date +%F)_obj_recon
-mkdir -p "$EXP"/figures "$EXP"/outputs "$EXP"/models
-touch "$EXP"/README.md "$EXP"/config.yaml "$EXP"/command.sh "$EXP"/metrics.json "$EXP"/logs.txt
+# 1. Extract object 2D masks
+python3.8 scripts/mask_extraction_v2.py --objects bread pipette drink_ad drink_yykx --stride 5
 
-# Download HO-Tracker data (approve large downloads first)
-bash scripts/download_ho_tracker_data.sh
+# 2. Pose tracking
+python3.8 scripts/pose_tracking_v2.py --objects bread pipette drink_ad drink_yykx
+
+# 3. 3D reconstruction (scaled)
+python3.8 scripts/recon_scaled_v3.py --objects bread pipette drink_ad drink_yykx
+
+# 4. Visualize trajectory on video
+python3.8 scripts/viz_trajectory_overlay.py --objects bread pipette drink_ad drink_yykx
+
+# 5. Visualize 3D model on video (geometry consistency)
+python3.8 scripts/viz_geometry_consistency.py --objects bread pipette drink_ad drink_yykx
 
 # Validate URDF in IsaacGym
-python -c "from isaacgym import gymapi; ..."
+python3.8 scripts/validate_asset_isaacgym.py
 
 # Check mesh quality
-python -c "import trimesh; m = trimesh.load('model.obj'); print(m.is_watertight, m.is_manifold)"
+python3.8 -c "import trimesh; m = trimesh.load('runs/object_asset_v3/bread/bread_visual.obj'); print(m.is_watertight, m.is_manifold)"
 ```
 
 ## Experiment Logging Rules (inherited)

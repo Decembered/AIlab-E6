@@ -11,7 +11,7 @@ import numpy as np
 import cv2
 import trimesh
 
-DATA_ROOT = '/mnt/workspace/Hackthon/data/human_demo'
+DATA_ROOT = os.environ.get('HO_TRACKER_DATA', '/mnt/workspace/Hackthon/data/human_demo')
 MASK_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'outputs', 'mask_pose')
 OUT_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'runs', 'object_asset_v3')
 

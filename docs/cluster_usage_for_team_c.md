@@ -3,8 +3,8 @@
 记录时间：2026-07-04  
 来源：
 
-- `/home/ruan/Downloads/P集群Hackthon.pdf`
-- `/home/ruan/Downloads/阿里云（4090）集群__黑客松集群入门.pdf`
+- `P集群Hackthon.pdf`
+- `阿里云（4090）集群__黑客松集群入门.pdf`
 
 ## 你的目标
 

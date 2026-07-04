@@ -24,7 +24,7 @@ Current canonical scripts:
 Recommended Python for local object work:
 
 ```bash
-/home/ruan/miniconda3/envs/objasset/bin/python
+python3.8
 ```
 
 ## What Is Done
@@ -88,9 +88,9 @@ outputs. For the current Phase 5 story, prefer `object_trajectory_multiview_pose
 ## Reproduce The Current Evidence Bundle
 
 ```bash
-/home/ruan/miniconda3/envs/objasset/bin/python \
+python3.8 \
   scripts/prepare_object3_submission_evidence.py \
-  --python /home/ruan/miniconda3/envs/objasset/bin/python
+  --python python3.8
 ```
 
 This regenerates:
@@ -115,7 +115,7 @@ claiming IsaacGym asset load success.
 Inventory:
 
 ```bash
-/home/ruan/miniconda3/envs/objasset/bin/python \
+python3.8 \
   scripts/phase5_mask_depth_pose.py \
   --inventory-only \
   --data-root data/human_demo \
@@ -125,7 +125,7 @@ Inventory:
 Bread current smoke test:
 
 ```bash
-/home/ruan/miniconda3/envs/objasset/bin/python \
+python3.8 \
   scripts/phase5_mask_depth_pose.py \
   --sequence weigh_bread__2026_0701_0044_30 \
   --data-root data/human_demo \
@@ -136,7 +136,7 @@ Bread current smoke test:
 Synthetic checks:
 
 ```bash
-/home/ruan/miniconda3/envs/objasset/bin/python scripts/test_mask_depth_pose.py
+python3.8 scripts/test_mask_depth_pose.py
 ```
 
 ## What Is Not Done

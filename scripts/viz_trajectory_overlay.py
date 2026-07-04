@@ -8,7 +8,7 @@ import os, json, argparse
 import numpy as np
 import cv2
 
-DATA_ROOT = '/mnt/workspace/Hackthon/data/human_demo'
+DATA_ROOT = os.environ.get('HO_TRACKER_DATA', '/mnt/workspace/Hackthon/data/human_demo')
 TRAJ_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'outputs', 'mask_pose')
 VIZ_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'outputs', 'trajectory_viz')
 

@@ -1,56 +1,16 @@
-# ============================================================================
-# SafeFly Hackathon — Requirements (Tiered)
-# ============================================================================
+# Video2Motion2Action: Dexterous Manipulation Skill Transfer
+# Sub-task 3.3 — Object Shape Reconstruction & IsaacGym Asset
 #
-# TIER 0 — Always install (minimal demo works with just these)
-# ============================================================================
-numpy>=1.24,<2.0
-matplotlib>=3.7
-scipy>=1.10
+# Core dependencies tested with Python 3.8
 
-# ============================================================================
-# TIER 1 — Core demo (PyBullet 3D + basic viz)
-# ============================================================================
-pybullet>=3.2.5
-open3d>=0.18       # Point cloud viz, optional for 2D demo
-gymnasium>=1.29    # Standard env interface
-rich>=13.0          # Pretty terminal output
-tqdm>=4.65
+numpy>=1.21,<2.0
+opencv-python>=4.5
+torch>=1.13
+trimesh>=4.0
+scipy>=1.7
+matplotlib>=3.5
+h5py>=3.0
+segment-anything>=1.0
 
-# ============================================================================
-# TIER 2 — VLA inference (uncomment when ready for real VLA)
-# ============================================================================
-# octo                  # Octo VLA model (27M params, CPU-capable)
-# torch>=2.0            # Required by octo
-# torchvision>=0.15     # Required by octo
-# transformers>=4.35    # Required by some VLA models
-# accelerate>=0.25
-
-# ============================================================================
-# TIER 3 — Enhanced viz & logging (nice-to-have)
-# ============================================================================
-# wandb>=0.16           # Experiment tracking (needs internet)
-# rerun-sdk>=0.15       # Beautiful 3D viz
-# plotly>=5.15          # Interactive charts
-# gradio>=4.0           # Web demo UI
-
-# ============================================================================
-# TIER 4 — ROS/PX4 integration (only if doing SITL demo)
-# ============================================================================
-# pymavlink>=2.4
-# rospkg                # ROS Python tools (if ROS is installed)
-
-# ============================================================================
-# INSTALL GUIDE
-# ============================================================================
-#
-# Minimal (all demos work):
-#   pip install -r requirements.txt
-#   # This installs only Tier 0-1 by default
-#
-# Full VLA:
-#   pip install -r requirements.txt octo torch torchvision
-#
-# Everything:
-#   # Uncomment all lines above, then:
-#   pip install -r requirements.txt
+# Optional: IsaacGym (Preview 4) — for asset validation only
+# isaacgym is installed separately via ~/opt/isaac_gym/
