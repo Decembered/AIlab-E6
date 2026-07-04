@@ -1,0 +1,12 @@
+{
+  "object": "pipette",
+  "method": "multi_view_triangulation",
+  "num_frames_total": 23,
+  "num_frames_valid": 23,
+  "valid_ratio": 1.0,
+  "cameras": [
+    "camera_top",
+    "camera_side_1",
+    "camera_side_2"
+  ]
+}
