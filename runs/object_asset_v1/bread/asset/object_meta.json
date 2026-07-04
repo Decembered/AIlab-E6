@@ -1,19 +1,28 @@
 {
   "object_name": "Bread #1",
-  "unit": "meter",
-  "mesh_file": "../mesh/visual_mesh.obj",
-  "collision_file": "../mesh/collision_mesh.obj",
-  "urdf_file": "object.urdf",
-  "mass_kg": 0.08,
-  "scale": [
-    1.0,
-    1.0,
-    1.0
-  ],
-  "coordinate": "mesh centered at origin; x-axis is bread length direction",
-  "method": "parametric ellipsoid bread asset v1; to be refined by video masks / visual hull",
-  "visual_faces": 1280,
-  "collision_faces": 12,
+  "visual_vertices": 296,
+  "visual_faces": 588,
+  "collision_vertices": 74,
+  "collision_faces": 144,
   "visual_watertight": true,
-  "collision_watertight": true
+  "collision_watertight": true,
+  "visual_extents_mm": [
+    120.0,
+    62.7,
+    40.0
+  ],
+  "collision_extents_mm": [
+    120.0,
+    62.7,
+    40.0
+  ],
+  "mass_kg": 0.4,
+  "inertia": {
+    "ixx": 0.00018426,
+    "iyy": 0.00053333,
+    "izz": 0.00061093
+  },
+  "isaacgym_validated": true,
+  "isaacgym_validation_date": "2026-07-05T06:33",
+  "reconstruction_method": "Multi-view mask contour extrusion + Z-slice extrusion"
 }

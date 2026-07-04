@@ -1,19 +1,28 @@
 {
   "object_name": "Drink YYKX",
-  "unit": "meter",
-  "mesh_file": "../mesh/visual_mesh.obj",
-  "collision_file": "../mesh/collision_mesh.obj",
-  "urdf_file": "object.urdf",
-  "mass_kg": 0.3,
-  "scale": [
-    1.0,
-    1.0,
-    1.0
-  ],
-  "coordinate": "mesh centered at origin; z-axis is bottle vertical axis",
-  "method": "parametric bottle asset v1; to be refined by video masks / visual hull",
-  "visual_faces": 512,
-  "collision_faces": 64,
+  "visual_vertices": 144,
+  "visual_faces": 284,
+  "collision_vertices": 36,
+  "collision_faces": 68,
   "visual_watertight": true,
-  "collision_watertight": true
+  "collision_watertight": true,
+  "visual_extents_mm": [
+    70.0,
+    66.3,
+    200.0
+  ],
+  "collision_extents_mm": [
+    70.0,
+    66.3,
+    200.0
+  ],
+  "mass_kg": 0.55,
+  "inertia": {
+    "ixx": 0.0020347,
+    "iyy": 0.00205792,
+    "izz": 0.00042595
+  },
+  "isaacgym_validated": true,
+  "isaacgym_validation_date": "2026-07-05T06:33",
+  "reconstruction_method": "Multi-view mask contour extrusion + Z-slice extrusion"
 }

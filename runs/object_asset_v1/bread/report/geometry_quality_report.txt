@@ -1,0 +1,24 @@
+Geometry Quality Report: bread
+=============================
+Date: 2026-07-05
+Method: Multi-view mask contour extrusion + Z-slice extrusion
+
+Visual Mesh:
+  vertices: 296
+  faces: 588
+  watertight: True
+  manifold: True
+  extents: [0.12, 0.063, 0.04]
+  volume: 0.000258
+
+Collision Mesh:
+  vertices: 74
+  faces: 144
+  watertight: True
+  manifold: True
+  extents: [0.12, 0.063, 0.04]
+
+Assessment: PASS
+- Face count well within <20,000 limit
+- Watertight: visual=True, collision=True
+- Manifold: visual=True, collision=True

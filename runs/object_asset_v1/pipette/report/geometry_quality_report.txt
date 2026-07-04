@@ -1,0 +1,24 @@
+Geometry Quality Report: pipette
+=============================
+Date: 2026-07-05
+Method: Multi-view mask contour extrusion + Z-slice extrusion
+
+Visual Mesh:
+  vertices: 1600
+  faces: 3196
+  watertight: True
+  manifold: True
+  extents: [0.258, 0.104, 0.085]
+  volume: 0.00101
+
+Collision Mesh:
+  vertices: 40
+  faces: 76
+  watertight: True
+  manifold: True
+  extents: [0.258, 0.104, 0.085]
+
+Assessment: PASS
+- Face count well within <20,000 limit
+- Watertight: visual=True, collision=True
+- Manifold: visual=True, collision=True

@@ -1,0 +1,24 @@
+Geometry Quality Report: drink_yykx
+=============================
+Date: 2026-07-05
+Method: Multi-view mask contour extrusion + Z-slice extrusion
+
+Visual Mesh:
+  vertices: 144
+  faces: 284
+  watertight: True
+  manifold: True
+  extents: [0.07, 0.066, 0.2]
+  volume: 0.000857
+
+Collision Mesh:
+  vertices: 36
+  faces: 68
+  watertight: True
+  manifold: True
+  extents: [0.07, 0.066, 0.2]
+
+Assessment: PASS
+- Face count well within <20,000 limit
+- Watertight: visual=True, collision=True
+- Manifold: visual=True, collision=True
