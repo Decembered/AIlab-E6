@@ -1,0 +1,23 @@
+{
+  "version": "v4.1",
+  "sequence": "weigh_bread__2026_0701_0044_30",
+  "method": "SAM v4.1 on key frames + linear interpolation",
+  "num_frames": 47,
+  "key_frames": [
+    0,
+    10,
+    20,
+    23,
+    30,
+    40,
+    46
+  ],
+  "pos_range_x": [
+    0.11385032511763259,
+    0.15063505703264476
+  ],
+  "pos_range_z": [
+    0.285683048277614,
+    0.3191668167262646
+  ]
+}

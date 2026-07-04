@@ -1,0 +1,20 @@
+{
+  "version": "v4.1",
+  "object": "bread",
+  "mass_kg": 0.24000000000000007,
+  "density_kg_m3": 200,
+  "dimensions_cm": [
+    15.000000000000002,
+    8.0,
+    10.0
+  ],
+  "volume_cm3": 1200.0000000000002,
+  "inertia": {
+    "Ixx": 0.0003280000000000001,
+    "Iyy": 0.0006500000000000003,
+    "Izz": 0.0005780000000000002
+  },
+  "mesh": "bread_v41.obj",
+  "urdf": "bread_v41.urdf",
+  "mask_source": "SAM v4.1"
+}

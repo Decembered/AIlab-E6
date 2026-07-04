@@ -93,9 +93,63 @@ the bread surface. SAM segmented the green work surface, not the bread.
 - `masks/camera_top_frame_000115_overlay_sam_refined.jpg` — visualization with color-coded prompts
 - `masks/camera_top_frame_000115_mask_sam_refined.png` — binary mask
 
+### v4: Over-shrunk (CRITICAL FIX) — [phase2_sam_v4.py](../../scripts/phase2_sam_v4.py)
+
+**Method:** Shifted positives up/right onto bread texture, added bottom-left negative points, tightened box bottom to 380.
+
+**Result:** 7,455 px (0.8%). Background clean but over-shrunk — bread bottom and lower-right clipped.
+
+**Failure reason:** Box bottom too tight (380), negative point [545,390] too close to bread bottom edge.
+
+### v4.1: Restore bottom edge (FINAL for Phases 3-5) — [phase2_sam_v41.py](../../scripts/phase2_sam_v41.py)
+
+**Method:** Micro-adjustments from v4 — box bottom 380→395, moved dangerous negative [545,390]→[535,405], added positive [595,360] to anchor bread lower region.
+
+**Result:** 12,030 px (1.3%), SAM score 0.843. Hits target range 1.0-1.5%. Best balance of completeness and cleanliness.
+
+**Output files:**
+- `masks/camera_top_frame_000115_mask_sam_v41.png` — binary mask
+- `masks/camera_top_frame_000115_overlay_sam_v41.jpg` — visualization
+- `masks/camera_top_frame_000115_compare_v3_v4_v41.jpg` — 3-version comparison
+
+---
+
+## Phase 3-5: Re-run with v4.1 Mask
+
+### Phase 3: 3D Reconstruction
+
+| Metric | GrabCut (old) | SAM v4.1 (new) |
+|--------|--------------|----------------|
+| Contour | 220→16 pts (over-simplified) | **388→90 pts** |
+| Vertices | 34 | **182** |
+| Faces | 64 | **360** |
+| Dimensions | 15×10×8 cm | 15×10×8 cm |
+
+Output: `models/bread_v41.obj`
+
+### Phase 4: IsaacGym Asset
+
+- Mass: 240g (200 kg/m³ bread density)
+- Inertia: (0.000328, 0.000650, 0.000578)
+- Output: `models/bread_v41.urdf`
+
+### Phase 5: Pose Tracking
+
+**Method:** SAM v4.1 on 7 key frames, linear interpolation for remaining 40 frames.
+
+**Known issue:** Fixed-coordinate SAM prompts don't adapt to object motion.
+Frames 30, 40 showed inflated masks (18-21k px) with large orientation jumps (47-57°),
+likely because prompts hit background/hand at those timestamps.
+
+**Mitigation:** Trajectory smoothed with 3-frame moving average.
+Total displacement: 2.1 cm (bread essentially stationary during weighing).
+
+Output: `object_trajectory_v41.npz`
+
 ## Next Steps
 
-- [ ] Verify refined mask quality on overlay image
-- [ ] If mask is good, regenerate 3D model (Phase 3) with new mask
-- [ ] Regenerate URDF and trajectory with refined mask
-- [ ] Apply same refined pipeline to pipette, drink objects
+- [x] SAM mask iterated to v4.1 (best balance)
+- [x] Phase 3-5 re-run with v4.1 mask
+- [ ] Phase 6: Validate URDF on cluster with IsaacGym
+- [ ] Replace fixed-coordinate SAM tracking with FoundationPose or optical flow
+- [ ] Apply same pipeline to pipette, drink AD, drink YYKX objects
