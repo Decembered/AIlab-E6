@@ -1,0 +1,32 @@
+{
+  "status": "valid",
+  "method": "DLT_triangulation + mesh_silhouette_yaw + kalman_filter",
+  "postprocessing": "kalman_filter_constant_velocity",
+  "num_frames": 71,
+  "num_source_keypoints": 71,
+  "duration_s": 4.733333333333333,
+  "position_stats_m": {
+    "x": [
+      0.009917269295133327,
+      0.1364097256682792
+    ],
+    "y": [
+      0.2427220766587463,
+      0.6443286997800428
+    ],
+    "z": [
+      -0.1649357365325202,
+      0.18583059749398478
+    ]
+  },
+  "velocity_stats_m_per_s": {
+    "max": 1.5756188823291593,
+    "mean": 0.03687902753824931
+  },
+  "view_quality": {
+    "grade_3view": 71,
+    "grade_2view": 0,
+    "invalid": 0
+  },
+  "quality_flag": "GOOD"
+}
