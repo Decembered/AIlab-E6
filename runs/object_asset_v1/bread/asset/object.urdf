@@ -2,10 +2,10 @@
 <robot name="bread">
   <link name="base_link">
     <inertial><origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.1016"/>
-      <inertia ixx="0.000071" ixy="0.0" ixz="0.0"
-               iyy="0.000086" iyz="0.0"
-               izz="0.000098"/>
+      <mass value="0.0698"/>
+      <inertia ixx="0.000049" ixy="0.0" ixz="0.0"
+               iyy="0.000068" iyz="0.0"
+               izz="0.000075"/>
     </inertial>
     <visual><origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry><mesh filename="../mesh/visual_mesh.obj" scale="1 1 1"/></geometry>

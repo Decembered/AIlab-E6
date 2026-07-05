@@ -2,10 +2,10 @@
 <robot name="drink_yykx">
   <link name="base_link">
     <inertial><origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.7616"/>
-      <inertia ixx="0.001259" ixy="0.0" ixz="0.0"
-               iyy="0.001219" iyz="0.0"
-               izz="0.001259"/>
+      <mass value="0.2775"/>
+      <inertia ixx="0.000234" ixy="0.0" ixz="0.0"
+               iyy="0.000227" iyz="0.0"
+               izz="0.000234"/>
     </inertial>
     <visual><origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry><mesh filename="../mesh/visual_mesh.obj" scale="1 1 1"/></geometry>

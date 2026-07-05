@@ -2,10 +2,10 @@
 <robot name="pipette">
   <link name="base_link">
     <inertial><origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.5898"/>
-      <inertia ixx="0.000354" ixy="0.0" ixz="0.0"
-               iyy="0.004696" iyz="0.0"
-               izz="0.004381"/>
+      <mass value="0.7171"/>
+      <inertia ixx="0.002666" ixy="0.0" ixz="0.0"
+               iyy="0.003849" iyz="0.0"
+               izz="0.001230"/>
     </inertial>
     <visual><origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry><mesh filename="../mesh/visual_mesh.obj" scale="1 1 1"/></geometry>
