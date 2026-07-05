@@ -9,25 +9,24 @@ This folder is a curated presentation bundle for Member C's object reconstructio
    - Message: Member C reconstructed 4 required objects, generated IsaacGym assets, recovered object pose trajectories, and prepared task 2-4/3.4 integration handoff files.
 
 2. **Object Assets Overview**
-   - Use: `01_asset_renders/asset_renders_contact_sheet.png`
+   - Use: `01_asset_renders/asset_overview_ppt.png`
    - Message: Bread, pipette, Drink AD, and Drink YYKX all have low-face-count visual/collision meshes suitable for simulation.
 
 3. **Geometry Consistency With Videos**
-   - Use: `02_video_overlays/video_overlay_contact_sheet.png`
+   - Use: `02_video_overlays/geometry_overlay_ppt.png`
    - Message: Reconstructed object geometry is projected back to original multi-view videos to show scale and shape consistency.
 
 4. **Object Pose Tracking**
-   - Use: `03_pose_tracking/trajectory_overview_v3.png`
-   - Use: `03_pose_tracking/trajectory_dense_overview_v3.png`
+   - Use: `03_pose_tracking/pose_tracking_ppt.png`
    - Message: Object trajectories are recovered for all 12 sequences. The authoritative trajectories are under `outputs/mask_pose/{object}/{sequence}/object_trajectory.json`.
 
 5. **IsaacGym Asset Validation**
-   - Use: `04_isaacgym_validation/isaacgym_asset_contact_sheet.png`
+   - Use: `04_isaacgym_validation/isaacgym_validation_ppt.png`
    - Use: `04_isaacgym_validation/isaacgym_validation_summary.json`
    - Message: Four URDF assets load and pass 60-step physics validation on the cluster IsaacGym Preview 4 Python 3.8 environment.
 
 6. **Task 3.4 Object-Side Integration**
-   - Use: `05_task24_integration/hand_object_joint_contact_sheet.png`
+   - Use: `05_task24_integration/task34_integration_ppt.png`
    - Use: `05_task24_integration/hand_object_joint_frames.mp4`
    - Message: Object assets and object poses have been packed into `data/pipeline_assets/{sequence}/left_urdf/` for hand-object tracking pipeline integration.
 
@@ -41,21 +40,21 @@ This folder is a curated presentation bundle for Member C's object reconstructio
 | Requirement | Evidence |
 |---|---|
 | Object 2D mask | Mask overlays referenced in `06_reports/member_c_task3_status_report.md`; selected geometry overlays in `02_video_overlays/` |
-| Object 3D model and visualization | `01_asset_renders/asset_renders_contact_sheet.png`; per-object renders in `01_asset_renders/` |
+| Object 3D model and visualization | `01_asset_renders/asset_overview_ppt.png`; per-object renders in `01_asset_renders/` |
 | Geometric quality | `06_reports/asset_summary.json`; per-object logs in `04_isaacgym_validation/*_asset_check.log` |
-| Geometric consistency | `02_video_overlays/video_overlay_contact_sheet.png`; `06_reports/geometry_summary.md` |
-| IsaacGym asset | `04_isaacgym_validation/isaacgym_asset_contact_sheet.png`; `04_isaacgym_validation/isaacgym_validation_summary.json` |
-| Object pose tracking | `03_pose_tracking/trajectory_overview_v3.png`; `03_pose_tracking/trajectory_dense_overview_v3.png` |
-| Task 3.4 object-side handoff | `05_task24_integration/hand_object_joint_frames.mp4`; `06_reports/task24_preflight_object_only.json` |
+| Geometric consistency | `02_video_overlays/geometry_overlay_ppt.png`; `06_reports/geometry_summary.md` |
+| IsaacGym asset | `04_isaacgym_validation/isaacgym_validation_ppt.png`; `04_isaacgym_validation/isaacgym_validation_summary.json` |
+| Object pose tracking | `03_pose_tracking/pose_tracking_ppt.png`; `03_pose_tracking/trajectory_overview_v3.png`; `03_pose_tracking/trajectory_dense_overview_v3.png` |
+| Task 3.4 object-side handoff | `05_task24_integration/task34_integration_ppt.png`; `05_task24_integration/hand_object_joint_frames.mp4`; `06_reports/task24_preflight_object_only.json` |
 | Failure/limitation analysis | `06_reports/isaacgym_rendering_note.md`; `06_reports/task24_preflight_strict.json` |
 
 ## Directory Contents
 
-- `01_asset_renders/`: per-object mesh render images and an asset contact sheet.
-- `02_video_overlays/`: reconstructed object projection overlays on original videos.
-- `03_pose_tracking/`: trajectory overview figures.
-- `04_isaacgym_validation/`: IsaacGym render screenshots, validation summary, and asset check logs.
-- `05_task24_integration/`: object-side hand-object integration frames and MP4 video.
+- `01_asset_renders/`: per-object mesh render images and PPT-ready asset overview.
+- `02_video_overlays/`: reconstructed object projection overlays on original videos and PPT-ready overlay grid.
+- `03_pose_tracking/`: trajectory overview figures and PPT-ready tracking summary.
+- `04_isaacgym_validation/`: validation summary card and asset check logs. Black/invalid IsaacGym render screenshots were removed.
+- `05_task24_integration/`: object-side hand-object integration frames, PPT-ready summary, and MP4 video.
 - `06_reports/`: compact markdown and JSON reports copied from canonical outputs.
 - `manifest.json`: source-to-figure mapping for traceability.
 
@@ -64,4 +63,5 @@ This folder is a curated presentation bundle for Member C's object reconstructio
 - These figures are curated copies. Canonical generated outputs remain in `outputs/`, `runs/`, and `data/pipeline_assets/`.
 - The latest authoritative object trajectories are in `outputs/mask_pose/`, not `outputs/pose_tracking/`.
 - `hand_object_joint_frames.mp4` is a visualization compiled from existing hand-object frames. It is useful for presentation but does not replace full Sharpa tracking rollout.
+- Black or non-informative IsaacGym render images are intentionally excluded. IsaacGym evidence is represented by validation logs and the `isaacgym_validation_ppt.png` status card.
 - Full task 2-4/3.4 tracking still needs real hand trajectories from Member B; current placeholder hand files are intentionally flagged by `scripts/preflight_task24_integration.py`.

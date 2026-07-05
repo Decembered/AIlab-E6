@@ -1,402 +1,615 @@
 {
-  "purpose": "Curated figures for Member C / Task 3 object reconstruction, asset validation, pose tracking, and task 2-4 integration handoff.",
-  "generated_files": [
-    "figure/01_asset_renders/bread_angle.png",
-    "figure/01_asset_renders/bread_front.png",
-    "figure/01_asset_renders/bread_top.png",
-    "figure/01_asset_renders/bread_collision_angle.png",
-    "figure/04_isaacgym_validation/bread_isaacgym_front.png",
-    "figure/04_isaacgym_validation/bread_isaacgym_angle.png",
-    "figure/04_isaacgym_validation/bread_asset_check.log",
-    "figure/01_asset_renders/pipette_angle.png",
-    "figure/01_asset_renders/pipette_front.png",
-    "figure/01_asset_renders/pipette_top.png",
-    "figure/01_asset_renders/pipette_collision_angle.png",
-    "figure/04_isaacgym_validation/pipette_isaacgym_front.png",
-    "figure/04_isaacgym_validation/pipette_isaacgym_angle.png",
-    "figure/04_isaacgym_validation/pipette_asset_check.log",
-    "figure/01_asset_renders/drink_ad_angle.png",
-    "figure/01_asset_renders/drink_ad_front.png",
-    "figure/01_asset_renders/drink_ad_top.png",
-    "figure/01_asset_renders/drink_ad_collision_angle.png",
-    "figure/04_isaacgym_validation/drink_ad_isaacgym_front.png",
-    "figure/04_isaacgym_validation/drink_ad_isaacgym_angle.png",
-    "figure/04_isaacgym_validation/drink_ad_asset_check.log",
-    "figure/01_asset_renders/drink_yykx_angle.png",
-    "figure/01_asset_renders/drink_yykx_front.png",
-    "figure/01_asset_renders/drink_yykx_top.png",
-    "figure/01_asset_renders/drink_yykx_collision_angle.png",
-    "figure/04_isaacgym_validation/drink_yykx_isaacgym_front.png",
-    "figure/04_isaacgym_validation/drink_yykx_isaacgym_angle.png",
-    "figure/04_isaacgym_validation/drink_yykx_asset_check.log",
-    "figure/02_video_overlays/bread_camera_top_overlay.jpg",
-    "figure/02_video_overlays/bread_camera_side_1_overlay.jpg",
-    "figure/02_video_overlays/bread_camera_side_2_overlay.jpg",
-    "figure/02_video_overlays/bread_temporal_t0.jpg",
-    "figure/02_video_overlays/bread_temporal_t2.jpg",
-    "figure/02_video_overlays/bread_temporal_t4.jpg",
-    "figure/02_video_overlays/pipette_camera_top_overlay.jpg",
-    "figure/02_video_overlays/pipette_camera_side_1_overlay.jpg",
-    "figure/02_video_overlays/pipette_camera_side_2_overlay.jpg",
-    "figure/02_video_overlays/pipette_temporal_t0.jpg",
-    "figure/02_video_overlays/pipette_temporal_t2.jpg",
-    "figure/02_video_overlays/pipette_temporal_t4.jpg",
-    "figure/02_video_overlays/drink_ad_camera_top_overlay.jpg",
-    "figure/02_video_overlays/drink_ad_camera_side_1_overlay.jpg",
-    "figure/02_video_overlays/drink_ad_camera_side_2_overlay.jpg",
-    "figure/02_video_overlays/drink_ad_temporal_t0.jpg",
-    "figure/02_video_overlays/drink_ad_temporal_t2.jpg",
-    "figure/02_video_overlays/drink_ad_temporal_t4.jpg",
-    "figure/02_video_overlays/drink_yykx_camera_top_overlay.jpg",
-    "figure/02_video_overlays/drink_yykx_camera_side_1_overlay.jpg",
-    "figure/02_video_overlays/drink_yykx_camera_side_2_overlay.jpg",
-    "figure/02_video_overlays/drink_yykx_temporal_t0.jpg",
-    "figure/02_video_overlays/drink_yykx_temporal_t2.jpg",
-    "figure/02_video_overlays/drink_yykx_temporal_t4.jpg",
-    "figure/03_pose_tracking/trajectory_overview_v3.png",
-    "figure/03_pose_tracking/trajectory_dense_overview_v3.png",
-    "figure/04_isaacgym_validation/isaacgym_validation_summary.json",
-    "figure/05_task24_integration/hand_object_joint_render.png",
-    "figure/05_task24_integration/hand_object_joint_frames.mp4",
-    "figure/05_task24_integration/joint_frame_00_step000.png",
-    "figure/05_task24_integration/joint_frame_01_step020.png",
-    "figure/05_task24_integration/joint_frame_02_step040.png",
-    "figure/05_task24_integration/bread_step000.png",
-    "figure/05_task24_integration/bread_step075.png",
-    "figure/05_task24_integration/bread_step119.png",
-    "figure/05_task24_integration/pipette_step000.png",
-    "figure/05_task24_integration/pipette_step075.png",
-    "figure/05_task24_integration/pipette_step119.png",
-    "figure/06_reports/member_c_task3_status_report.md",
-    "figure/06_reports/geometry_summary.md",
-    "figure/06_reports/object_bonus_report.md",
-    "figure/06_reports/isaacgym_rendering_note.md",
-    "figure/06_reports/task24_preflight_strict.json",
-    "figure/06_reports/task24_preflight_object_only.json",
-    "figure/06_reports/asset_summary.json",
-    "figure/06_reports/object_asset_v1_README.md",
-    "figure/06_reports/member_c_object_task_handoff.md",
-    "figure/01_asset_renders/asset_renders_contact_sheet.png",
-    "figure/02_video_overlays/video_overlay_contact_sheet.png",
-    "figure/04_isaacgym_validation/isaacgym_asset_contact_sheet.png",
-    "figure/05_task24_integration/hand_object_joint_contact_sheet.png"
+  "purpose": "Curated, PPT-ready figures for Member C task3 object reconstruction and object-side task3.4 integration.",
+  "policy": "Broken, black, and non-informative screenshots are excluded. IsaacGym evidence uses validation logs/status cards instead of black render frames.",
+  "file_count": 76,
+  "total_size_bytes": 13952514,
+  "recommended_ppt_figures": [
+    "figure/01_asset_renders/asset_overview_ppt.png",
+    "figure/02_video_overlays/geometry_overlay_ppt.png",
+    "figure/03_pose_tracking/pose_tracking_ppt.png",
+    "figure/04_isaacgym_validation/isaacgym_validation_ppt.png",
+    "figure/05_task24_integration/task34_integration_ppt.png",
+    "figure/05_task24_integration/hand_object_joint_frames.mp4"
   ],
-  "source_map": [
+  "files": [
+    {
+      "path": "figure/01_asset_renders/asset_overview_ppt.png",
+      "size_bytes": 79966,
+      "width": 1600,
+      "height": 1050,
+      "mean": 230.83,
+      "std": 59.91,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/asset_renders_contact_sheet.png",
+      "size_bytes": 100905,
+      "width": 1280,
+      "height": 1138,
+      "mean": 238.32,
+      "std": 46.19,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/bread_angle.png",
+      "size_bytes": 197531,
+      "width": 1580,
+      "height": 1580,
+      "mean": 242.44,
+      "std": 38.93,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/bread_collision_angle.png",
+      "size_bytes": 166604,
+      "width": 1580,
+      "height": 1580,
+      "mean": 249.19,
+      "std": 22.57,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/bread_front.png",
+      "size_bytes": 145155,
+      "width": 1580,
+      "height": 1580,
+      "mean": 244.78,
+      "std": 34.94,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/bread_top.png",
+      "size_bytes": 104939,
+      "width": 1580,
+      "height": 1580,
+      "mean": 242.41,
+      "std": 36.35,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/drink_ad_angle.png",
+      "size_bytes": 141190,
+      "width": 1580,
+      "height": 1580,
+      "mean": 243.45,
+      "std": 42.43,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/drink_ad_collision_angle.png",
+      "size_bytes": 102077,
+      "width": 1580,
+      "height": 1580,
+      "mean": 250.64,
+      "std": 20.41,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/drink_ad_front.png",
+      "size_bytes": 113524,
+      "width": 1580,
+      "height": 1580,
+      "mean": 245.37,
+      "std": 38.14,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/drink_ad_top.png",
+      "size_bytes": 55397,
+      "width": 1580,
+      "height": 1580,
+      "mean": 250.62,
+      "std": 27.53,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/drink_yykx_angle.png",
+      "size_bytes": 140539,
+      "width": 1580,
+      "height": 1580,
+      "mean": 242.9,
+      "std": 43.1,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/drink_yykx_collision_angle.png",
+      "size_bytes": 85421,
+      "width": 1580,
+      "height": 1580,
+      "mean": 250.49,
+      "std": 19.97,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/drink_yykx_front.png",
+      "size_bytes": 87900,
+      "width": 1580,
+      "height": 1580,
+      "mean": 246.41,
+      "std": 34.69,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/drink_yykx_top.png",
+      "size_bytes": 39610,
+      "width": 1580,
+      "height": 1580,
+      "mean": 250.66,
+      "std": 26.68,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/pipette_angle.png",
+      "size_bytes": 169149,
+      "width": 1580,
+      "height": 1580,
+      "mean": 251.01,
+      "std": 20.24,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/pipette_collision_angle.png",
+      "size_bytes": 75956,
+      "width": 1580,
+      "height": 1580,
+      "mean": 252.57,
+      "std": 15.27,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/pipette_front.png",
+      "size_bytes": 57903,
+      "width": 1580,
+      "height": 1580,
+      "mean": 254.19,
+      "std": 8.77,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/01_asset_renders/pipette_top.png",
+      "size_bytes": 61521,
+      "width": 1580,
+      "height": 1580,
+      "mean": 254.03,
+      "std": 9.32,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/02_video_overlays/bread_camera_side_1_overlay.jpg",
+      "size_bytes": 251716,
+      "width": 1280,
+      "height": 720,
+      "mean": 87.47,
+      "std": 74.45,
+      "black_ratio": 0.1975
+    },
+    {
+      "path": "figure/02_video_overlays/bread_camera_side_2_overlay.jpg",
+      "size_bytes": 237099,
+      "width": 1280,
+      "height": 720,
+      "mean": 80.08,
+      "std": 82.77,
+      "black_ratio": 0.3324
+    },
+    {
+      "path": "figure/02_video_overlays/bread_camera_top_overlay.jpg",
+      "size_bytes": 267581,
+      "width": 1280,
+      "height": 720,
+      "mean": 86.03,
+      "std": 82.91,
+      "black_ratio": 0.238
+    },
+    {
+      "path": "figure/02_video_overlays/bread_temporal_t0.jpg",
+      "size_bytes": 267238,
+      "width": 1280,
+      "height": 720,
+      "mean": 86.04,
+      "std": 82.94,
+      "black_ratio": 0.2379
+    },
+    {
+      "path": "figure/02_video_overlays/bread_temporal_t2.jpg",
+      "size_bytes": 272082,
+      "width": 1280,
+      "height": 720,
+      "mean": 85.91,
+      "std": 82.77,
+      "black_ratio": 0.2379
+    },
+    {
+      "path": "figure/02_video_overlays/bread_temporal_t4.jpg",
+      "size_bytes": 272593,
+      "width": 1280,
+      "height": 720,
+      "mean": 85.93,
+      "std": 82.78,
+      "black_ratio": 0.2378
+    },
+    {
+      "path": "figure/02_video_overlays/drink_ad_camera_side_1_overlay.jpg",
+      "size_bytes": 268831,
+      "width": 1280,
+      "height": 720,
+      "mean": 89.94,
+      "std": 76.47,
+      "black_ratio": 0.1939
+    },
+    {
+      "path": "figure/02_video_overlays/drink_ad_camera_side_2_overlay.jpg",
+      "size_bytes": 247467,
+      "width": 1280,
+      "height": 720,
+      "mean": 81.01,
+      "std": 83.51,
+      "black_ratio": 0.3357
+    },
+    {
+      "path": "figure/02_video_overlays/drink_ad_camera_top_overlay.jpg",
+      "size_bytes": 266120,
+      "width": 1280,
+      "height": 720,
+      "mean": 85.55,
+      "std": 82.14,
+      "black_ratio": 0.2412
+    },
+    {
+      "path": "figure/02_video_overlays/drink_ad_temporal_t0.jpg",
+      "size_bytes": 265284,
+      "width": 1280,
+      "height": 720,
+      "mean": 85.57,
+      "std": 82.17,
+      "black_ratio": 0.2412
+    },
+    {
+      "path": "figure/02_video_overlays/drink_ad_temporal_t2.jpg",
+      "size_bytes": 282793,
+      "width": 1280,
+      "height": 720,
+      "mean": 85.39,
+      "std": 81.86,
+      "black_ratio": 0.241
+    },
+    {
+      "path": "figure/02_video_overlays/drink_ad_temporal_t4.jpg",
+      "size_bytes": 283156,
+      "width": 1280,
+      "height": 720,
+      "mean": 85.4,
+      "std": 81.87,
+      "black_ratio": 0.241
+    },
+    {
+      "path": "figure/02_video_overlays/drink_yykx_camera_side_1_overlay.jpg",
+      "size_bytes": 254184,
+      "width": 1280,
+      "height": 720,
+      "mean": 88.18,
+      "std": 75.38,
+      "black_ratio": 0.1974
+    },
+    {
+      "path": "figure/02_video_overlays/drink_yykx_camera_side_2_overlay.jpg",
+      "size_bytes": 243079,
+      "width": 1280,
+      "height": 720,
+      "mean": 81.17,
+      "std": 83.42,
+      "black_ratio": 0.3287
+    },
+    {
+      "path": "figure/02_video_overlays/drink_yykx_camera_top_overlay.jpg",
+      "size_bytes": 265220,
+      "width": 1280,
+      "height": 720,
+      "mean": 84.04,
+      "std": 81.74,
+      "black_ratio": 0.2471
+    },
+    {
+      "path": "figure/02_video_overlays/drink_yykx_temporal_t0.jpg",
+      "size_bytes": 264131,
+      "width": 1280,
+      "height": 720,
+      "mean": 84.04,
+      "std": 81.77,
+      "black_ratio": 0.2473
+    },
+    {
+      "path": "figure/02_video_overlays/drink_yykx_temporal_t2.jpg",
+      "size_bytes": 272179,
+      "width": 1280,
+      "height": 720,
+      "mean": 83.91,
+      "std": 81.61,
+      "black_ratio": 0.247
+    },
+    {
+      "path": "figure/02_video_overlays/drink_yykx_temporal_t4.jpg",
+      "size_bytes": 272052,
+      "width": 1280,
+      "height": 720,
+      "mean": 83.92,
+      "std": 81.63,
+      "black_ratio": 0.2471
+    },
+    {
+      "path": "figure/02_video_overlays/geometry_overlay_ppt.png",
+      "size_bytes": 1048048,
+      "width": 1600,
+      "height": 1180,
+      "mean": 181.81,
+      "std": 97.37,
+      "black_ratio": 0.081
+    },
+    {
+      "path": "figure/02_video_overlays/pipette_camera_side_1_overlay.jpg",
+      "size_bytes": 255573,
+      "width": 1280,
+      "height": 720,
+      "mean": 88.39,
+      "std": 74.73,
+      "black_ratio": 0.1908
+    },
+    {
+      "path": "figure/02_video_overlays/pipette_camera_side_2_overlay.jpg",
+      "size_bytes": 235793,
+      "width": 1280,
+      "height": 720,
+      "mean": 80.26,
+      "std": 82.31,
+      "black_ratio": 0.3328
+    },
+    {
+      "path": "figure/02_video_overlays/pipette_camera_top_overlay.jpg",
+      "size_bytes": 274901,
+      "width": 1280,
+      "height": 720,
+      "mean": 85.73,
+      "std": 81.4,
+      "black_ratio": 0.2313
+    },
+    {
+      "path": "figure/02_video_overlays/pipette_temporal_t0.jpg",
+      "size_bytes": 274313,
+      "width": 1280,
+      "height": 720,
+      "mean": 85.74,
+      "std": 81.42,
+      "black_ratio": 0.2312
+    },
+    {
+      "path": "figure/02_video_overlays/pipette_temporal_t2.jpg",
+      "size_bytes": 282757,
+      "width": 1280,
+      "height": 720,
+      "mean": 86.22,
+      "std": 82.15,
+      "black_ratio": 0.2306
+    },
+    {
+      "path": "figure/02_video_overlays/pipette_temporal_t4.jpg",
+      "size_bytes": 282029,
+      "width": 1280,
+      "height": 720,
+      "mean": 86.18,
+      "std": 82.15,
+      "black_ratio": 0.2309
+    },
+    {
+      "path": "figure/02_video_overlays/video_overlay_contact_sheet.png",
+      "size_bytes": 1088651,
+      "width": 960,
+      "height": 1138,
+      "mean": 134.95,
+      "std": 98.7,
+      "black_ratio": 0.1597
+    },
+    {
+      "path": "figure/03_pose_tracking/pose_tracking_ppt.png",
+      "size_bytes": 228266,
+      "width": 1600,
+      "height": 900,
+      "mean": 227.6,
+      "std": 65.34,
+      "black_ratio": 0.0002
+    },
+    {
+      "path": "figure/03_pose_tracking/trajectory_dense_overview_v3.png",
+      "size_bytes": 407454,
+      "width": 3005,
+      "height": 2652,
+      "mean": 250.34,
+      "std": 29.44,
+      "black_ratio": 0.0038
+    },
+    {
+      "path": "figure/03_pose_tracking/trajectory_overview_v3.png",
+      "size_bytes": 242612,
+      "width": 2336,
+      "height": 2063,
+      "mean": 246.8,
+      "std": 37.1,
+      "black_ratio": 0.0051
+    },
+    {
+      "path": "figure/04_isaacgym_validation/bread_asset_check.log",
+      "size_bytes": 1012
+    },
+    {
+      "path": "figure/04_isaacgym_validation/drink_ad_asset_check.log",
+      "size_bytes": 1010
+    },
+    {
+      "path": "figure/04_isaacgym_validation/drink_yykx_asset_check.log",
+      "size_bytes": 1017
+    },
+    {
+      "path": "figure/04_isaacgym_validation/isaacgym_validation_ppt.png",
+      "size_bytes": 62840,
+      "width": 1600,
+      "height": 900,
+      "mean": 227.49,
+      "std": 63.75,
+      "black_ratio": 0.0
+    },
+    {
+      "path": "figure/04_isaacgym_validation/isaacgym_validation_summary.json",
+      "size_bytes": 835
+    },
+    {
+      "path": "figure/04_isaacgym_validation/pipette_asset_check.log",
+      "size_bytes": 1017
+    },
+    {
+      "path": "figure/05_task24_integration/bread_step000.png",
+      "size_bytes": 110703,
+      "width": 954,
+      "height": 953,
+      "mean": 244.49,
+      "std": 33.18,
+      "black_ratio": 0.0051
+    },
+    {
+      "path": "figure/05_task24_integration/bread_step075.png",
+      "size_bytes": 167240,
+      "width": 987,
+      "height": 953,
+      "mean": 244.99,
+      "std": 28.11,
+      "black_ratio": 0.0047
+    },
+    {
+      "path": "figure/05_task24_integration/bread_step119.png",
+      "size_bytes": 165370,
+      "width": 954,
+      "height": 953,
+      "mean": 244.14,
+      "std": 28.77,
+      "black_ratio": 0.0051
+    },
     {
-      "source": "runs/object_asset_v1/bread/renders/angle.png",
-      "figure": "figure/01_asset_renders/bread_angle.png"
+      "path": "figure/05_task24_integration/hand_object_joint_contact_sheet.png",
+      "size_bytes": 225786,
+      "width": 960,
+      "height": 864,
+      "mean": 233.42,
+      "std": 48.02,
+      "black_ratio": 0.0
     },
     {
-      "source": "runs/object_asset_v1/bread/renders/front.png",
-      "figure": "figure/01_asset_renders/bread_front.png"
+      "path": "figure/05_task24_integration/hand_object_joint_frames.mp4",
+      "size_bytes": 541700
     },
     {
-      "source": "runs/object_asset_v1/bread/renders/top.png",
-      "figure": "figure/01_asset_renders/bread_top.png"
+      "path": "figure/05_task24_integration/joint_frame_00_step000.png",
+      "size_bytes": 225714,
+      "width": 1191,
+      "height": 1185,
+      "mean": 244.29,
+      "std": 27.51,
+      "black_ratio": 0.0032
     },
     {
-      "source": "runs/object_asset_v1/bread/renders/collision_angle.png",
-      "figure": "figure/01_asset_renders/bread_collision_angle.png"
+      "path": "figure/05_task24_integration/joint_frame_01_step020.png",
+      "size_bytes": 205342,
+      "width": 1186,
+      "height": 1185,
+      "mean": 244.01,
+      "std": 28.23,
+      "black_ratio": 0.0026
     },
     {
-      "source": "runs/object_asset_v1/bread/renders_isaacgym/front.png",
-      "figure": "figure/04_isaacgym_validation/bread_isaacgym_front.png"
+      "path": "figure/05_task24_integration/joint_frame_02_step040.png",
+      "size_bytes": 212168,
+      "width": 1185,
+      "height": 1185,
+      "mean": 244.55,
+      "std": 26.75,
+      "black_ratio": 0.0027
     },
     {
-      "source": "runs/object_asset_v1/bread/renders_isaacgym/angle.png",
-      "figure": "figure/04_isaacgym_validation/bread_isaacgym_angle.png"
+      "path": "figure/05_task24_integration/pipette_step000.png",
+      "size_bytes": 107895,
+      "width": 954,
+      "height": 953,
+      "mean": 243.72,
+      "std": 33.88,
+      "black_ratio": 0.0048
     },
     {
-      "source": "runs/object_asset_v1/bread/asset_check.log",
-      "figure": "figure/04_isaacgym_validation/bread_asset_check.log"
+      "path": "figure/05_task24_integration/pipette_step075.png",
+      "size_bytes": 170352,
+      "width": 986,
+      "height": 953,
+      "mean": 244.5,
+      "std": 28.86,
+      "black_ratio": 0.0046
     },
     {
-      "source": "runs/object_asset_v1/pipette/renders/angle.png",
-      "figure": "figure/01_asset_renders/pipette_angle.png"
+      "path": "figure/05_task24_integration/pipette_step119.png",
+      "size_bytes": 169382,
+      "width": 954,
+      "height": 953,
+      "mean": 243.77,
+      "std": 29.18,
+      "black_ratio": 0.0049
     },
     {
-      "source": "runs/object_asset_v1/pipette/renders/front.png",
-      "figure": "figure/01_asset_renders/pipette_front.png"
+      "path": "figure/05_task24_integration/task34_integration_ppt.png",
+      "size_bytes": 220950,
+      "width": 1600,
+      "height": 1050,
+      "mean": 231.97,
+      "std": 59.52,
+      "black_ratio": 0.0
     },
     {
-      "source": "runs/object_asset_v1/pipette/renders/top.png",
-      "figure": "figure/01_asset_renders/pipette_top.png"
+      "path": "figure/06_reports/asset_summary.json",
+      "size_bytes": 1247
     },
     {
-      "source": "runs/object_asset_v1/pipette/renders/collision_angle.png",
-      "figure": "figure/01_asset_renders/pipette_collision_angle.png"
+      "path": "figure/06_reports/geometry_summary.md",
+      "size_bytes": 1193
     },
     {
-      "source": "runs/object_asset_v1/pipette/renders_isaacgym/front.png",
-      "figure": "figure/04_isaacgym_validation/pipette_isaacgym_front.png"
+      "path": "figure/06_reports/isaacgym_rendering_note.md",
+      "size_bytes": 1513
     },
     {
-      "source": "runs/object_asset_v1/pipette/renders_isaacgym/angle.png",
-      "figure": "figure/04_isaacgym_validation/pipette_isaacgym_angle.png"
+      "path": "figure/06_reports/member_c_object_task_handoff.md",
+      "size_bytes": 6179
     },
     {
-      "source": "runs/object_asset_v1/pipette/asset_check.log",
-      "figure": "figure/04_isaacgym_validation/pipette_asset_check.log"
+      "path": "figure/06_reports/member_c_task3_status_report.md",
+      "size_bytes": 8282
     },
     {
-      "source": "runs/object_asset_v1/drink_ad/renders/angle.png",
-      "figure": "figure/01_asset_renders/drink_ad_angle.png"
+      "path": "figure/06_reports/object_asset_v1_README.md",
+      "size_bytes": 1838
     },
     {
-      "source": "runs/object_asset_v1/drink_ad/renders/front.png",
-      "figure": "figure/01_asset_renders/drink_ad_front.png"
+      "path": "figure/06_reports/object_bonus_report.md",
+      "size_bytes": 6607
     },
     {
-      "source": "runs/object_asset_v1/drink_ad/renders/top.png",
-      "figure": "figure/01_asset_renders/drink_ad_top.png"
+      "path": "figure/06_reports/task24_preflight_object_only.json",
+      "size_bytes": 7309
     },
     {
-      "source": "runs/object_asset_v1/drink_ad/renders/collision_angle.png",
-      "figure": "figure/01_asset_renders/drink_ad_collision_angle.png"
+      "path": "figure/06_reports/task24_preflight_strict.json",
+      "size_bytes": 7310
     },
     {
-      "source": "runs/object_asset_v1/drink_ad/renders_isaacgym/front.png",
-      "figure": "figure/04_isaacgym_validation/drink_ad_isaacgym_front.png"
+      "path": "figure/README.md",
+      "size_bytes": 4832
     },
     {
-      "source": "runs/object_asset_v1/drink_ad/renders_isaacgym/angle.png",
-      "figure": "figure/04_isaacgym_validation/drink_ad_isaacgym_angle.png"
-    },
-    {
-      "source": "runs/object_asset_v1/drink_ad/asset_check.log",
-      "figure": "figure/04_isaacgym_validation/drink_ad_asset_check.log"
-    },
-    {
-      "source": "runs/object_asset_v1/drink_yykx/renders/angle.png",
-      "figure": "figure/01_asset_renders/drink_yykx_angle.png"
-    },
-    {
-      "source": "runs/object_asset_v1/drink_yykx/renders/front.png",
-      "figure": "figure/01_asset_renders/drink_yykx_front.png"
-    },
-    {
-      "source": "runs/object_asset_v1/drink_yykx/renders/top.png",
-      "figure": "figure/01_asset_renders/drink_yykx_top.png"
-    },
-    {
-      "source": "runs/object_asset_v1/drink_yykx/renders/collision_angle.png",
-      "figure": "figure/01_asset_renders/drink_yykx_collision_angle.png"
-    },
-    {
-      "source": "runs/object_asset_v1/drink_yykx/renders_isaacgym/front.png",
-      "figure": "figure/04_isaacgym_validation/drink_yykx_isaacgym_front.png"
-    },
-    {
-      "source": "runs/object_asset_v1/drink_yykx/renders_isaacgym/angle.png",
-      "figure": "figure/04_isaacgym_validation/drink_yykx_isaacgym_angle.png"
-    },
-    {
-      "source": "runs/object_asset_v1/drink_yykx/asset_check.log",
-      "figure": "figure/04_isaacgym_validation/drink_yykx_asset_check.log"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/bread_camera_top_overlay.jpg",
-      "figure": "figure/02_video_overlays/bread_camera_top_overlay.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/bread_camera_side_1_overlay.jpg",
-      "figure": "figure/02_video_overlays/bread_camera_side_1_overlay.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/bread_camera_side_2_overlay.jpg",
-      "figure": "figure/02_video_overlays/bread_camera_side_2_overlay.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/bread_overlay_t0.jpg",
-      "figure": "figure/02_video_overlays/bread_temporal_t0.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/bread_overlay_t2.jpg",
-      "figure": "figure/02_video_overlays/bread_temporal_t2.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/bread_overlay_t4.jpg",
-      "figure": "figure/02_video_overlays/bread_temporal_t4.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/pipette_camera_top_overlay.jpg",
-      "figure": "figure/02_video_overlays/pipette_camera_top_overlay.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/pipette_camera_side_1_overlay.jpg",
-      "figure": "figure/02_video_overlays/pipette_camera_side_1_overlay.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/pipette_camera_side_2_overlay.jpg",
-      "figure": "figure/02_video_overlays/pipette_camera_side_2_overlay.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/pipette_overlay_t0.jpg",
-      "figure": "figure/02_video_overlays/pipette_temporal_t0.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/pipette_overlay_t2.jpg",
-      "figure": "figure/02_video_overlays/pipette_temporal_t2.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/pipette_overlay_t4.jpg",
-      "figure": "figure/02_video_overlays/pipette_temporal_t4.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/drink_ad_camera_top_overlay.jpg",
-      "figure": "figure/02_video_overlays/drink_ad_camera_top_overlay.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/drink_ad_camera_side_1_overlay.jpg",
-      "figure": "figure/02_video_overlays/drink_ad_camera_side_1_overlay.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/drink_ad_camera_side_2_overlay.jpg",
-      "figure": "figure/02_video_overlays/drink_ad_camera_side_2_overlay.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/drink_ad_overlay_t0.jpg",
-      "figure": "figure/02_video_overlays/drink_ad_temporal_t0.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/drink_ad_overlay_t2.jpg",
-      "figure": "figure/02_video_overlays/drink_ad_temporal_t2.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/drink_ad_overlay_t4.jpg",
-      "figure": "figure/02_video_overlays/drink_ad_temporal_t4.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/drink_yykx_camera_top_overlay.jpg",
-      "figure": "figure/02_video_overlays/drink_yykx_camera_top_overlay.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/drink_yykx_camera_side_1_overlay.jpg",
-      "figure": "figure/02_video_overlays/drink_yykx_camera_side_1_overlay.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/drink_yykx_camera_side_2_overlay.jpg",
-      "figure": "figure/02_video_overlays/drink_yykx_camera_side_2_overlay.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/drink_yykx_overlay_t0.jpg",
-      "figure": "figure/02_video_overlays/drink_yykx_temporal_t0.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/drink_yykx_overlay_t2.jpg",
-      "figure": "figure/02_video_overlays/drink_yykx_temporal_t2.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/visual_overlay/drink_yykx_overlay_t4.jpg",
-      "figure": "figure/02_video_overlays/drink_yykx_temporal_t4.jpg"
-    },
-    {
-      "source": "outputs/object3_submission/trajectory_overview_v3.png",
-      "figure": "figure/03_pose_tracking/trajectory_overview_v3.png"
-    },
-    {
-      "source": "outputs/object3_submission/trajectory_dense_overview_v3.png",
-      "figure": "figure/03_pose_tracking/trajectory_dense_overview_v3.png"
-    },
-    {
-      "source": "runs/object_asset_v1/isaacgym_validation_summary.json",
-      "figure": "figure/04_isaacgym_validation/isaacgym_validation_summary.json"
-    },
-    {
-      "source": "outputs/object3_submission/hand_object_joint_render.png",
-      "figure": "figure/05_task24_integration/hand_object_joint_render.png"
-    },
-    {
-      "source": "outputs/object3_submission/hand_object_joint_frames.mp4",
-      "figure": "figure/05_task24_integration/hand_object_joint_frames.mp4"
-    },
-    {
-      "source": "outputs/object3_submission/hand_object_joint_frames/joint_frame_00_step000.png",
-      "figure": "figure/05_task24_integration/joint_frame_00_step000.png"
-    },
-    {
-      "source": "outputs/object3_submission/hand_object_joint_frames/joint_frame_01_step020.png",
-      "figure": "figure/05_task24_integration/joint_frame_01_step020.png"
-    },
-    {
-      "source": "outputs/object3_submission/hand_object_joint_frames/joint_frame_02_step040.png",
-      "figure": "figure/05_task24_integration/joint_frame_02_step040.png"
-    },
-    {
-      "source": "outputs/object3_submission/hand_object_joint_frames/bread_step000.png",
-      "figure": "figure/05_task24_integration/bread_step000.png"
-    },
-    {
-      "source": "outputs/object3_submission/hand_object_joint_frames/bread_step075.png",
-      "figure": "figure/05_task24_integration/bread_step075.png"
-    },
-    {
-      "source": "outputs/object3_submission/hand_object_joint_frames/bread_step119.png",
-      "figure": "figure/05_task24_integration/bread_step119.png"
-    },
-    {
-      "source": "outputs/object3_submission/hand_object_joint_frames/pipette_step000.png",
-      "figure": "figure/05_task24_integration/pipette_step000.png"
-    },
-    {
-      "source": "outputs/object3_submission/hand_object_joint_frames/pipette_step075.png",
-      "figure": "figure/05_task24_integration/pipette_step075.png"
-    },
-    {
-      "source": "outputs/object3_submission/hand_object_joint_frames/pipette_step119.png",
-      "figure": "figure/05_task24_integration/pipette_step119.png"
-    },
-    {
-      "source": "outputs/object3_submission/member_c_task3_status_report.md",
-      "figure": "figure/06_reports/member_c_task3_status_report.md"
-    },
-    {
-      "source": "outputs/object3_submission/geometry_summary.md",
-      "figure": "figure/06_reports/geometry_summary.md"
-    },
-    {
-      "source": "outputs/object3_submission/object_bonus_report.md",
-      "figure": "figure/06_reports/object_bonus_report.md"
-    },
-    {
-      "source": "outputs/object3_submission/isaacgym_rendering_note.md",
-      "figure": "figure/06_reports/isaacgym_rendering_note.md"
-    },
-    {
-      "source": "outputs/object3_submission/task24_preflight_strict.json",
-      "figure": "figure/06_reports/task24_preflight_strict.json"
-    },
-    {
-      "source": "outputs/object3_submission/task24_preflight_object_only.json",
-      "figure": "figure/06_reports/task24_preflight_object_only.json"
-    },
-    {
-      "source": "runs/object_asset_v1/asset_summary.json",
-      "figure": "figure/06_reports/asset_summary.json"
-    },
-    {
-      "source": "runs/object_asset_v1/README.md",
-      "figure": "figure/06_reports/object_asset_v1_README.md"
-    },
-    {
-      "source": "docs/member_c_object_task_handoff.md",
-      "figure": "figure/06_reports/member_c_object_task_handoff.md"
-    },
-    {
-      "source": "generated",
-      "figure": "figure/01_asset_renders/asset_renders_contact_sheet.png"
-    },
-    {
-      "source": "generated",
-      "figure": "figure/02_video_overlays/video_overlay_contact_sheet.png"
-    },
-    {
-      "source": "generated",
-      "figure": "figure/04_isaacgym_validation/isaacgym_asset_contact_sheet.png"
-    },
-    {
-      "source": "generated",
-      "figure": "figure/05_task24_integration/hand_object_joint_contact_sheet.png"
+      "path": "figure/manifest.json",
+      "size_bytes": 17382
     }
   ]
 }
