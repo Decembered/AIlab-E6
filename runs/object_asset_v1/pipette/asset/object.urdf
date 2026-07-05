@@ -1,19 +1,16 @@
 <?xml version="1.0"?>
 <robot name="pipette">
   <link name="base_link">
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.1500"/>
-      <inertia ixx="0.000095" ixy="0.0" ixz="0.0"
-               iyy="0.000922" iyz="0.0"
-               izz="0.000837"/>
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.5898"/>
+      <inertia ixx="0.000354" ixy="0.0" ixz="0.0"
+               iyy="0.004696" iyz="0.0"
+               izz="0.004381"/>
     </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry><mesh filename="../mesh/visual_mesh.obj" scale="1 1 1"/></geometry>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry><mesh filename="../mesh/collision_mesh.obj" scale="1 1 1"/></geometry>
     </collision>
   </link>
