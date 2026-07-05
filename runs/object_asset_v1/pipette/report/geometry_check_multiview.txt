@@ -1,14 +1,14 @@
 name: pipette_multiview_v4
 method: multi-view mask contour extrusion (top camera XY + side camera height)
 object: Pipette #1
-vertices: 1600
-faces: 3196
+vertices: 4800
+faces: 9596
 is_watertight: True
 extents_m: [0.258, 0.10441376278152273, 0.085]
 target_size_m: [0.258, 0.02, 0.085]
-mass_kg: 1.2116
+mass_kg: 1.2125
 density_kgm3: 1200
-inertia_ixx_iyy_izz: [0.001830, 0.007450, 0.007822]
-contour_points: 200
-z_slices: 8
+inertia_ixx_iyy_izz: [0.001832, 0.007456, 0.007827]
+contour_points: 300
+z_slices: 16
 cameras_used: 3

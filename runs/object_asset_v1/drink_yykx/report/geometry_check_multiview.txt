@@ -1,14 +1,14 @@
 name: drink_yykx_multiview_v4
 method: multi-view mask contour extrusion (top camera XY + side camera height)
 object: Drink YYKX
-vertices: 144
-faces: 284
+vertices: 320
+faces: 636
 is_watertight: True
 extents_m: [0.07, 0.06628246118241495, 0.2]
 target_size_m: [0.07, 0.07, 0.2]
-mass_kg: 0.8571
+mass_kg: 0.8624
 density_kgm3: 1000
-inertia_ixx_iyy_izz: [0.003171, 0.003207, 0.000664]
-contour_points: 18
-z_slices: 8
+inertia_ixx_iyy_izz: [0.003190, 0.003227, 0.000668]
+contour_points: 20
+z_slices: 16
 cameras_used: 3
