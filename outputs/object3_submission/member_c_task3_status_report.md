@@ -108,6 +108,14 @@ V3 improvements:
 5. **180-degree symmetry flip tolerance** for near-axisymmetric objects
 6. **Reduced stride** 15→5 for denser source keyframes
 
+### V3.1 (2026-07-05 — Tier 2: Kalman Filter Smoothing)
+
+Added constant-velocity Kalman filter post-processing:
+- **Position smoothing**: 6D state [x,y,z,vx,vy,vz], reduces frame-to-frame jitter
+- **Yaw smoothing**: 2D state [theta,omega] with circular angle handling
+- **Result**: modest velocity reduction (~1-3%), trajectory is smoother with fewer micro-jumps
+- **FoundationPose**: assessed as NOT FEASIBLE — requires depth data which is not available
+
 Trajectory files: `outputs/mask_pose/{obj}/{seq}/object_trajectory.json`
 Quality reports: `outputs/mask_pose/{obj}/{seq}/trajectory_quality_report.json`
 
@@ -133,9 +141,9 @@ Quality reports: `outputs/mask_pose/{obj}/{seq}/trajectory_quality_report.json`
 
 1. **3D models**: Contour extrusion from single-frame masks; no temporal multi-view consistency
 2. **Pose tracking yaw precision**: Narrow objects (pipette) have occasional theta_jump failures (23/757 = 3%)
-3. **Rotation**: Only yaw estimated via mesh silhouette; pitch/roll unconstrained
+3. **Rotation**: Only yaw estimated via mesh silhouette + Kalman smoothing; pitch/roll unconstrained
 4. **Transparent objects**: Drink bottle masks have lower quality
-5. **Single-camera ICP not used**: No depth data available for mask_depth_icp pipeline
+5. **No depth data**: FoundationPose (RGB-D 6D pose) cannot be used for full 6D tracking
 6. **Collision mesh**: Identical to visual mesh for bread; simplified convex hull for others
 
 ## Reproduction
@@ -144,7 +152,7 @@ Quality reports: `outputs/mask_pose/{obj}/{seq}/trajectory_quality_report.json`
 # Extract masks (stride=5)
 python3.8 scripts/mask_extraction_v2.py --stride 5 --objects bread pipette drink_ad drink_yykx
 
-# Run pose tracking (V3: DLT + mesh silhouette optimization)
+# Run pose tracking (V3.1: DLT + mesh silhouette + Kalman filter)
 python3.8 scripts/pose_tracking_v2.py --objects bread pipette drink_ad drink_yykx
 
 # Validate IsaacGym

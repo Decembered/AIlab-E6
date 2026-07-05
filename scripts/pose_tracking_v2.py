@@ -128,6 +128,87 @@ def build_view_records(masks_dict, cameras_dict, config):
     return view_records
 
 
+def kalman_smooth_positions(positions, timestamps, process_noise_pos=0.01, process_noise_vel=0.1, meas_noise=0.001):
+    """Constant velocity Kalman filter for 3D position smoothing.
+
+    State: [x, y, z, vx, vy, vz] (6D)
+    Measurement: [x, y, z] (3D)
+    """
+    n = len(positions)
+    dt = np.diff(timestamps).mean() if len(timestamps) > 1 else 1.0 / 15.0
+
+    F = np.eye(6)
+    F[0, 3] = dt
+    F[1, 4] = dt
+    F[2, 5] = dt
+
+    H = np.zeros((3, 6))
+    H[0, 0] = H[1, 1] = H[2, 2] = 1.0
+
+    Q = np.eye(6)
+    Q[0, 0] = Q[1, 1] = Q[2, 2] = process_noise_pos * dt
+    Q[3, 3] = Q[4, 4] = Q[5, 5] = process_noise_vel * dt
+
+    R = np.eye(3) * meas_noise
+
+    x_est = np.zeros(6)
+    x_est[:3] = positions[0]
+    P = np.eye(6) * 0.1
+
+    smoothed = np.zeros((n, 3))
+    smoothed[0] = positions[0]
+
+    for i in range(1, n):
+        x_pred = F @ x_est
+        P_pred = F @ P @ F.T + Q
+
+        z = positions[i]
+        y = z - H @ x_pred
+        S = H @ P_pred @ H.T + R
+        K = P_pred @ H.T @ np.linalg.inv(S)
+
+        x_est = x_pred + K @ y
+        P = (np.eye(6) - K @ H) @ P_pred
+        smoothed[i] = x_est[:3]
+
+    return smoothed
+
+
+def kalman_smooth_angles(thetas, timestamps, process_noise=0.05, meas_noise=0.01):
+    """Constant velocity Kalman filter for 1D angle smoothing (handles circularity)."""
+    n = len(thetas)
+    dt = np.diff(timestamps).mean() if len(timestamps) > 1 else 1.0 / 15.0
+    dt = max(dt, 1e-6)
+
+    x_est = np.array([thetas[0], 0.0])
+    P = np.eye(2) * 0.1
+
+    F = np.array([[1.0, dt], [0.0, 1.0]])
+    H = np.array([[1.0, 0.0]])
+    Q = np.array([[process_noise * dt, 0], [0, process_noise * dt * 0.1]])
+    R = np.array([[meas_noise]])
+
+    smoothed = np.zeros(n)
+    smoothed[0] = thetas[0]
+
+    for i in range(1, n):
+        x_pred = F @ x_est
+        P_pred = F @ P @ F.T + Q
+
+        residual = thetas[i] - x_pred[0]
+        residual = math.atan2(math.sin(residual), math.cos(residual))
+        y = np.array([residual])
+
+        S = H @ P_pred @ H.T + R
+        K = P_pred @ H.T @ np.linalg.inv(S)
+
+        x_est = x_pred + K @ y
+        P = (np.eye(2) - K @ H) @ P_pred
+        smoothed[i] = x_est[0]
+
+    return smoothed
+
+
 def triangulate_dlt(points_2d, proj_matrices):
     """DLT triangulation from multiple 2D observations with known 3x4 projection matrices."""
     A = []
@@ -296,7 +377,40 @@ def run_pose_tracking(obj_name, seq_name, mesh_points, config):
             'pose_jump_m': float(pose_jump),
         })
 
-    positions = np.array([[t['transform_4x4'][0][3], t['transform_4x4'][1][3], t['transform_4x4'][2][3]] for t in trajectory])
+    positions_raw = np.array([[t['transform_4x4'][0][3], t['transform_4x4'][1][3], t['transform_4x4'][2][3]] for t in trajectory])
+    timestamps = np.array([t['timestamp'] for t in trajectory])
+    yaws_raw = np.array([float(math.atan2(
+        t['transform_4x4'][0][2], t['transform_4x4'][0][0]
+    )) for t in trajectory])
+    yaw_ambiguous = obj_name in LOCAL_YAW_AMBIGUOUS
+
+    vel_raw = np.zeros(len(positions_raw))
+    for i in range(1, len(positions_raw)):
+        dt = timestamps[i] - timestamps[i - 1]
+        vel_raw[i] = np.linalg.norm(positions_raw[i] - positions_raw[i - 1]) / max(dt, 1e-6)
+
+    if len(positions_raw) >= 3:
+        positions_smooth = kalman_smooth_positions(positions_raw, timestamps)
+        if not yaw_ambiguous:
+            yaws_smooth = kalman_smooth_angles(yaws_raw, timestamps)
+        else:
+            yaws_smooth = yaws_raw
+
+        for i in range(len(trajectory)):
+            trans = positions_smooth[i]
+            if not yaw_ambiguous:
+                cos_a, sin_a = float(math.cos(yaws_smooth[i])), float(math.sin(yaws_smooth[i]))
+            else:
+                cos_a, sin_a = float(math.cos(yaws_raw[i])), float(math.sin(yaws_raw[i]))
+            R = np.array([[cos_a, 0, sin_a], [0, 1, 0], [-sin_a, 0, cos_a]])
+            T = np.eye(4)
+            T[:3, :3] = R
+            T[:3, 3] = trans
+            trajectory[i]['transform_4x4'] = T.tolist()
+    else:
+        positions_smooth = positions_raw
+
+    positions = positions_smooth
     vel = np.zeros(len(positions))
     for i in range(1, len(positions)):
         dt = trajectory[i]['timestamp'] - trajectory[i - 1]['timestamp']
@@ -318,7 +432,7 @@ def run_pose_tracking(obj_name, seq_name, mesh_points, config):
         'sequence': seq_name,
         'num_frames': len(trajectory),
         'fps': 15.0,
-        'method': 'multi-view mask centroid + mesh silhouette yaw optimization',
+        'method': 'DLT triangulation + mesh silhouette yaw + Kalman filter',
         'trajectory': trajectory,
         'frame_records': frame_records,
         'quality': {
@@ -327,6 +441,8 @@ def run_pose_tracking(obj_name, seq_name, mesh_points, config):
             'num_invalid_frames': len(trajectory) - num_3view - num_2view,
             'max_velocity_m_per_s': max_vel,
             'mean_velocity_m_per_s': float(vel.mean()) if len(vel) else 0.0,
+            'max_velocity_raw_m_per_s': float(vel_raw.max()) if len(vel_raw) else 0.0,
+            'mean_velocity_raw_m_per_s': float(vel_raw.mean()) if len(vel_raw) else 0.0,
             'quality_flag': quality_flag,
             'position_stats_m': position_stats,
         }
@@ -397,8 +513,8 @@ def main():
             with open(quality_path, 'w') as f:
                 json.dump({
                     'status': 'valid',
-                    'method': 'multi_view_mask_silhouette_optimization',
-                    'postprocessing': 'gaussian_smooth_sigma1.0 + linear_interpolation',
+                    'method': 'DLT_triangulation + mesh_silhouette_yaw + kalman_filter',
+                    'postprocessing': 'kalman_filter_constant_velocity',
                     'num_frames': result['num_frames'],
                     'num_source_keypoints': result['num_frames'],
                     'duration_s': result['num_frames'] / 15.0,
@@ -433,7 +549,9 @@ def main():
             print(f"                        Y [{ext_min['y'][0]:.3f}, {ext_min['y'][1]:.3f}]")
             print(f"                        Z [{ext_min['z'][0]:.3f}, {ext_min['z'][1]:.3f}]")
             print(f"    Travel dist (m):    X {ext_range['x']:.3f}, Y {ext_range['y']:.3f}, Z {ext_range['z']:.3f}")
-            print(f"    Max velocity: {result['quality']['max_velocity_m_per_s']:.3f} m/s")
+            vel_raw_max = result['quality'].get('max_velocity_raw_m_per_s', result['quality']['max_velocity_m_per_s'])
+            vel_kf_max = result['quality']['max_velocity_m_per_s']
+            print(f"    Max velocity: {vel_kf_max:.3f} m/s (raw: {vel_raw_max:.3f} m/s)")
             print(f"    Quality: {result['quality']['quality_flag']}")
 
     print(f"\nDone. Trajectories saved to: {MASK_ROOT}")
