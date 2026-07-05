@@ -16,6 +16,8 @@ experiments/*/frames/
 experiments/*/pose_tracking/mask_sequence/
 experiments/*/pose_tracking/mask_sequence_debug/
 outputs/mask_pose/
+outputs/trajectory_viz/
+outputs/geometry_viz/
 
 # Claude workspace config
 .claude/
