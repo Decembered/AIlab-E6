@@ -1,8 +1,8 @@
 [
   {
     "name": "bread",
-    "visual_faces": 1116,
-    "collision_faces": 136,
+    "visual_faces": 5760,
+    "collision_faces": 320,
     "visual_watertight": true,
     "collision_watertight": true,
     "extents_m": [
@@ -10,14 +10,14 @@
       0.07,
       0.04
     ],
-    "mass_kg": 0.4,
-    "vertex_colors": true,
+    "mass_kg": 0.076,
+    "method": "high_precision_parametric_v4",
     "isaacgym_validated": true
   },
   {
     "name": "pipette",
-    "visual_faces": 9596,
-    "collision_faces": 80,
+    "visual_faces": 1920,
+    "collision_faces": 400,
     "visual_watertight": true,
     "collision_watertight": true,
     "extents_m": [
@@ -25,14 +25,14 @@
       0.02,
       0.085
     ],
-    "mass_kg": 0.15,
-    "vertex_colors": true,
+    "mass_kg": 0.18,
+    "method": "high_precision_parametric_v4",
     "isaacgym_validated": true
   },
   {
     "name": "drink_ad",
-    "visual_faces": 988,
-    "collision_faces": 120,
+    "visual_faces": 1792,
+    "collision_faces": 384,
     "visual_watertight": true,
     "collision_watertight": true,
     "extents_m": [
@@ -40,14 +40,14 @@
       0.07,
       0.2
     ],
-    "mass_kg": 0.55,
-    "vertex_colors": true,
+    "mass_kg": 0.622,
+    "method": "high_precision_parametric_v4",
     "isaacgym_validated": true
   },
   {
     "name": "drink_yykx",
-    "visual_faces": 636,
-    "collision_faces": 76,
+    "visual_faces": 1792,
+    "collision_faces": 384,
     "visual_watertight": true,
     "collision_watertight": true,
     "extents_m": [
@@ -55,8 +55,8 @@
       0.07,
       0.2
     ],
-    "mass_kg": 0.55,
-    "vertex_colors": true,
+    "mass_kg": 0.353,
+    "method": "high_precision_parametric_v4",
     "isaacgym_validated": true
   }
 ]

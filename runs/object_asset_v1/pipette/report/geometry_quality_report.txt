@@ -1,7 +1,46 @@
-Geometry Quality Report: pipette (v3 — textured)
-=============================
-Visual Mesh: 4800v/9596f, watertight=True, manifold=True
-Collision Mesh: 42v/80f, watertight=True, manifold=True
-Extents: [0.258, 0.02, 0.085]
-Vertex Colors: YES (sampled from 3 camera video frames)
-Assessment: PASS — within <20000 face limit, watertight, vertex-colored
+{
+  "name": "pipette",
+  "method": "high_precision_parametric_v4",
+  "object_type": "pipette",
+  "visual_vertices": 962,
+  "visual_faces": 1920,
+  "collision_faces": 400,
+  "visual_watertight": true,
+  "collision_watertight": true,
+  "visual_winding_consistent": true,
+  "extents_m": [
+    0.258,
+    0.02,
+    0.085
+  ],
+  "target_size_m": [
+    0.258,
+    0.02,
+    0.085
+  ],
+  "mass_kg": 0.18,
+  "volume_m3": 0.00016549103392220904,
+  "mask_statistics": {
+    "camera_top": {
+      "count": 52,
+      "median_width_px": 269.5,
+      "median_height_px": 716.5,
+      "median_area_px": 123365.0,
+      "iqr_area_px": 44244.875
+    },
+    "camera_side_1": {
+      "count": 52,
+      "median_width_px": 1012.0,
+      "median_height_px": 718.0,
+      "median_area_px": 416535.75,
+      "iqr_area_px": 18258.0
+    },
+    "camera_side_2": {
+      "count": 52,
+      "median_width_px": 438.0,
+      "median_height_px": 538.0,
+      "median_area_px": 154052.75,
+      "iqr_area_px": 756.125
+    }
+  }
+}

@@ -1,5 +1,5 @@
 === IsaacGym Asset Validation ===
-Time: 2026-07-05T11:01:54.374723
+Time: 2026-07-05T11:35:39.105385
 URDF: /mnt/workspace/AIlab-E6/runs/object_asset_v1/drink_yykx/asset/object.urdf
 Asset dir: /mnt/workspace/AIlab-E6/runs/object_asset_v1/drink_yykx/asset
 
@@ -14,14 +14,14 @@ Asset dir: /mnt/workspace/AIlab-E6/runs/object_asset_v1/drink_yykx/asset
   Actor spawned, handle=0
 [5/5] Simulating 60 steps...
   Step 0: pos=(0.0000, 0.0980, 0.0000), dist=0.098m
-  Step 10: pos=(-0.0006, 0.0352, 0.0001), dist=0.035m
-  Step 20: pos=(-0.0006, 0.0352, 0.0001), dist=0.035m
-  Step 30: pos=(-0.0006, 0.0352, 0.0001), dist=0.035m
-  Step 40: pos=(-0.0006, 0.0352, 0.0001), dist=0.035m
-  Step 50: pos=(-0.0006, 0.0352, 0.0001), dist=0.035m
+  Step 10: pos=(0.0000, 0.0361, 0.0002), dist=0.036m
+  Step 20: pos=(-0.0000, 0.0361, 0.0002), dist=0.036m
+  Step 30: pos=(-0.0000, 0.0361, 0.0002), dist=0.036m
+  Step 40: pos=(-0.0000, 0.0361, 0.0002), dist=0.036m
+  Step 50: pos=(-0.0000, 0.0361, 0.0002), dist=0.036m
 
 === PASS: Asset loads and simulates correctly ===
 Body count: 1, Shape count: 1
-Position range X: [-0.0006, 0.0000]
-Position range Y: [0.0352, 0.0980]
-Position range Z: [0.0000, 0.0001]
+Position range X: [-0.0000, 0.0000]
+Position range Y: [0.0361, 0.0980]
+Position range Z: [0.0000, 0.0002]

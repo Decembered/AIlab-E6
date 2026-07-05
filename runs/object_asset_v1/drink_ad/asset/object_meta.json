@@ -1,28 +1,46 @@
 {
-  "object_name": "Drink AD",
-  "visual_vertices": 232,
-  "visual_faces": 460,
-  "collision_vertices": 58,
-  "collision_faces": 112,
+  "name": "drink_ad",
+  "method": "high_precision_parametric_v4",
+  "object_type": "round_bottle",
+  "visual_vertices": 898,
+  "visual_faces": 1792,
+  "collision_faces": 384,
   "visual_watertight": true,
   "collision_watertight": true,
-  "visual_extents_mm": [
-    70.0,
-    118.2,
-    200.0
+  "visual_winding_consistent": true,
+  "extents_m": [
+    0.07,
+    0.07,
+    0.2
   ],
-  "collision_extents_mm": [
-    70.0,
-    118.2,
-    200.0
+  "target_size_m": [
+    0.07,
+    0.07,
+    0.2
   ],
-  "mass_kg": 0.55,
-  "inertia": {
-    "ixx": 0.00247342,
-    "iyy": 0.00205792,
-    "izz": 0.00086467
-  },
-  "isaacgym_validated": true,
-  "isaacgym_validation_date": "2026-07-05T06:33",
-  "reconstruction_method": "Multi-view mask contour extrusion + Z-slice extrusion"
+  "mass_kg": 0.622,
+  "volume_m3": 0.0006352346389615866,
+  "mask_statistics": {
+    "camera_top": {
+      "count": 49,
+      "median_width_px": 311.0,
+      "median_height_px": 716.0,
+      "median_area_px": 145789.0,
+      "iqr_area_px": 43905.0
+    },
+    "camera_side_1": {
+      "count": 49,
+      "median_width_px": 386.0,
+      "median_height_px": 490.0,
+      "median_area_px": 125777.0,
+      "iqr_area_px": 735.0
+    },
+    "camera_side_2": {
+      "count": 49,
+      "median_width_px": 438.0,
+      "median_height_px": 538.0,
+      "median_area_px": 154135.5,
+      "iqr_area_px": 666.0
+    }
+  }
 }

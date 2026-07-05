@@ -1,6 +1,6 @@
 {
-  "validated_at": "2026-07-05T07:10:01.269768",
-  "platform": "NVIDIA GeForce RTX 4090 x2 (cluster)",
+  "validated_at": "2026-07-05T11:35:39.105385",
+  "platform": "local IsaacGym Preview 4, CPU PhysX, GPU pipeline disabled",
   "python": "3.8",
   "isaacgym": "Preview 4",
   "results": {

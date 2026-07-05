@@ -1,28 +1,46 @@
 {
-  "object_name": "Drink YYKX",
-  "visual_vertices": 144,
-  "visual_faces": 284,
-  "collision_vertices": 36,
-  "collision_faces": 68,
+  "name": "drink_yykx",
+  "method": "high_precision_parametric_v4",
+  "object_type": "rounded_square_bottle",
+  "visual_vertices": 898,
+  "visual_faces": 1792,
+  "collision_faces": 384,
   "visual_watertight": true,
   "collision_watertight": true,
-  "visual_extents_mm": [
-    70.0,
-    66.3,
-    200.0
+  "visual_winding_consistent": true,
+  "extents_m": [
+    0.07,
+    0.07,
+    0.2
   ],
-  "collision_extents_mm": [
-    70.0,
-    66.3,
-    200.0
+  "target_size_m": [
+    0.07,
+    0.07,
+    0.2
   ],
-  "mass_kg": 0.55,
-  "inertia": {
-    "ixx": 0.0020347,
-    "iyy": 0.00205792,
-    "izz": 0.00042595
-  },
-  "isaacgym_validated": true,
-  "isaacgym_validation_date": "2026-07-05T06:33",
-  "reconstruction_method": "Multi-view mask contour extrusion + Z-slice extrusion"
+  "mass_kg": 0.353,
+  "volume_m3": 0.0007503678143379098,
+  "mask_statistics": {
+    "camera_top": {
+      "count": 49,
+      "median_width_px": 310.0,
+      "median_height_px": 716.0,
+      "median_area_px": 138618.0,
+      "iqr_area_px": 39657.0
+    },
+    "camera_side_1": {
+      "count": 49,
+      "median_width_px": 385.0,
+      "median_height_px": 490.0,
+      "median_area_px": 125812.0,
+      "iqr_area_px": 552.0
+    },
+    "camera_side_2": {
+      "count": 49,
+      "median_width_px": 438.0,
+      "median_height_px": 538.0,
+      "median_area_px": 154432.0,
+      "iqr_area_px": 777.0
+    }
+  }
 }

@@ -1,28 +1,46 @@
 {
-  "object_name": "Pipette #1",
-  "visual_vertices": 1600,
-  "visual_faces": 3196,
-  "collision_vertices": 40,
-  "collision_faces": 76,
+  "name": "pipette",
+  "method": "high_precision_parametric_v4",
+  "object_type": "pipette",
+  "visual_vertices": 962,
+  "visual_faces": 1920,
+  "collision_faces": 400,
   "visual_watertight": true,
   "collision_watertight": true,
-  "visual_extents_mm": [
-    258.0,
-    20.0,
-    85.0
+  "visual_winding_consistent": true,
+  "extents_m": [
+    0.258,
+    0.02,
+    0.085
   ],
-  "collision_extents_mm": [
-    258.0,
-    104.4,
-    85.0
+  "target_size_m": [
+    0.258,
+    0.02,
+    0.085
   ],
-  "mass_kg": 0.15,
-  "inertia": {
-    "ixx": 9.531e-05,
-    "iyy": 0.00092236,
-    "izz": 0.00083705
-  },
-  "isaacgym_validated": true,
-  "isaacgym_validation_date": "2026-07-05T06:33",
-  "reconstruction_method": "Multi-view mask contour extrusion + Z-slice extrusion"
+  "mass_kg": 0.18,
+  "volume_m3": 0.00016549103392220904,
+  "mask_statistics": {
+    "camera_top": {
+      "count": 52,
+      "median_width_px": 269.5,
+      "median_height_px": 716.5,
+      "median_area_px": 123365.0,
+      "iqr_area_px": 44244.875
+    },
+    "camera_side_1": {
+      "count": 52,
+      "median_width_px": 1012.0,
+      "median_height_px": 718.0,
+      "median_area_px": 416535.75,
+      "iqr_area_px": 18258.0
+    },
+    "camera_side_2": {
+      "count": 52,
+      "median_width_px": 438.0,
+      "median_height_px": 538.0,
+      "median_area_px": 154052.75,
+      "iqr_area_px": 756.125
+    }
+  }
 }

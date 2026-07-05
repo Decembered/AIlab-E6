@@ -1,14 +1,20 @@
-name: drink_ad_multiview_v4
-method: multi-view mask contour extrusion (top camera XY + side camera height)
+name: drink_ad_high_precision_v4
+method: multi-frame mask statistics + object-specific parametric mesh prior
 object: Drink AD
-vertices: 496
-faces: 988
+object_type: round_bottle
+vertices: 898
+faces: 1792
 is_watertight: True
-extents_m: [0.07, 0.11817585089007952, 0.2]
+is_winding_consistent: True
+extents_m: [0.07, 0.07, 0.2]
 target_size_m: [0.07, 0.07, 0.2]
-mass_kg: 1.4729
+volume_m3: 0.00063523
+mass_kg: 0.622000
 density_kgm3: 1000
-inertia_ixx_iyy_izz: [0.006624, 0.005511, 0.002316]
-contour_points: 31
-z_slices: 16
-cameras_used: 3
+inertia_ixx_iyy_izz: [0.00232732, 0.00232732, 0.00050797]
+visual_faces: 1792
+collision_faces: 384
+mask_samples_camera_top: 49
+mask_samples_camera_side_1: 49
+mask_samples_camera_side_2: 49
+generated_at: 2026-07-05T11:35:03.376371

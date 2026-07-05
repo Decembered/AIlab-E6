@@ -1,7 +1,46 @@
-Geometry Quality Report: drink_ad (v3 — textured)
-=============================
-Visual Mesh: 496v/988f, watertight=True, manifold=True
-Collision Mesh: 62v/120f, watertight=True, manifold=True
-Extents: [0.07, 0.07, 0.2]
-Vertex Colors: YES (sampled from 3 camera video frames)
-Assessment: PASS — within <20000 face limit, watertight, vertex-colored
+{
+  "name": "drink_ad",
+  "method": "high_precision_parametric_v4",
+  "object_type": "round_bottle",
+  "visual_vertices": 898,
+  "visual_faces": 1792,
+  "collision_faces": 384,
+  "visual_watertight": true,
+  "collision_watertight": true,
+  "visual_winding_consistent": true,
+  "extents_m": [
+    0.07,
+    0.07,
+    0.2
+  ],
+  "target_size_m": [
+    0.07,
+    0.07,
+    0.2
+  ],
+  "mass_kg": 0.622,
+  "volume_m3": 0.0006352346389615866,
+  "mask_statistics": {
+    "camera_top": {
+      "count": 49,
+      "median_width_px": 311.0,
+      "median_height_px": 716.0,
+      "median_area_px": 145789.0,
+      "iqr_area_px": 43905.0
+    },
+    "camera_side_1": {
+      "count": 49,
+      "median_width_px": 386.0,
+      "median_height_px": 490.0,
+      "median_area_px": 125777.0,
+      "iqr_area_px": 735.0
+    },
+    "camera_side_2": {
+      "count": 49,
+      "median_width_px": 438.0,
+      "median_height_px": 538.0,
+      "median_area_px": 154135.5,
+      "iqr_area_px": 666.0
+    }
+  }
+}

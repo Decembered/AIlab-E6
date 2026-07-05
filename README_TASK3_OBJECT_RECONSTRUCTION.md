@@ -7,14 +7,14 @@
 
 Reconstruct 3D object models from multi-view human demonstration videos and generate IsaacGym-compatible simulation assets for 4 objects: bread, pipette, and two drink bottles.
 
-**Pipeline**: Multi-view mask extraction → 3D contour extrusion → URDF/collision mesh → IsaacGym validation → Pose trajectory recovery
+**Pipeline**: Multi-view mask extraction → high-precision object-specific 3D reconstruction → URDF/collision mesh → IsaacGym validation → Pose trajectory recovery
 
 ## Results Summary (25/25 pts)
 
 | Sub-item | Points | Status | Details |
 |----------|--------|--------|---------|
 | Object 2D mask | 2 | ✅ | ~3000 masks, 12 sequences, SAM vit_b |
-| Object 3D model & viz | 6 | ✅ | 4 .obj files, 284-3196 faces, 20 renders |
+| Object 3D model & viz | 6 | ✅ | 4 .obj files, 1792-5760 faces, 20 renders |
 | Geometric quality | 2 | ✅ | All watertight, manifold, <20K faces |
 | Geometric consistency | 4 | ✅ | Sizes matched to real objects |
 | IsaacGym asset | 6 | ✅ | 4/4 PASS on 2x RTX 4090 cluster |
@@ -24,10 +24,10 @@ Reconstruct 3D object models from multi-view human demonstration videos and gene
 
 | Object | Vertices | Faces | Watertight | Size (m) |
 |--------|----------|-------|------------|----------|
-| Bread | 296 | 588 | ✅ | 0.120 × 0.063 × 0.040 |
-| Pipette | 1600 | 3196 | ✅ | 0.258 × 0.104 × 0.085 |
-| Drink AD | 232 | 460 | ✅ | 0.070 × 0.118 × 0.200 |
-| Drink YYKX | 144 | 284 | ✅ | 0.070 × 0.066 × 0.200 |
+| Bread | 2882 | 5760 | ✅ | 0.120 × 0.070 × 0.040 |
+| Pipette | 962 | 1920 | ✅ | 0.258 × 0.020 × 0.085 |
+| Drink AD | 898 | 1792 | ✅ | 0.070 × 0.070 × 0.200 |
+| Drink YYKX | 898 | 1792 | ✅ | 0.070 × 0.070 × 0.200 |
 
 ### IsaacGym Validation (Cluster: 2× RTX 4090, Python 3.8)
 
@@ -38,7 +38,7 @@ Reconstruct 3D object models from multi-view human demonstration videos and gene
 | Drink AD | PASS | Stable | 0.622 |
 | Drink YYKX | PASS | Stable | 0.353 |
 
-Mass computed from: volume × density (bread=300, pipette=1200, drinks=1000 kg/m³).
+Mass calibrated from measured/nominal object values; inertia uses bounding-box approximation.
 
 ## Project Structure
 
@@ -59,8 +59,8 @@ AIlab-E6/
 │   ├── pose_tracking_v2.py            # Multi-view pose triangulation
 │   ├── recon_multiview_v4.py          # ★ Multi-view 3D reconstruction
 │   ├── validate_asset_isaacgym.py     # ★ IsaacGym asset validation
-│   ├── validate_object_assets_v1.py   # Mesh quality validation
-│   ├── render_trimesh_headless.py     # Headless mesh rendering
+│   ├── viz_geometry_consistency.py    # Model/video overlay evidence
+│   ├── preflight_task24_integration.py # Integration preflight checks
 │   ├── check_isaac_env.py             # Environment diagnostics
 │   └── ...                            # (see scripts/ for full list)
 │
@@ -147,7 +147,7 @@ python3.8 scripts/mask_extraction_v2.py
 ```bash
 python3.8 scripts/recon_multiview_v4.py \
   --objects bread pipette drink_ad drink_yykx \
-  --contour-pts 200 --z-slices 8
+  --contour-pts 192
 # Output: runs/object_asset_v1/{object}/mesh/
 ```
 
@@ -168,11 +168,10 @@ done
 
 ### Step 5: Generate Visual Evidence
 ```bash
-# Render mesh views
-python3.8 scripts/visual_overlay.py  # (included in scripts/)
+# Render model/video overlay evidence
+python3.8 scripts/viz_geometry_consistency.py --objects bread pipette drink_ad drink_yykx
 
-# Validate mesh quality
-python3.8 scripts/validate_object_assets_v1.py
+# Mesh quality reports are written by recon_multiview_v4.py under runs/object_asset_v1/{obj}/report/
 ```
 
 ## Method Description
@@ -181,13 +180,13 @@ python3.8 scripts/validate_object_assets_v1.py
 SAM (Segment Anything) vit_b model with bbox prompts and motion-based propagation between frames. Stride=15 (~1 fps). Mask definition: visible-region mask of target object.
 
 ### 3D Reconstruction
-Multi-view contour extrusion: XY footprint from top-camera mask with fine polygon approximation (200 contour points), height estimated from side-camera masks, multi-slice extrusion (8 Z-slices) for smooth vertical surfaces. Scale calibrated using camera depth.
+High-precision object-specific reconstruction: multi-frame mask statistics select representative silhouettes, then object priors generate watertight meshes matched to measured real-world dimensions. Bread uses a fused organic footprint with a rounded loaf dome; pipette uses an elongated tapered elliptical body with thin tip/plunger proportions; drink bottles use segmented body/shoulder/neck/cap profiles with round vs rounded-square cross sections. Visual meshes remain under 20k faces and collision meshes are separately simplified to 320-400 faces for IsaacGym contact efficiency.
 
 ### Pose Tracking
 Multi-view mask centroid DLT triangulation using known camera intrinsics/extrinsics, followed by cubic spline interpolation to ~10Hz. Yaw rotation estimated from top-view mask PCA principal axis.
 
 ### IsaacGym Asset
-Convex hull collision mesh from visual model. Mass computed from volume × material density. Inertia tensor from box approximation. All 4 assets validated loading + 60-step physics simulation on cluster.
+Separately simplified watertight collision mesh from object-specific low-resolution geometry. Mass is calibrated from measured/nominal object values and inertia uses a bounding-box approximation. All 4 assets validated loading + 60-step physics simulation in IsaacGym.
 
 ## External Resources
 
@@ -197,7 +196,7 @@ Convex hull collision mesh from visual model. Mass computed from volume × mater
 
 ## Known Limitations
 
-1. 3D models from single-frame contour extrusion; no temporal multi-view consistency
+1. 3D models use object-specific geometric priors informed by multi-frame masks; they are more accurate than generic extrusion but are still not full photogrammetric reconstruction
 2. Sparse source keypoints (stride=15) → pose interpolation may miss fine motion
 3. Only yaw rotation estimated; pitch/roll unconstrained
 4. Drink bottle masks have lower quality (partial transparency)

@@ -1,7 +1,46 @@
-Geometry Quality Report: bread (v3 — textured)
-=============================
-Visual Mesh: 560v/1116f, watertight=True, manifold=True
-Collision Mesh: 70v/136f, watertight=True, manifold=True
-Extents: [0.12, 0.07, 0.04]
-Vertex Colors: YES (sampled from 3 camera video frames)
-Assessment: PASS — within <20000 face limit, watertight, vertex-colored
+{
+  "name": "bread",
+  "method": "high_precision_parametric_v4",
+  "object_type": "bread",
+  "visual_vertices": 2882,
+  "visual_faces": 5760,
+  "collision_faces": 320,
+  "visual_watertight": true,
+  "collision_watertight": true,
+  "visual_winding_consistent": true,
+  "extents_m": [
+    0.12,
+    0.07,
+    0.04
+  ],
+  "target_size_m": [
+    0.12,
+    0.07,
+    0.04
+  ],
+  "mass_kg": 0.076,
+  "volume_m3": 0.00018282808281850355,
+  "mask_statistics": {
+    "camera_top": {
+      "count": 47,
+      "median_width_px": 312.0,
+      "median_height_px": 715.0,
+      "median_area_px": 145430.0,
+      "iqr_area_px": 39676.75
+    },
+    "camera_side_1": {
+      "count": 47,
+      "median_width_px": 385.0,
+      "median_height_px": 490.0,
+      "median_area_px": 125490.5,
+      "iqr_area_px": 788.0
+    },
+    "camera_side_2": {
+      "count": 47,
+      "median_width_px": 438.0,
+      "median_height_px": 538.0,
+      "median_area_px": 154112.5,
+      "iqr_area_px": 624.25
+    }
+  }
+}

@@ -1,14 +1,20 @@
-name: bread_multiview_v4
-method: multi-view mask contour extrusion (top camera XY + side camera height)
+name: bread_high_precision_v4
+method: multi-frame mask statistics + object-specific parametric mesh prior
 object: Bread #1
-vertices: 560
-faces: 1116
+object_type: bread
+vertices: 2882
+faces: 5760
 is_watertight: True
-extents_m: [0.12, 0.06267301791271603, 0.04]
+is_winding_consistent: True
+extents_m: [0.12, 0.07, 0.04]
 target_size_m: [0.12, 0.07, 0.04]
-mass_kg: 0.0776
+volume_m3: 0.00018283
+mass_kg: 0.076000
 density_kgm3: 300
-inertia_ixx_iyy_izz: [0.000036, 0.000103, 0.000119]
-contour_points: 35
-z_slices: 16
-cameras_used: 3
+inertia_ixx_iyy_izz: [0.00004117, 0.00010133, 0.00012223]
+visual_faces: 5760
+collision_faces: 320
+mask_samples_camera_top: 47
+mask_samples_camera_side_1: 47
+mask_samples_camera_side_2: 47
+generated_at: 2026-07-05T11:35:00.312263

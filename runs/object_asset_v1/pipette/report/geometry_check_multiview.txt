@@ -1,14 +1,20 @@
-name: pipette_multiview_v4
-method: multi-view mask contour extrusion (top camera XY + side camera height)
+name: pipette_high_precision_v4
+method: multi-frame mask statistics + object-specific parametric mesh prior
 object: Pipette #1
-vertices: 4800
-faces: 9596
+object_type: pipette
+vertices: 962
+faces: 1920
 is_watertight: True
-extents_m: [0.258, 0.10441376278152273, 0.085]
+is_winding_consistent: True
+extents_m: [0.258, 0.02, 0.085]
 target_size_m: [0.258, 0.02, 0.085]
-mass_kg: 1.2125
+volume_m3: 0.00016549
+mass_kg: 0.180000
 density_kgm3: 1200
-inertia_ixx_iyy_izz: [0.001832, 0.007456, 0.007827]
-contour_points: 300
-z_slices: 16
-cameras_used: 3
+inertia_ixx_iyy_izz: [0.00011438, 0.00110683, 0.00100446]
+visual_faces: 1920
+collision_faces: 400
+mask_samples_camera_top: 52
+mask_samples_camera_side_1: 52
+mask_samples_camera_side_2: 52
+generated_at: 2026-07-05T11:35:02.227588

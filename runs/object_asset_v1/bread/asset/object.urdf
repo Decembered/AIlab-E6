@@ -3,10 +3,10 @@
   <link name="base_link">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="0.4000"/>
-      <inertia ixx="0.00021667" ixy="0.0" ixz="0.0"
-               iyy="0.00053333" iyz="0.0"
-               izz="0.00064333"/>
+      <mass value="0.076000"/>
+      <inertia ixx="0.00004117" ixy="0.0" ixz="0.0"
+               iyy="0.00010133" iyz="0.0"
+               izz="0.00012223"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
