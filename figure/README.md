@@ -2,6 +2,11 @@
 
 This folder is a curated presentation bundle for Member C's object reconstruction work in Video2Motion2Action task 3.3 and the object-side contribution to task 3.4. It is intended for PPT roadshow, brief report, and GitHub README pages.
 
+Start here for the marked high-priority slide assets:
+
+- `RECOMMENDED_FIGURES.md`
+- `recommended/`
+
 ## Recommended PPT Order
 
 1. **Task Scope And Deliverables**
@@ -64,6 +69,7 @@ This folder is a curated presentation bundle for Member C's object reconstructio
 - `05_task24_integration/`: object-side hand-object integration frames, PPT-ready summary, and MP4 video.
 - `06_reports/`: compact markdown and JSON reports copied from canonical outputs.
 - `07_analysis_charts/`: optional radar/spider, violin, and band charts generated from task3 metadata and object pose trajectories.
+- `recommended/`: duplicated high-priority figures and demo video with numeric prefixes for PPT/GitHub insertion.
 - `manifest.json`: source-to-figure mapping for traceability.
 
 ## Important Notes
