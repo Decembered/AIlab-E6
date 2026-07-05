@@ -4,6 +4,7 @@
 > **赛道**: Track 1: Physical Intelligence, Topic T-1, Team Challenge
 > **角色**: Member C — 物体重建与资产生成 (Sub-task 3.3, 25 pts)
 > **时间**: 2026-07-04 ~ 2026-07-05
+> **最新补充**: 2026-07-05 最终展示材料、推荐图包与 task2-4 preflight
 
 ---
 
@@ -20,7 +21,7 @@
 | 3.3.5 | IsaacGym Asset 仿真资产 | 6 | ✅ |
 | 3.3.6 | Object Pose Tracking 姿态追踪 | 5 | ✅ |
 | Bonus | Articulated Models + 碰撞优化 + 物理参数 | 额外 | ✅ |
-| 3.4 | 手物联合跟踪集成 (与Member A/B协作) | 共享 | ✅ |
+| 3.4 | 物体侧 handoff、preflight、手物可视化 (与Member A/B协作) | 共享 | ✅ 对象侧完成，完整 tracking 依赖 A/B |
 | **总计** | | **25/25** | **ALL COMPLETE** |
 
 ### 处理的数据
@@ -29,6 +30,7 @@
 - **12个视频序列**: 每个序列包含3个同步相机视角（top + side_1 + side_2）的RGB视频
 - **~3000张2D掩码**: SAM vit_b 模型，stride=5 采样
 - **757帧3D轨迹**: DLT三角化 + Mesh Silhouette优化 + 卡尔曼滤波
+- **展示材料**: `figure/` 精选图包、`figure/recommended/` 重点图、PPT级合成图、定量分析图、demo mp4
 
 ---
 
@@ -56,9 +58,10 @@
 ### Phase 4: 可视化与渲染 (07-05 中午)
 - 轨迹叠加视频: 257帧 (12序列，top视角)
 - 几何一致性验证: 68帧 (4物体)
-- IsaacGym 渲染视频: 48个MP4 (12序列×4视角: persp/top/front/side)
+- IsaacGym渲染脚本与多视角可视化产物: 支持12序列×4视角 (persp/top/front/side)
 - 修复: Top视角黑屏 (gimbal lock, target +0.005 offset)
 - 修复: 视频文字叠加 (物体名/帧号/时间/3D坐标/进度条)
+- 最终展示策略: RTX4090 + IsaacGym Preview 4存在GPU渲染兼容风险，答辩图包中剔除黑屏图，以验证日志、状态卡片和有效hand-object帧视频为准
 
 ### Phase 5: 3D模型精度提升 (07-05 下午)
 
@@ -76,6 +79,17 @@
 ### Phase 6: 集成与验证 (07-05 末期)
 - 手物联合跟踪集成 (Member A/B协作)
 - task2-4 集成preflight
+- 12个序列整理为 `data/pipeline_assets/{sequence}/left_urdf/`，包含 `scan.urdf`、`scan.obj`、`left_obj.pkl`、`left_hand.pkl` 接口占位
+- 新增 `scripts/preflight_task24_integration.py`，自动检查 object/hand pkl、URDF/OBJ、timestamps、placeholder hand
+- 严格preflight明确指出当前 `left_hand.pkl` 仍为placeholder，避免把对象侧 smoke test 误报为真实 hand-object tracking
+
+### Phase 7: 答辩展示与GitHub交付整理 (07-05 最终)
+- 新建 `figure/` 展示包，精选物体资产、几何overlay、pose tracking、IsaacGym验证、task3.4对象侧联调证据
+- 清理黑屏/无效IsaacGym截图，改用验证日志和状态卡片 `isaacgym_validation_ppt.png` 展示asset可加载性
+- 新增 `figure/recommended/`，按PPT推荐顺序标记9个核心图片/视频
+- 新增 `figure/RECOMMENDED_FIGURES.md`，为每张推荐图写明用途、优先级和答辩caption
+- 新增 `figure/07_analysis_charts/`，生成蛛网图、小提琴图、轨迹稳定性条带图
+- 将 `WORK_SUMMARY.md` 同步到 `figure/06_reports/`，便于GitHub页面与个人贡献展示引用
 
 ---
 
@@ -126,7 +140,32 @@ V3: 饮料→圆柱, 面包→有机挤出+caps, 移液枪→多截面
 
 ### 3. IsaacGym渲染视频
 
-48个MP4视频，12序列×4视角 (persp/top/front/side)，动态相机追踪物体，含文字叠加 (物体名/帧号/时间/3D坐标)。
+IsaacGym asset加载与60步物理验证通过。由于IsaacGym Preview 4在RTX4090上存在GPU渲染兼容问题，黑屏/无效渲染图不作为最终展示证据；最终展示采用CPU physics验证日志、`isaacgym_validation_summary.json`、`isaacgym_validation_ppt.png` 以及有效的hand-object帧视频。
+
+### 4. Task2-4 / 3.4 对象侧接口与Preflight
+
+**贡献**:
+- 为12个序列生成pipeline handoff结构: `data/pipeline_assets/{sequence}/left_urdf/`
+- 每个序列提供 `scan.urdf`、`scan.obj`、`left_obj.pkl` 和 `left_hand.pkl` 接口文件
+- 新增 `scripts/preflight_task24_integration.py`，无需IsaacGym即可检查联调输入
+- 输出 `task24_preflight_strict.json` 和 `task24_preflight_object_only.json`
+
+**当前结论**:
+- Object-side结构完整: 12/12序列有URDF、OBJ、object pose和时间戳
+- 严格模式失败原因全部为 `left_hand.pkl_is_placeholder_or_all_zero`
+- 完整真实hand-object tracking仍需Member B替换真实手部轨迹、Member A接Sharpa rollout
+
+### 5. 展示材料与个人贡献证据包
+
+**贡献**:
+- 新建 `figure/`，集中整理答辩/PPT/GitHub可直接使用的高质量展示素材
+- 新建 `figure/recommended/`，将重点图片和demo视频按推荐顺序编号
+- 新增 `figure/RECOMMENDED_FIGURES.md`，标记每张图的展示优先级、用途与caption
+- 新增 `figure/07_analysis_charts/`，补充定量分析图:
+  - `asset_quality_radar.png`: 多指标资产质量蛛网图
+  - `trajectory_speed_violin.png`: 轨迹速度分布小提琴图
+  - `trajectory_speed_band.png`: 轨迹稳定性条带图，非GT误差图
+- 删除/排除黑屏IsaacGym截图，避免展示误导性或打不开的材料
 
 ---
 
@@ -206,9 +245,13 @@ Output: 每帧4×4变换矩阵 (位置 + yaw旋转)
 | Pose轨迹 | 12个JSON + 12个NPZ | `outputs/mask_pose/{obj}/{seq}/` |
 | 轨迹叠加 | 257帧 | `outputs/trajectory_viz/` |
 | 几何验证 | 68帧 | `outputs/geometry_viz/` |
-| IsaacGym视频 | 48个MP4 | `outputs/isaacgym_trajectory_render/` |
+| IsaacGym验证/可视化 | 验证日志 + 有效帧/视频 | `runs/object_asset_v1/`, `figure/04_isaacgym_validation/`, `figure/05_task24_integration/` |
 | 汇总图表 | 2张PNG | `outputs/object3_submission/` |
 | 提交材料 | 1份报告 + bonus报告 | `outputs/object3_submission/` |
+| PPT展示图包 | 15MB精选素材 | `figure/` |
+| 重点推荐图 | 9个图片/视频 | `figure/recommended/` |
+| 定量分析图 | 3张PNG + 数据JSON | `figure/07_analysis_charts/` |
+| 工作总结副本 | 1份Markdown | `figure/06_reports/WORK_SUMMARY.md` |
 
 ### Object Bonus (额外加分)
 
@@ -217,7 +260,7 @@ Output: 每帧4×4变换矩阵 (位置 + yaw旋转)
 
 ---
 
-## 六、Git提交记录 (52 commits)
+## 六、关键Git提交记录
 
 | Hash | 时间 | 内容 |
 |------|------|------|
@@ -250,6 +293,9 @@ _(详见 `git log --oneline --graph` 获取完整历史)_
 3. **无深度数据**: FoundationPose (RGB-D 6D pose) 无法使用，环境已就绪但缺depth
 4. **透明物体**: Drink瓶的掩码质量较低
 5. **移液枪theta_jump**: 3%帧有yaw跳变 (窄的非对称物体silhouette优化不稳定)
+6. **无GT误差曲线**: 主物体GT pose mask全False，因此不能报告真实GT tracking error；条带图仅表示轨迹速度稳定性/分布
+7. **3.4完整tracking依赖队友输出**: 当前对象侧handoff完成，但 `left_hand.pkl` 仍为placeholder，完整Sharpa tracking需Member B真实手轨迹与Member A rollout
+8. **IsaacGym GPU渲染兼容性**: RTX4090 + IsaacGym Preview 4可能出现黑屏/illegal memory access，最终展示中已剔除黑屏图，改用验证日志和状态卡片
 
 ---
 
@@ -290,6 +336,19 @@ python3.8 scripts/render_trajectory.py --all
 for obj in bread pipette drink_ad drink_yykx; do
   python3.8 scripts/validate_asset_isaacgym.py --urdf runs/object_asset_v1/$obj/asset/object.urdf
 done
+
+# 8. task2-4 / 3.4 对象侧preflight
+python3.8 scripts/preflight_task24_integration.py --root data/pipeline_assets
+python3.8 scripts/preflight_task24_integration.py --root data/pipeline_assets --allow-placeholder-hand
+```
+
+### 展示材料入口
+
+```text
+figure/README.md
+figure/RECOMMENDED_FIGURES.md
+figure/recommended/
+figure/07_analysis_charts/
 ```
 
 ---
@@ -297,4 +356,4 @@ done
 > **报告生成时间**: 2026-07-05
 > **Git仓库**: github.com/Decembered/AIlab-E6
 > **分支**: task3-object-reconstruction
-> **最终Commit**: 82a91a3
+> **最终Commit**: 以 `git log --oneline -1` 为准
