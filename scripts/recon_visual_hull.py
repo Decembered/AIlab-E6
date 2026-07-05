@@ -9,10 +9,14 @@ Input:  masks from mask_extraction_v2.py
 Output: .obj files with 500+ faces, watertight, proper scale
 """
 import os, sys, json, argparse
+from pathlib import Path
 import numpy as np
 import cv2
 import trimesh
 from scipy.spatial import ConvexHull
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src'))
+from object_recon.pose_tracking import load_intrinsics, load_extrinsics
 
 DATA_ROOT = os.environ.get('HO_TRACKER_DATA', '/mnt/workspace/Hackthon/data/human_demo')
 MASK_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'outputs', 'mask_pose')
@@ -46,10 +50,8 @@ CAMERAS = ['camera_top', 'camera_side_1', 'camera_side_2']
 
 
 def load_camera(seq, cam_name):
-    with open(os.path.join(DATA_ROOT, seq, 'camera_calib', cam_name, 'calib.json')) as f:
-        d = json.load(f)
-    K = np.array(d['K'])
-    E = np.array(d['E'])
+    K = np.asarray(load_intrinsics(Path(DATA_ROOT) / seq / 'camera_calib', cam_name), dtype='float64')
+    E = np.asarray(load_extrinsics(Path(DATA_ROOT) / seq / 'camera_calib', cam_name), dtype='float64')
     R, t = E[:3, :3], E[:3, 3]
     C = -R.T @ t
     return {'K': K, 'R': R, 't': t, 'C': C, 'P': K @ E[:3, :4]}
@@ -206,41 +208,25 @@ def main():
             print(f"  SKIP: need >=2 masks, got {len(masks)}")
             continue
         
-        # Estimate workspace bounds from masks + cameras
-        # Collect all rays from mask contours
-        positions = []
-        for cam_name, mask in masks.items():
-            cam = cams[cam_name]
-            contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-            if not contours:
-                continue
-            contour = max(contours, key=cv2.contourArea)
-            for pt in contour[:, 0]:
-                u, v = pt
-                # Back-project to some depth
-                d_cam = np.array([(u-cam['K'][0,2])/cam['K'][0,0], 
-                                  (v-cam['K'][1,2])/cam['K'][1,1], 1.0])
-                d_world = cam['R'].T @ d_cam
-                d_world /= np.linalg.norm(d_world)
-                # Intersect with Z=0 plane
-                if abs(d_world[2]) > 0.01:
-                    lam = -cam['C'][2] / d_world[2]
-                    if lam > 0 and lam < 10:
-                        pos = cam['C'] + lam * d_world
-                        positions.append(pos)
-        
-        if len(positions) < 10:
-            print(f"  SKIP: too few position estimates")
-            continue
-        
-        positions = np.array(positions)
-        
-        # Bounds from positions + expand
-        x_min, y_min, z_min = positions.min(axis=0) - 0.02
-        x_max, y_max, z_max = positions.max(axis=0) + 0.02
-        
-        # Clamp height to be above table
-        z_min = max(z_min, 0.0)
+        # Use trajectory position as center, with generous bounds
+        traj_path = os.path.join(MASK_ROOT, obj_name, seq, 'object_trajectory.json')
+        center = np.array([0.05, 0.05, 0.0])
+        if os.path.exists(traj_path):
+            with open(traj_path) as f:
+                traj_data = json.load(f)
+            if traj_data.get('trajectory'):
+                t0 = traj_data['trajectory'][0]
+                tf = t0.get('transform_4x4')
+                if tf:
+                    center = np.array([tf[0][3], tf[1][3], tf[2][3]])
+                elif 'position' in t0:
+                    center = np.array(t0['position'])
+
+        size = np.array(real_size)
+        expanding = size * 0.3
+        x_min, x_max = center[0] - size[0]/2 - expanding[0], center[0] + size[0]/2 + expanding[0]
+        y_min, y_max = max(0.0, center[1] - size[1]/2 - expanding[1]), center[1] + size[1]/2 + expanding[1]
+        z_min, z_max = center[2] - size[2]/2 - expanding[2], center[2] + size[2]/2 + expanding[2]
         
         print(f"  Bounds: X[{x_min:.3f},{x_max:.3f}] Y[{y_min:.3f},{y_max:.3f}] Z[{z_min:.3f},{z_max:.3f}]")
         
