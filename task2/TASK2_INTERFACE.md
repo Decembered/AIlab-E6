@@ -78,8 +78,15 @@ python task2/scripts/08_validate_hand_traj.py \
   --out_report task2/reports/hand_traj_validation.md
 ```
 
+Optional multi-view triangulation entry point:
+
+```bash
+python task2/scripts/15_triangulate_multiview_hand_traj.py --help
+```
+
 ## Notes For Task1 And Task3
 
 - Task1 can provide local input videos or extracted frames; this repository does not commit challenge raw data.
-- Task3 should consume `task2/outputs/trajectories/hand_traj.npz` or the by-view archived trajectory after Task2 has run locally.
-- Current baseline is MediaPipe non-metric 3D. MANO/HaMeR/SAM2 are documented extension points, not required for the committed baseline to run.
+- Task3 should consume `task2/outputs/trajectories/hand_traj.npz`, multi-view outputs, or by-view archived trajectories after Task2 has run locally.
+- Current baseline is MediaPipe non-metric 3D, with optional multi-view triangulation support when local camera/view inputs are available.
+- MANO/HaMeR/SAM2 are documented extension points, not required for the committed baseline to run.

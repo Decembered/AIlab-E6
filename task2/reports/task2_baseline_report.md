@@ -2,44 +2,44 @@
 
 ## 输入与输出
 
-- MediaPipe JSON：`task2/outputs/trajectories/mediapipe_landmarks.json`，存在：True
-- hand_traj.npz：`task2/outputs/trajectories/hand_traj.npz`，存在：True
-- 关键点 overlay 视频：`task2/outputs/videos/mediapipe_overlay.mp4`，存在：True
-- hand mask overlay 视频：`task2/outputs/overlays/hand_mask_overlay.mp4`，存在：True
-- hand mask 目录：`task2/outputs/masks/weigh_drink_yykx_left_2026_0701_0052_53_camera_side_2`，存在：True
-- 3D skeleton 视频：`task2/outputs/videos/hand_3d_skeleton.mp4`，存在：True
-- hand_traj 校验报告：`task2/reports/hand_traj_validation.md`，存在：True
-- 帧级质量审计：`task2/reports/frame_quality/frame_quality_audit.md`，存在：True
-- 帧级指标 CSV：`task2/reports/frame_quality/frame_metrics.csv`，存在：True
-- 评分审查视频：`task2/outputs/videos/task2_scoring_review.mp4`，存在：True
-- temporal refiner 应用报告：`task2/reports/temporal_refiner_apply_report.md`，存在：True
+- MediaPipe JSON：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/trajectories/mediapipe_landmarks.json`，存在：True
+- hand_traj.npz：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/trajectories/hand_traj.npz`，存在：True
+- 关键点 overlay 视频：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/videos/mediapipe_overlay.mp4`，存在：True
+- hand mask overlay 视频：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/overlays/hand_mask_overlay.mp4`，存在：True
+- hand mask 目录：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/masks`，存在：True
+- 3D skeleton 视频：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/videos/hand_3d_skeleton.mp4`，存在：True
+- hand_traj 校验报告：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/reports/hand_traj_validation.md`，存在：True
+- 帧级质量审计：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/reports/frame_quality/frame_quality_audit.md`，存在：True
+- 帧级指标 CSV：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/reports/frame_quality/frame_metrics.csv`，存在：True
+- 评分审查视频：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/videos/task2_scoring_review.mp4`，存在：True
+- temporal refiner 应用报告：`None`，存在：False
 
 ## 检测统计
 
-- 输入帧目录：`task2/data/frames/weigh_drink_yykx_left_2026_0701_0052_53_camera_side_2`
-- 输入帧数：182
-- 检测成功帧数：182
+- 输入帧目录：`task2/data/frames/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top`
+- 输入帧数：534
+- 检测成功帧数：534
 - 检测成功帧比例：100.00%
 - 缺失帧列表：[]
 
 ## 轨迹跳变统计
 
-- 轨迹帧数：182
-- 有效帧数：182
+- 轨迹帧数：534
+- 有效帧数：534
 - 有效帧比例：100.00%
 - 平滑前缺失帧列表：[]
-- wrist 平均相邻位移：0.001557
-- wrist 最大相邻位移：0.005666
-- fingertips 平均相邻位移：0.001644
-- fingertips 最大相邻位移：0.007764
+- wrist 平均相邻位移：0.003173
+- wrist 最大相邻位移：0.014599
+- fingertips 平均相邻位移：0.004683
+- fingertips 最大相邻位移：0.023414
 
 ## Mask 统计
 
-- mask 文件数：182
-- 非空 mask：182
+- mask 文件数：534
+- 非空 mask：534
 - 空 mask：0
-- 平均 mask 面积：12789.48 px
-- 最大 mask 面积：16408.00 px
+- 平均 mask 面积：11815.88 px
+- 最大 mask 面积：14091.00 px
 
 ## hand_traj.npz 字段
 
@@ -119,15 +119,15 @@
 
 ## 可视化文件路径
 
-- MediaPipe overlay：`task2/outputs/videos/mediapipe_overlay.mp4`
-- hand mask overlay：`task2/outputs/overlays/hand_mask_overlay.mp4`，当前为 coarse visible hand mask baseline，后续可替换为 SAM2。
-- hand mask 目录：`task2/outputs/masks/weigh_drink_yykx_left_2026_0701_0052_53_camera_side_2`
-- 3D skeleton 可视化：`task2/outputs/videos/hand_3d_skeleton.mp4`，当前为 MediaPipe world landmarks skeleton，非 MANO mesh。
-- hand_traj 校验报告：`task2/reports/hand_traj_validation.md`
-- 帧级质量审计：`task2/reports/frame_quality/frame_quality_audit.md`
-- 帧级指标 CSV：`task2/reports/frame_quality/frame_metrics.csv`
-- 评分审查视频：`task2/outputs/videos/task2_scoring_review.mp4`
-- temporal refiner 应用报告：`task2/reports/temporal_refiner_apply_report.md`
+- MediaPipe overlay：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/videos/mediapipe_overlay.mp4`
+- hand mask overlay：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/overlays/hand_mask_overlay.mp4`，当前为 coarse visible hand mask baseline，后续可替换为 SAM2。
+- hand mask 目录：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/masks`
+- 3D skeleton 可视化：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/videos/hand_3d_skeleton.mp4`，当前为 MediaPipe world landmarks skeleton，非 MANO mesh。
+- hand_traj 校验报告：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/reports/hand_traj_validation.md`
+- 帧级质量审计：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/reports/frame_quality/frame_quality_audit.md`
+- 帧级指标 CSV：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/reports/frame_quality/frame_metrics.csv`
+- 评分审查视频：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/videos/task2_scoring_review.mp4`
+- temporal refiner 应用报告：未传入
 
 ## 当前局限性
 

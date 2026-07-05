@@ -1,18 +1,18 @@
 # 轨迹质量简报
 
-- 输入 JSON：`task2/outputs/by_view/weigh_drink_yykx_left_2026_0701_0052_53_camera_side_2/trajectories/mediapipe_landmarks.json`
-- 输出 NPZ：`task2/outputs/by_view/weigh_drink_yykx_left_2026_0701_0052_53_camera_side_2/trajectories/hand_traj_smooth.npz`
-- 序列名：weigh_drink_yykx_left_2026_0701_0052_53_camera_side_2
+- 输入 JSON：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/trajectories/mediapipe_landmarks.json`
+- 输出 NPZ：`task2/outputs/by_view/pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top/trajectories/hand_traj_smooth.npz`
+- 序列名：pipette_rh_beaker_testtube_2026_0701_0039_28_camera_top
 - FPS：15.000
-- 总帧数：182
-- 检测成功帧数：182
+- 总帧数：534
+- 检测成功帧数：534
 - 检测成功比例：100.00%
 - 缺失帧：[]
 - 平滑窗口：5
-- wrist 跳变阈值：0.004260
-- wrist 跳变帧：[122, 124, 127]
-- 3D 骨长均值：0.026539
-- 3D 骨长标准差：0.016026
+- wrist 跳变阈值：0.012166
+- wrist 跳变帧：[127, 131, 215, 216, 217, 220, 221, 222, 225, 227, 248]
+- 3D 骨长均值：0.024647
+- 3D 骨长标准差：0.018382
 
 ## 说明
 

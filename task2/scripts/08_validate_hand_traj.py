@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from __future__ import annotations
 """校验 task2 hand_traj.npz 是否满足标准接口。"""
 
 import argparse
