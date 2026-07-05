@@ -4,12 +4,12 @@ This folder contains the current Member C object assets for task 3.3. The assets
 
 ## Objects
 
-| Folder | Object | Visual Mesh | Collision Mesh | URDF | Renders | Local IsaacGym Probe |
+| Folder | Object | Visual Mesh | Collision Mesh | URDF | Renders | IsaacGym Probe |
 |---|---|---|---|---|---|---|
-| bread | Bread #1 | `mesh/visual_mesh.obj` | `mesh/collision_mesh.obj` | `asset/object.urdf` | `renders/` | failed_local_env |
-| pipette | Pipette #1 | `mesh/visual_mesh.obj` | `mesh/collision_mesh.obj` | `asset/object.urdf` | `renders/` | failed_local_env |
-| drink_ad | Drink AD | `mesh/visual_mesh.obj` | `mesh/collision_mesh.obj` | `asset/object.urdf` | `renders/` | failed_local_env |
-| drink_yykx | Drink YYKX | `mesh/visual_mesh.obj` | `mesh/collision_mesh.obj` | `asset/object.urdf` | `renders/` | failed_local_env |
+| bread | Bread #1 | `mesh/visual_mesh.obj` | `mesh/collision_mesh.obj` | `asset/object.urdf` | `renders/` | cluster_pass_cpu_physics |
+| pipette | Pipette #1 | `mesh/visual_mesh.obj` | `mesh/collision_mesh.obj` | `asset/object.urdf` | `renders/` | cluster_pass_cpu_physics |
+| drink_ad | Drink AD | `mesh/visual_mesh.obj` | `mesh/collision_mesh.obj` | `asset/object.urdf` | `renders/` | cluster_pass_cpu_physics |
+| drink_yykx | Drink YYKX | `mesh/visual_mesh.obj` | `mesh/collision_mesh.obj` | `asset/object.urdf` | `renders/` | cluster_pass_cpu_physics |
 
 ## Units and Coordinate Convention
 
@@ -22,4 +22,5 @@ This folder contains the current Member C object assets for task 3.3. The assets
 
 - Geometry summary: `asset_summary.json`, `geometry_summary.csv`, and per-object `report/` files.
 - Render evidence: per-object `renders/front.png`, `side.png`, `top.png`, `angle.png`, `collision_angle.png`.
-- IsaacGym local probe: per-object `report/asset_check_local.log`. If local IsaacGym is unavailable, rerun the same validation on the competition cluster image.
+- IsaacGym cluster validation: `isaacgym_validation_summary.json` and per-object `asset_check.log` record 4/4 load plus 60-step CPU physics PASS on the 2x RTX 4090 cluster Python 3.8 environment.
+- Local IsaacGym probe logs remain under `report/asset_check_local.log`. A local failure only means the legacy `isaacgym` Python module is unavailable in that local environment; use the cluster validation as the submission evidence.

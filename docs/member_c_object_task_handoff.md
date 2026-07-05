@@ -8,11 +8,12 @@ the object reconstruction and pose-tracking work for Video2Motion2Action task 3.
 Current canonical evidence bundle:
 
 - Task status report: `outputs/object3_submission/member_c_task3_status_report.md`
-- Dataset inventory: `outputs/dataset_inventory.csv`
-- Geometry summary: `outputs/object3_submission/geometry_summary.csv`
-- Mask audit: `outputs/object3_submission/mask_audit.csv`
-- Render contact sheet: `outputs/object3_submission/render_contact_sheet.png`
+- Geometry summary: `outputs/object3_submission/geometry_summary.md`
+- Trajectory overview: `outputs/object3_submission/trajectory_overview_v3.png`
+- Dense trajectory overview: `outputs/object3_submission/trajectory_dense_overview_v3.png`
+- Object-side preflight result: `outputs/object3_submission/task24_preflight_object_only.json`
 - Canonical object assets: `runs/object_asset_v1/`
+- Task 2-4 handoff package: `data/pipeline_assets/`
 
 Current canonical scripts:
 
@@ -20,6 +21,7 @@ Current canonical scripts:
 - Prompt-free pose tracking entrypoint: `scripts/phase5_mask_depth_pose.py`
 - Pose tracking implementation: `src/object_recon/pose_tracking.py`
 - Synthetic checks: `scripts/test_mask_depth_pose.py`
+- Task 2-4 integration preflight: `scripts/preflight_task24_integration.py`
 
 Recommended Python for local object work:
 
@@ -82,8 +84,7 @@ Most relevant files:
 - `trajectory_plot.png`
 - `debug_overlay/frame_000115.png`
 
-Important: older files named `object_trajectory_mask_pose.*` are legacy/fallback
-outputs. For the current Phase 5 story, prefer `object_trajectory_multiview_pose.*`.
+Important: `object_trajectory.json` is the canonical integration filename. Older files named `object_trajectory_mask_pose.*` are legacy/fallback outputs. Some sequences also keep `object_trajectory_multiview_pose.*` as provenance, but downstream code should consume `object_trajectory.json`.
 
 ## Reproduce The Current Evidence Bundle
 
@@ -100,15 +101,14 @@ This regenerates:
 - per-object render images
 - per-object local IsaacGym probe logs
 
-Local IsaacGym probe currently fails because this environment does not have the
-legacy `isaacgym` Python module. That is recorded in:
+Local IsaacGym probe can fail if the environment does not have the legacy
+`isaacgym` Python module. That is recorded in:
 
 ```text
 runs/object_asset_v1/<object>/report/asset_check_local.log
 ```
 
-Run the same validation on the cluster IsaacGym Python 3.8 environment before
-claiming IsaacGym asset load success.
+Cluster IsaacGym Python 3.8 validation has been recorded in `runs/object_asset_v1/isaacgym_validation_summary.json` and per-object `asset_check.log` files: 4/4 object assets load and run 60-step CPU physics successfully.
 
 ## Reproduce Dataset Inventory And Pose Tracking
 
@@ -141,30 +141,26 @@ python3.8 scripts/test_mask_depth_pose.py
 
 ## What Is Not Done
 
-Still incomplete:
+Object-side task 3.3 is complete enough for handoff. The remaining work is integration-side:
 
-- Stable continuous object masks for pipette, drink_ad, and drink_yykx.
-- Full-sequence object pose trajectories for all four objects.
-- Cluster IsaacGym validation logs for all four URDFs.
-- Strong video-overlay/scale evidence for pipette and drinks.
-- Object Bonus articulated modeling, especially a pipette plunger/button joint.
+- Replace placeholder `left_hand.pkl` files in `data/pipeline_assets/{sequence}/left_urdf/` with Member B's real hand reconstruction or Sharpa-retargeted trajectories.
+- Run real hand-object replay/tracking with moving hand DOFs; current object-side verification replays object trajectories and uses a fixed hand pose for compatibility checks.
+- Replace Inspire hand in `scripts/verify_hand_object_joint.py` with Sharpa hand once the Sharpa URDF and DOF mapping are finalized by Members A/B.
+- Re-run the task 2-4 preflight check after hand trajectories are dropped in.
 
 Why:
 
-- Fixed-coordinate SAM prompts fail on long sequences.
-- Current masks for pipette and drinks are too large and often include hand or
-  background.
-- The current dataset has no depth frames.
-- Primary GT object poses are intentionally invalidated by all-false masks.
+- Object GT poses are unavailable for primary objects, so the object trajectory is video-derived.
+- The current `left_hand.pkl` files are intentionally zero placeholders so the package shape matches HO-Tracker conventions before Member B's data is available.
+- Full task 3.4 success requires Members A/B outputs: Sharpa asset support, hand reconstruction, retargeting, and rollout evaluation.
 
 ## Next Best Actions
 
-1. Run URDF load validation on the cluster IsaacGym Python 3.8 environment.
-2. Build dynamic mask propagation for one sequence per object.
-3. Re-run `multi_view_mask_pose` once at least two calibrated views have usable
-   masks for the same frames.
-4. Add mesh projection/video overlay evidence for pipette and drinks.
-5. Add pipette articulated URDF only after the base 3.3 deliverables are stable.
+1. Ask Member B for real `left_hand.pkl` trajectories with documented shape, DOF order, and timestamps.
+2. Run `python3.8 scripts/preflight_task24_integration.py --root data/pipeline_assets`.
+3. Start with one representative sequence such as `weigh_bread__2026_0701_0044_30` or `grasp_pipette_press__2026_0701_0028_11`.
+4. Verify real hand-object replay before moving to Sharpa tracking rollout.
+5. Keep `outputs/pose_tracking/` deprecated; use `outputs/mask_pose/` for all object trajectories.
 
 ## Git Hygiene
 

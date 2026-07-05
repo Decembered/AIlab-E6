@@ -1,0 +1,358 @@
+{
+  "root": "/mnt/workspace/AIlab-E6/data/pipeline_assets",
+  "allow_placeholder_hand": true,
+  "total": 12,
+  "pass": 0,
+  "warn": 12,
+  "fail": 0,
+  "results": [
+    {
+      "sequence": "grasp_drink_yykx__2026_0701_0054_45",
+      "status": "WARN",
+      "errors": [],
+      "warnings": [
+        "left_hand.pkl_is_placeholder_or_all_zero"
+      ],
+      "files": {
+        "scan.urdf": true,
+        "scan.obj": true,
+        "left_obj.pkl": true,
+        "left_hand.pkl": true
+      },
+      "obj_pose_shape": [
+        174,
+        7
+      ],
+      "obj_timestamps_shape": [
+        174
+      ],
+      "hand_pose_shape": [
+        174,
+        51
+      ],
+      "hand_timestamps_shape": [
+        174
+      ],
+      "max_timestamp_delta_s": 0.0
+    },
+    {
+      "sequence": "grasp_pipette_press__2026_0701_0028_11",
+      "status": "WARN",
+      "errors": [],
+      "warnings": [
+        "left_hand.pkl_is_placeholder_or_all_zero"
+      ],
+      "files": {
+        "scan.urdf": true,
+        "scan.obj": true,
+        "left_obj.pkl": true,
+        "left_hand.pkl": true
+      },
+      "obj_pose_shape": [
+        207,
+        7
+      ],
+      "obj_timestamps_shape": [
+        207
+      ],
+      "hand_pose_shape": [
+        207,
+        51
+      ],
+      "hand_timestamps_shape": [
+        207
+      ],
+      "max_timestamp_delta_s": 0.0
+    },
+    {
+      "sequence": "grasp_pipette_rotate__2026_0701_0025_42",
+      "status": "WARN",
+      "errors": [],
+      "warnings": [
+        "left_hand.pkl_is_placeholder_or_all_zero"
+      ],
+      "files": {
+        "scan.urdf": true,
+        "scan.obj": true,
+        "left_obj.pkl": true,
+        "left_hand.pkl": true
+      },
+      "obj_pose_shape": [
+        234,
+        7
+      ],
+      "obj_timestamps_shape": [
+        234
+      ],
+      "hand_pose_shape": [
+        234,
+        51
+      ],
+      "hand_timestamps_shape": [
+        234
+      ],
+      "max_timestamp_delta_s": 0.0
+    },
+    {
+      "sequence": "grasp_pipette_stand__2026_0701_0019_19",
+      "status": "WARN",
+      "errors": [],
+      "warnings": [
+        "left_hand.pkl_is_placeholder_or_all_zero"
+      ],
+      "files": {
+        "scan.urdf": true,
+        "scan.obj": true,
+        "left_obj.pkl": true,
+        "left_hand.pkl": true
+      },
+      "obj_pose_shape": [
+        171,
+        7
+      ],
+      "obj_timestamps_shape": [
+        171
+      ],
+      "hand_pose_shape": [
+        171,
+        51
+      ],
+      "hand_timestamps_shape": [
+        171
+      ],
+      "max_timestamp_delta_s": 0.0
+    },
+    {
+      "sequence": "pipette_rh_beaker__2026_0701_0035_47",
+      "status": "WARN",
+      "errors": [],
+      "warnings": [
+        "left_hand.pkl_is_placeholder_or_all_zero"
+      ],
+      "files": {
+        "scan.urdf": true,
+        "scan.obj": true,
+        "left_obj.pkl": true,
+        "left_hand.pkl": true
+      },
+      "obj_pose_shape": [
+        471,
+        7
+      ],
+      "obj_timestamps_shape": [
+        471
+      ],
+      "hand_pose_shape": [
+        471,
+        51
+      ],
+      "hand_timestamps_shape": [
+        471
+      ],
+      "max_timestamp_delta_s": 0.0
+    },
+    {
+      "sequence": "pipette_rh_beaker_testtube__2026_0701_0039_28",
+      "status": "WARN",
+      "errors": [],
+      "warnings": [
+        "left_hand.pkl_is_placeholder_or_all_zero"
+      ],
+      "files": {
+        "scan.urdf": true,
+        "scan.obj": true,
+        "left_obj.pkl": true,
+        "left_hand.pkl": true
+      },
+      "obj_pose_shape": [
+        351,
+        7
+      ],
+      "obj_timestamps_shape": [
+        351
+      ],
+      "hand_pose_shape": [
+        351,
+        51
+      ],
+      "hand_timestamps_shape": [
+        351
+      ],
+      "max_timestamp_delta_s": 0.0
+    },
+    {
+      "sequence": "weigh_bread__2026_0701_0044_30",
+      "status": "WARN",
+      "errors": [],
+      "warnings": [
+        "left_hand.pkl_is_placeholder_or_all_zero"
+      ],
+      "files": {
+        "scan.urdf": true,
+        "scan.obj": true,
+        "left_obj.pkl": true,
+        "left_hand.pkl": true
+      },
+      "obj_pose_shape": [
+        154,
+        7
+      ],
+      "obj_timestamps_shape": [
+        154
+      ],
+      "hand_pose_shape": [
+        154,
+        51
+      ],
+      "hand_timestamps_shape": [
+        154
+      ],
+      "max_timestamp_delta_s": 0.0
+    },
+    {
+      "sequence": "weigh_bread__left__2026_0701_0046_02",
+      "status": "WARN",
+      "errors": [],
+      "warnings": [
+        "left_hand.pkl_is_placeholder_or_all_zero"
+      ],
+      "files": {
+        "scan.urdf": true,
+        "scan.obj": true,
+        "left_obj.pkl": true,
+        "left_hand.pkl": true
+      },
+      "obj_pose_shape": [
+        144,
+        7
+      ],
+      "obj_timestamps_shape": [
+        144
+      ],
+      "hand_pose_shape": [
+        144,
+        51
+      ],
+      "hand_timestamps_shape": [
+        144
+      ],
+      "max_timestamp_delta_s": 0.0
+    },
+    {
+      "sequence": "weigh_drink_ad__2026_0701_0047_56",
+      "status": "WARN",
+      "errors": [],
+      "warnings": [
+        "left_hand.pkl_is_placeholder_or_all_zero"
+      ],
+      "files": {
+        "scan.urdf": true,
+        "scan.obj": true,
+        "left_obj.pkl": true,
+        "left_hand.pkl": true
+      },
+      "obj_pose_shape": [
+        161,
+        7
+      ],
+      "obj_timestamps_shape": [
+        161
+      ],
+      "hand_pose_shape": [
+        161,
+        51
+      ],
+      "hand_timestamps_shape": [
+        161
+      ],
+      "max_timestamp_delta_s": 0.0
+    },
+    {
+      "sequence": "weigh_drink_ad__left__2026_0701_0049_04",
+      "status": "WARN",
+      "errors": [],
+      "warnings": [
+        "left_hand.pkl_is_placeholder_or_all_zero"
+      ],
+      "files": {
+        "scan.urdf": true,
+        "scan.obj": true,
+        "left_obj.pkl": true,
+        "left_hand.pkl": true
+      },
+      "obj_pose_shape": [
+        137,
+        7
+      ],
+      "obj_timestamps_shape": [
+        137
+      ],
+      "hand_pose_shape": [
+        137,
+        51
+      ],
+      "hand_timestamps_shape": [
+        137
+      ],
+      "max_timestamp_delta_s": 0.0
+    },
+    {
+      "sequence": "weigh_drink_yykx__2026_0701_0051_12",
+      "status": "WARN",
+      "errors": [],
+      "warnings": [
+        "left_hand.pkl_is_placeholder_or_all_zero"
+      ],
+      "files": {
+        "scan.urdf": true,
+        "scan.obj": true,
+        "left_obj.pkl": true,
+        "left_hand.pkl": true
+      },
+      "obj_pose_shape": [
+        161,
+        7
+      ],
+      "obj_timestamps_shape": [
+        161
+      ],
+      "hand_pose_shape": [
+        161,
+        51
+      ],
+      "hand_timestamps_shape": [
+        161
+      ],
+      "max_timestamp_delta_s": 0.0
+    },
+    {
+      "sequence": "weigh_drink_yykx__left__2026_0701_0052_53",
+      "status": "WARN",
+      "errors": [],
+      "warnings": [
+        "left_hand.pkl_is_placeholder_or_all_zero"
+      ],
+      "files": {
+        "scan.urdf": true,
+        "scan.obj": true,
+        "left_obj.pkl": true,
+        "left_hand.pkl": true
+      },
+      "obj_pose_shape": [
+        121,
+        7
+      ],
+      "obj_timestamps_shape": [
+        121
+      ],
+      "hand_pose_shape": [
+        121,
+        51
+      ],
+      "hand_timestamps_shape": [
+        121
+      ],
+      "max_timestamp_delta_s": 0.0
+    }
+  ]
+}
