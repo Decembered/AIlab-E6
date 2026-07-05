@@ -1,0 +1,402 @@
+{
+  "purpose": "Curated figures for Member C / Task 3 object reconstruction, asset validation, pose tracking, and task 2-4 integration handoff.",
+  "generated_files": [
+    "figure/01_asset_renders/bread_angle.png",
+    "figure/01_asset_renders/bread_front.png",
+    "figure/01_asset_renders/bread_top.png",
+    "figure/01_asset_renders/bread_collision_angle.png",
+    "figure/04_isaacgym_validation/bread_isaacgym_front.png",
+    "figure/04_isaacgym_validation/bread_isaacgym_angle.png",
+    "figure/04_isaacgym_validation/bread_asset_check.log",
+    "figure/01_asset_renders/pipette_angle.png",
+    "figure/01_asset_renders/pipette_front.png",
+    "figure/01_asset_renders/pipette_top.png",
+    "figure/01_asset_renders/pipette_collision_angle.png",
+    "figure/04_isaacgym_validation/pipette_isaacgym_front.png",
+    "figure/04_isaacgym_validation/pipette_isaacgym_angle.png",
+    "figure/04_isaacgym_validation/pipette_asset_check.log",
+    "figure/01_asset_renders/drink_ad_angle.png",
+    "figure/01_asset_renders/drink_ad_front.png",
+    "figure/01_asset_renders/drink_ad_top.png",
+    "figure/01_asset_renders/drink_ad_collision_angle.png",
+    "figure/04_isaacgym_validation/drink_ad_isaacgym_front.png",
+    "figure/04_isaacgym_validation/drink_ad_isaacgym_angle.png",
+    "figure/04_isaacgym_validation/drink_ad_asset_check.log",
+    "figure/01_asset_renders/drink_yykx_angle.png",
+    "figure/01_asset_renders/drink_yykx_front.png",
+    "figure/01_asset_renders/drink_yykx_top.png",
+    "figure/01_asset_renders/drink_yykx_collision_angle.png",
+    "figure/04_isaacgym_validation/drink_yykx_isaacgym_front.png",
+    "figure/04_isaacgym_validation/drink_yykx_isaacgym_angle.png",
+    "figure/04_isaacgym_validation/drink_yykx_asset_check.log",
+    "figure/02_video_overlays/bread_camera_top_overlay.jpg",
+    "figure/02_video_overlays/bread_camera_side_1_overlay.jpg",
+    "figure/02_video_overlays/bread_camera_side_2_overlay.jpg",
+    "figure/02_video_overlays/bread_temporal_t0.jpg",
+    "figure/02_video_overlays/bread_temporal_t2.jpg",
+    "figure/02_video_overlays/bread_temporal_t4.jpg",
+    "figure/02_video_overlays/pipette_camera_top_overlay.jpg",
+    "figure/02_video_overlays/pipette_camera_side_1_overlay.jpg",
+    "figure/02_video_overlays/pipette_camera_side_2_overlay.jpg",
+    "figure/02_video_overlays/pipette_temporal_t0.jpg",
+    "figure/02_video_overlays/pipette_temporal_t2.jpg",
+    "figure/02_video_overlays/pipette_temporal_t4.jpg",
+    "figure/02_video_overlays/drink_ad_camera_top_overlay.jpg",
+    "figure/02_video_overlays/drink_ad_camera_side_1_overlay.jpg",
+    "figure/02_video_overlays/drink_ad_camera_side_2_overlay.jpg",
+    "figure/02_video_overlays/drink_ad_temporal_t0.jpg",
+    "figure/02_video_overlays/drink_ad_temporal_t2.jpg",
+    "figure/02_video_overlays/drink_ad_temporal_t4.jpg",
+    "figure/02_video_overlays/drink_yykx_camera_top_overlay.jpg",
+    "figure/02_video_overlays/drink_yykx_camera_side_1_overlay.jpg",
+    "figure/02_video_overlays/drink_yykx_camera_side_2_overlay.jpg",
+    "figure/02_video_overlays/drink_yykx_temporal_t0.jpg",
+    "figure/02_video_overlays/drink_yykx_temporal_t2.jpg",
+    "figure/02_video_overlays/drink_yykx_temporal_t4.jpg",
+    "figure/03_pose_tracking/trajectory_overview_v3.png",
+    "figure/03_pose_tracking/trajectory_dense_overview_v3.png",
+    "figure/04_isaacgym_validation/isaacgym_validation_summary.json",
+    "figure/05_task24_integration/hand_object_joint_render.png",
+    "figure/05_task24_integration/hand_object_joint_frames.mp4",
+    "figure/05_task24_integration/joint_frame_00_step000.png",
+    "figure/05_task24_integration/joint_frame_01_step020.png",
+    "figure/05_task24_integration/joint_frame_02_step040.png",
+    "figure/05_task24_integration/bread_step000.png",
+    "figure/05_task24_integration/bread_step075.png",
+    "figure/05_task24_integration/bread_step119.png",
+    "figure/05_task24_integration/pipette_step000.png",
+    "figure/05_task24_integration/pipette_step075.png",
+    "figure/05_task24_integration/pipette_step119.png",
+    "figure/06_reports/member_c_task3_status_report.md",
+    "figure/06_reports/geometry_summary.md",
+    "figure/06_reports/object_bonus_report.md",
+    "figure/06_reports/isaacgym_rendering_note.md",
+    "figure/06_reports/task24_preflight_strict.json",
+    "figure/06_reports/task24_preflight_object_only.json",
+    "figure/06_reports/asset_summary.json",
+    "figure/06_reports/object_asset_v1_README.md",
+    "figure/06_reports/member_c_object_task_handoff.md",
+    "figure/01_asset_renders/asset_renders_contact_sheet.png",
+    "figure/02_video_overlays/video_overlay_contact_sheet.png",
+    "figure/04_isaacgym_validation/isaacgym_asset_contact_sheet.png",
+    "figure/05_task24_integration/hand_object_joint_contact_sheet.png"
+  ],
+  "source_map": [
+    {
+      "source": "runs/object_asset_v1/bread/renders/angle.png",
+      "figure": "figure/01_asset_renders/bread_angle.png"
+    },
+    {
+      "source": "runs/object_asset_v1/bread/renders/front.png",
+      "figure": "figure/01_asset_renders/bread_front.png"
+    },
+    {
+      "source": "runs/object_asset_v1/bread/renders/top.png",
+      "figure": "figure/01_asset_renders/bread_top.png"
+    },
+    {
+      "source": "runs/object_asset_v1/bread/renders/collision_angle.png",
+      "figure": "figure/01_asset_renders/bread_collision_angle.png"
+    },
+    {
+      "source": "runs/object_asset_v1/bread/renders_isaacgym/front.png",
+      "figure": "figure/04_isaacgym_validation/bread_isaacgym_front.png"
+    },
+    {
+      "source": "runs/object_asset_v1/bread/renders_isaacgym/angle.png",
+      "figure": "figure/04_isaacgym_validation/bread_isaacgym_angle.png"
+    },
+    {
+      "source": "runs/object_asset_v1/bread/asset_check.log",
+      "figure": "figure/04_isaacgym_validation/bread_asset_check.log"
+    },
+    {
+      "source": "runs/object_asset_v1/pipette/renders/angle.png",
+      "figure": "figure/01_asset_renders/pipette_angle.png"
+    },
+    {
+      "source": "runs/object_asset_v1/pipette/renders/front.png",
+      "figure": "figure/01_asset_renders/pipette_front.png"
+    },
+    {
+      "source": "runs/object_asset_v1/pipette/renders/top.png",
+      "figure": "figure/01_asset_renders/pipette_top.png"
+    },
+    {
+      "source": "runs/object_asset_v1/pipette/renders/collision_angle.png",
+      "figure": "figure/01_asset_renders/pipette_collision_angle.png"
+    },
+    {
+      "source": "runs/object_asset_v1/pipette/renders_isaacgym/front.png",
+      "figure": "figure/04_isaacgym_validation/pipette_isaacgym_front.png"
+    },
+    {
+      "source": "runs/object_asset_v1/pipette/renders_isaacgym/angle.png",
+      "figure": "figure/04_isaacgym_validation/pipette_isaacgym_angle.png"
+    },
+    {
+      "source": "runs/object_asset_v1/pipette/asset_check.log",
+      "figure": "figure/04_isaacgym_validation/pipette_asset_check.log"
+    },
+    {
+      "source": "runs/object_asset_v1/drink_ad/renders/angle.png",
+      "figure": "figure/01_asset_renders/drink_ad_angle.png"
+    },
+    {
+      "source": "runs/object_asset_v1/drink_ad/renders/front.png",
+      "figure": "figure/01_asset_renders/drink_ad_front.png"
+    },
+    {
+      "source": "runs/object_asset_v1/drink_ad/renders/top.png",
+      "figure": "figure/01_asset_renders/drink_ad_top.png"
+    },
+    {
+      "source": "runs/object_asset_v1/drink_ad/renders/collision_angle.png",
+      "figure": "figure/01_asset_renders/drink_ad_collision_angle.png"
+    },
+    {
+      "source": "runs/object_asset_v1/drink_ad/renders_isaacgym/front.png",
+      "figure": "figure/04_isaacgym_validation/drink_ad_isaacgym_front.png"
+    },
+    {
+      "source": "runs/object_asset_v1/drink_ad/renders_isaacgym/angle.png",
+      "figure": "figure/04_isaacgym_validation/drink_ad_isaacgym_angle.png"
+    },
+    {
+      "source": "runs/object_asset_v1/drink_ad/asset_check.log",
+      "figure": "figure/04_isaacgym_validation/drink_ad_asset_check.log"
+    },
+    {
+      "source": "runs/object_asset_v1/drink_yykx/renders/angle.png",
+      "figure": "figure/01_asset_renders/drink_yykx_angle.png"
+    },
+    {
+      "source": "runs/object_asset_v1/drink_yykx/renders/front.png",
+      "figure": "figure/01_asset_renders/drink_yykx_front.png"
+    },
+    {
+      "source": "runs/object_asset_v1/drink_yykx/renders/top.png",
+      "figure": "figure/01_asset_renders/drink_yykx_top.png"
+    },
+    {
+      "source": "runs/object_asset_v1/drink_yykx/renders/collision_angle.png",
+      "figure": "figure/01_asset_renders/drink_yykx_collision_angle.png"
+    },
+    {
+      "source": "runs/object_asset_v1/drink_yykx/renders_isaacgym/front.png",
+      "figure": "figure/04_isaacgym_validation/drink_yykx_isaacgym_front.png"
+    },
+    {
+      "source": "runs/object_asset_v1/drink_yykx/renders_isaacgym/angle.png",
+      "figure": "figure/04_isaacgym_validation/drink_yykx_isaacgym_angle.png"
+    },
+    {
+      "source": "runs/object_asset_v1/drink_yykx/asset_check.log",
+      "figure": "figure/04_isaacgym_validation/drink_yykx_asset_check.log"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/bread_camera_top_overlay.jpg",
+      "figure": "figure/02_video_overlays/bread_camera_top_overlay.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/bread_camera_side_1_overlay.jpg",
+      "figure": "figure/02_video_overlays/bread_camera_side_1_overlay.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/bread_camera_side_2_overlay.jpg",
+      "figure": "figure/02_video_overlays/bread_camera_side_2_overlay.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/bread_overlay_t0.jpg",
+      "figure": "figure/02_video_overlays/bread_temporal_t0.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/bread_overlay_t2.jpg",
+      "figure": "figure/02_video_overlays/bread_temporal_t2.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/bread_overlay_t4.jpg",
+      "figure": "figure/02_video_overlays/bread_temporal_t4.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/pipette_camera_top_overlay.jpg",
+      "figure": "figure/02_video_overlays/pipette_camera_top_overlay.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/pipette_camera_side_1_overlay.jpg",
+      "figure": "figure/02_video_overlays/pipette_camera_side_1_overlay.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/pipette_camera_side_2_overlay.jpg",
+      "figure": "figure/02_video_overlays/pipette_camera_side_2_overlay.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/pipette_overlay_t0.jpg",
+      "figure": "figure/02_video_overlays/pipette_temporal_t0.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/pipette_overlay_t2.jpg",
+      "figure": "figure/02_video_overlays/pipette_temporal_t2.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/pipette_overlay_t4.jpg",
+      "figure": "figure/02_video_overlays/pipette_temporal_t4.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/drink_ad_camera_top_overlay.jpg",
+      "figure": "figure/02_video_overlays/drink_ad_camera_top_overlay.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/drink_ad_camera_side_1_overlay.jpg",
+      "figure": "figure/02_video_overlays/drink_ad_camera_side_1_overlay.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/drink_ad_camera_side_2_overlay.jpg",
+      "figure": "figure/02_video_overlays/drink_ad_camera_side_2_overlay.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/drink_ad_overlay_t0.jpg",
+      "figure": "figure/02_video_overlays/drink_ad_temporal_t0.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/drink_ad_overlay_t2.jpg",
+      "figure": "figure/02_video_overlays/drink_ad_temporal_t2.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/drink_ad_overlay_t4.jpg",
+      "figure": "figure/02_video_overlays/drink_ad_temporal_t4.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/drink_yykx_camera_top_overlay.jpg",
+      "figure": "figure/02_video_overlays/drink_yykx_camera_top_overlay.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/drink_yykx_camera_side_1_overlay.jpg",
+      "figure": "figure/02_video_overlays/drink_yykx_camera_side_1_overlay.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/drink_yykx_camera_side_2_overlay.jpg",
+      "figure": "figure/02_video_overlays/drink_yykx_camera_side_2_overlay.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/drink_yykx_overlay_t0.jpg",
+      "figure": "figure/02_video_overlays/drink_yykx_temporal_t0.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/drink_yykx_overlay_t2.jpg",
+      "figure": "figure/02_video_overlays/drink_yykx_temporal_t2.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/visual_overlay/drink_yykx_overlay_t4.jpg",
+      "figure": "figure/02_video_overlays/drink_yykx_temporal_t4.jpg"
+    },
+    {
+      "source": "outputs/object3_submission/trajectory_overview_v3.png",
+      "figure": "figure/03_pose_tracking/trajectory_overview_v3.png"
+    },
+    {
+      "source": "outputs/object3_submission/trajectory_dense_overview_v3.png",
+      "figure": "figure/03_pose_tracking/trajectory_dense_overview_v3.png"
+    },
+    {
+      "source": "runs/object_asset_v1/isaacgym_validation_summary.json",
+      "figure": "figure/04_isaacgym_validation/isaacgym_validation_summary.json"
+    },
+    {
+      "source": "outputs/object3_submission/hand_object_joint_render.png",
+      "figure": "figure/05_task24_integration/hand_object_joint_render.png"
+    },
+    {
+      "source": "outputs/object3_submission/hand_object_joint_frames.mp4",
+      "figure": "figure/05_task24_integration/hand_object_joint_frames.mp4"
+    },
+    {
+      "source": "outputs/object3_submission/hand_object_joint_frames/joint_frame_00_step000.png",
+      "figure": "figure/05_task24_integration/joint_frame_00_step000.png"
+    },
+    {
+      "source": "outputs/object3_submission/hand_object_joint_frames/joint_frame_01_step020.png",
+      "figure": "figure/05_task24_integration/joint_frame_01_step020.png"
+    },
+    {
+      "source": "outputs/object3_submission/hand_object_joint_frames/joint_frame_02_step040.png",
+      "figure": "figure/05_task24_integration/joint_frame_02_step040.png"
+    },
+    {
+      "source": "outputs/object3_submission/hand_object_joint_frames/bread_step000.png",
+      "figure": "figure/05_task24_integration/bread_step000.png"
+    },
+    {
+      "source": "outputs/object3_submission/hand_object_joint_frames/bread_step075.png",
+      "figure": "figure/05_task24_integration/bread_step075.png"
+    },
+    {
+      "source": "outputs/object3_submission/hand_object_joint_frames/bread_step119.png",
+      "figure": "figure/05_task24_integration/bread_step119.png"
+    },
+    {
+      "source": "outputs/object3_submission/hand_object_joint_frames/pipette_step000.png",
+      "figure": "figure/05_task24_integration/pipette_step000.png"
+    },
+    {
+      "source": "outputs/object3_submission/hand_object_joint_frames/pipette_step075.png",
+      "figure": "figure/05_task24_integration/pipette_step075.png"
+    },
+    {
+      "source": "outputs/object3_submission/hand_object_joint_frames/pipette_step119.png",
+      "figure": "figure/05_task24_integration/pipette_step119.png"
+    },
+    {
+      "source": "outputs/object3_submission/member_c_task3_status_report.md",
+      "figure": "figure/06_reports/member_c_task3_status_report.md"
+    },
+    {
+      "source": "outputs/object3_submission/geometry_summary.md",
+      "figure": "figure/06_reports/geometry_summary.md"
+    },
+    {
+      "source": "outputs/object3_submission/object_bonus_report.md",
+      "figure": "figure/06_reports/object_bonus_report.md"
+    },
+    {
+      "source": "outputs/object3_submission/isaacgym_rendering_note.md",
+      "figure": "figure/06_reports/isaacgym_rendering_note.md"
+    },
+    {
+      "source": "outputs/object3_submission/task24_preflight_strict.json",
+      "figure": "figure/06_reports/task24_preflight_strict.json"
+    },
+    {
+      "source": "outputs/object3_submission/task24_preflight_object_only.json",
+      "figure": "figure/06_reports/task24_preflight_object_only.json"
+    },
+    {
+      "source": "runs/object_asset_v1/asset_summary.json",
+      "figure": "figure/06_reports/asset_summary.json"
+    },
+    {
+      "source": "runs/object_asset_v1/README.md",
+      "figure": "figure/06_reports/object_asset_v1_README.md"
+    },
+    {
+      "source": "docs/member_c_object_task_handoff.md",
+      "figure": "figure/06_reports/member_c_object_task_handoff.md"
+    },
+    {
+      "source": "generated",
+      "figure": "figure/01_asset_renders/asset_renders_contact_sheet.png"
+    },
+    {
+      "source": "generated",
+      "figure": "figure/02_video_overlays/video_overlay_contact_sheet.png"
+    },
+    {
+      "source": "generated",
+      "figure": "figure/04_isaacgym_validation/isaacgym_asset_contact_sheet.png"
+    },
+    {
+      "source": "generated",
+      "figure": "figure/05_task24_integration/hand_object_joint_contact_sheet.png"
+    }
+  ]
+}

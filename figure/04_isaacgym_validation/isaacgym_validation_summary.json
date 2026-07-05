@@ -1,0 +1,41 @@
+{
+  "validated_at": "2026-07-05T07:10:01.269768",
+  "platform": "NVIDIA GeForce RTX 4090 x2 (cluster)",
+  "python": "3.8",
+  "isaacgym": "Preview 4",
+  "results": {
+    "bread": {
+      "load": "PASS",
+      "bodies": 1,
+      "shapes": 1,
+      "physics_60_steps": "PASS",
+      "stable": true,
+      "no_nan": true
+    },
+    "pipette": {
+      "load": "PASS",
+      "bodies": 1,
+      "shapes": 1,
+      "physics_60_steps": "PASS",
+      "stable": true,
+      "no_nan": true
+    },
+    "drink_ad": {
+      "load": "PASS",
+      "bodies": 1,
+      "shapes": 1,
+      "physics_60_steps": "PASS",
+      "stable": true,
+      "no_nan": true
+    },
+    "drink_yykx": {
+      "load": "PASS",
+      "bodies": 1,
+      "shapes": 1,
+      "physics_60_steps": "PASS",
+      "stable": true,
+      "no_nan": true
+    }
+  },
+  "all_pass": true
+}
