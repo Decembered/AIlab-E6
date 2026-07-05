@@ -35,6 +35,12 @@ This folder is a curated presentation bundle for Member C's object reconstructio
    - Use: `06_reports/task24_preflight_object_only.json`
    - Message: Object-side inputs pass structure checks. Full task 2-4 integration still requires Member B's real hand trajectory because current `left_hand.pkl` files are placeholders.
 
+8. **Optional Quantitative Analysis Charts**
+   - Use: `07_analysis_charts/asset_quality_radar.png`
+   - Use: `07_analysis_charts/trajectory_speed_violin.png`
+   - Use with caution: `07_analysis_charts/trajectory_speed_band.png`
+   - Message: Radar/spider chart summarizes multi-metric asset quality; violin plot summarizes object trajectory speed distributions. The band plot shows trajectory variation/stability, not ground-truth error.
+
 ## Scoring Mapping
 
 | Requirement | Evidence |
@@ -47,6 +53,7 @@ This folder is a curated presentation bundle for Member C's object reconstructio
 | Object pose tracking | `03_pose_tracking/pose_tracking_ppt.png`; `03_pose_tracking/trajectory_overview_v3.png`; `03_pose_tracking/trajectory_dense_overview_v3.png` |
 | Task 3.4 object-side handoff | `05_task24_integration/task34_integration_ppt.png`; `05_task24_integration/hand_object_joint_frames.mp4`; `06_reports/task24_preflight_object_only.json` |
 | Failure/limitation analysis | `06_reports/isaacgym_rendering_note.md`; `06_reports/task24_preflight_strict.json` |
+| Optional quantitative charts | `07_analysis_charts/asset_quality_radar.png`; `07_analysis_charts/trajectory_speed_violin.png`; `07_analysis_charts/trajectory_speed_band.png` |
 
 ## Directory Contents
 
@@ -56,6 +63,7 @@ This folder is a curated presentation bundle for Member C's object reconstructio
 - `04_isaacgym_validation/`: validation summary card and asset check logs. Black/invalid IsaacGym render screenshots were removed.
 - `05_task24_integration/`: object-side hand-object integration frames, PPT-ready summary, and MP4 video.
 - `06_reports/`: compact markdown and JSON reports copied from canonical outputs.
+- `07_analysis_charts/`: optional radar/spider, violin, and band charts generated from task3 metadata and object pose trajectories.
 - `manifest.json`: source-to-figure mapping for traceability.
 
 ## Important Notes
@@ -64,4 +72,5 @@ This folder is a curated presentation bundle for Member C's object reconstructio
 - The latest authoritative object trajectories are in `outputs/mask_pose/`, not `outputs/pose_tracking/`.
 - `hand_object_joint_frames.mp4` is a visualization compiled from existing hand-object frames. It is useful for presentation but does not replace full Sharpa tracking rollout.
 - Black or non-informative IsaacGym render images are intentionally excluded. IsaacGym evidence is represented by validation logs and the `isaacgym_validation_ppt.png` status card.
+- `trajectory_speed_band.png` is not a true error-band plot because primary-object GT poses are unavailable. Present it as a trajectory stability/variation band only.
 - Full task 2-4/3.4 tracking still needs real hand trajectories from Member B; current placeholder hand files are intentionally flagged by `scripts/preflight_task24_integration.py`.

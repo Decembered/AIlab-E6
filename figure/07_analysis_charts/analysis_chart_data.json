@@ -1,0 +1,178 @@
+{
+  "note": "These charts use available object asset metadata and object pose handoff trajectories. The band plot is a stability/variation band, not ground-truth error, because primary object GT poses are unavailable.",
+  "radar_metrics": [
+    "Visual detail",
+    "Collision simplicity",
+    "Scale match",
+    "Watertight",
+    "IsaacGym",
+    "Mask stability"
+  ],
+  "radar_values": {
+    "bread": [
+      1.0,
+      0.6399999999999999,
+      1.0,
+      1.0,
+      1.0,
+      0.9937206402078245
+    ],
+    "pipette": [
+      0.5773502691896257,
+      0.55,
+      1.0,
+      1.0,
+      1.0,
+      0.9561670276800971
+    ],
+    "drink_ad": [
+      0.5577733510227171,
+      0.5680000000000001,
+      1.0,
+      1.0,
+      1.0,
+      0.9941563242882244
+    ],
+    "drink_yykx": [
+      0.5577733510227171,
+      0.5680000000000001,
+      1.0,
+      1.0,
+      1.0,
+      0.9949686593452134
+    ]
+  },
+  "sequence_records": [
+    {
+      "sequence": "grasp_drink_yykx__2026_0701_0054_45",
+      "object": "drink_yykx",
+      "frames": 174,
+      "duration": 17.33300018310547,
+      "path_len": 0.2754730985151424,
+      "displacement": 0.25806380549999625,
+      "mean_speed": 0.01589474038246306,
+      "max_speed": 0.08806053068222534
+    },
+    {
+      "sequence": "grasp_pipette_press__2026_0701_0028_11",
+      "object": "pipette",
+      "frames": 207,
+      "duration": 20.66699981689453,
+      "path_len": 0.3830052280460414,
+      "displacement": 0.3718843702123856,
+      "mean_speed": 0.018531300665104614,
+      "max_speed": 0.1062739540823929
+    },
+    {
+      "sequence": "grasp_pipette_rotate__2026_0701_0025_42",
+      "object": "pipette",
+      "frames": 234,
+      "duration": 23.33300018310547,
+      "path_len": 0.3816910278228883,
+      "displacement": 0.3741535635844931,
+      "mean_speed": 0.016357975093939554,
+      "max_speed": 0.09304361940146681
+    },
+    {
+      "sequence": "grasp_pipette_stand__2026_0701_0019_19",
+      "object": "pipette",
+      "frames": 171,
+      "duration": 17.0,
+      "path_len": 0.3921503230280372,
+      "displacement": 0.3717171203456825,
+      "mean_speed": 0.023067665685206094,
+      "max_speed": 0.12271116861183065
+    },
+    {
+      "sequence": "pipette_rh_beaker__2026_0701_0035_47",
+      "object": "pipette",
+      "frames": 471,
+      "duration": 47.0,
+      "path_len": 0.3878714279040446,
+      "displacement": 0.2964976175110896,
+      "mean_speed": 0.008252583487036653,
+      "max_speed": 0.016416124449392576
+    },
+    {
+      "sequence": "pipette_rh_beaker_testtube__2026_0701_0039_28",
+      "object": "pipette",
+      "frames": 351,
+      "duration": 35.0,
+      "path_len": 0.42692171438029375,
+      "displacement": 0.2652950552984205,
+      "mean_speed": 0.01219776326908883,
+      "max_speed": 0.021418839907427423
+    },
+    {
+      "sequence": "weigh_bread__2026_0701_0044_30",
+      "object": "bread",
+      "frames": 154,
+      "duration": 15.333000183105469,
+      "path_len": 0.3221321969253063,
+      "displacement": 0.3061484384672273,
+      "mean_speed": 0.02101146457596385,
+      "max_speed": 0.11753422268477791
+    },
+    {
+      "sequence": "weigh_bread__left__2026_0701_0046_02",
+      "object": "bread",
+      "frames": 144,
+      "duration": 14.333000183105469,
+      "path_len": 0.33044168894736287,
+      "displacement": 0.3051013543994566,
+      "mean_speed": 0.02305738013486738,
+      "max_speed": 0.1257139971361416
+    },
+    {
+      "sequence": "weigh_drink_ad__2026_0701_0047_56",
+      "object": "drink_ad",
+      "frames": 161,
+      "duration": 16.0,
+      "path_len": 0.3002046874868917,
+      "displacement": 0.28588513615998135,
+      "mean_speed": 0.018762792594698156,
+      "max_speed": 0.10234298948953406
+    },
+    {
+      "sequence": "weigh_drink_ad__left__2026_0701_0049_04",
+      "object": "drink_ad",
+      "frames": 137,
+      "duration": 13.666999816894531,
+      "path_len": 0.3009132073656188,
+      "displacement": 0.2912847895265337,
+      "mean_speed": 0.022019016991838808,
+      "max_speed": 0.12916967011469807
+    },
+    {
+      "sequence": "weigh_drink_yykx__2026_0701_0051_12",
+      "object": "drink_yykx",
+      "frames": 161,
+      "duration": 16.0,
+      "path_len": 0.316735516361844,
+      "displacement": 0.3049709275099034,
+      "mean_speed": 0.01979596944496545,
+      "max_speed": 0.10658299882545347
+    },
+    {
+      "sequence": "weigh_drink_yykx__left__2026_0701_0052_53",
+      "object": "drink_yykx",
+      "frames": 121,
+      "duration": 12.0,
+      "path_len": 0.30047655191275624,
+      "displacement": 0.2899466661803738,
+      "mean_speed": 0.02503971204489054,
+      "max_speed": 0.13820464929470747
+    }
+  ],
+  "speed_distribution_counts": {
+    "bread": 296,
+    "pipette": 1429,
+    "drink_ad": 296,
+    "drink_yykx": 453
+  },
+  "generated": [
+    "figure/07_analysis_charts/asset_quality_radar.png",
+    "figure/07_analysis_charts/trajectory_speed_violin.png",
+    "figure/07_analysis_charts/trajectory_speed_band.png"
+  ]
+}
