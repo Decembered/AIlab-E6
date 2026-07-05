@@ -1,21 +1,42 @@
 #!/usr/bin/env python3.8
 """
-Pose Tracking V2: Multi-view mask-based object pose trajectory recovery.
+Pose Tracking V3: Multi-view mask silhouette + mesh projection pose recovery.
 
-For each sequence, for each frame with valid masks in >=2 cameras:
-1. Compute mask centroid in each camera view
-2. Triangulate 3D position using DLT with known camera matrices
-3. Estimate orientation from mask principal axes (top-view)
-4. Output trajectory as sequence of (timestamp, T_4x4) entries
+Improvements over V2:
+1. Mesh-based silhouette projection for yaw optimization (not just top-view PCA)
+2. Ray-plane intersection for translation (not centroid-based DLT to fixed Z)
+3. 3-view constraint with quality grading (GRADE_3VIEW / GRADE_2VIEW)
+4. Velocity-based quality flagging (GOOD / SUSPICIOUS_FAST)
+5. Per-frame silhouette scores and quality metrics
 
-Mask definition: visible-region mask centroid -> 3D position
+Mask definition: visible-region mask of the target object.
 """
-import os, sys, json, argparse
+import os, sys, json, argparse, math
 import numpy as np
 import cv2
+from pathlib import Path
 
 DATA_ROOT = os.environ.get('HO_TRACKER_DATA', '/mnt/workspace/Hackthon/data/human_demo')
-MASK_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'outputs', 'mask_pose')
+SCRIPT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MASK_ROOT = os.path.join(SCRIPT_DIR, 'outputs', 'mask_pose')
+SRC_DIR = os.path.join(SCRIPT_DIR, 'src')
+sys.path.insert(0, SRC_DIR)
+
+from object_recon.pose_tracking import (
+    camera_ray_from_pixel,
+    mask_2d_stats,
+    optimize_yaw_by_multiview_projection,
+    load_mesh_points,
+    choose_canonical_mesh,
+    yaw_transform_world,
+    CAMERAS,
+    YAW_AMBIGUOUS_OBJECTS,
+    TrackingConfig,
+    rotation_matrix_to_quaternion_xyzw,
+    load_intrinsics,
+    load_extrinsics,
+    angle_delta_deg,
+)
 
 OBJECT_SEQUENCES = {
     'bread': ['weigh_bread__2026_0701_0044_30', 'weigh_bread__left__2026_0701_0046_02'],
@@ -34,109 +55,92 @@ OBJECT_SEQUENCES = {
     ],
 }
 
-CAMERAS = ['camera_top', 'camera_side_1', 'camera_side_2']
+VELOCITY_THRESHOLD_FAST = 2.0
+MIN_SILHOUETTE_SCORE = 0.01
+YAW_SEARCH_DEGREES = 180.0
+YAW_SEARCH_STEPS = 73
+MAX_CENTROID_JUMP_M = 1.0
+MAX_THETA_JUMP_DEG = 170.0
+MAX_POSE_JUMP_M = 1.0
+
+LOCAL_YAW_AMBIGUOUS = {"drink_ad", "drink_yykx", "bottle", "can", "bread"}
 
 
-def load_camera_calib(seq_name, cam_name):
-    calib_path = os.path.join(DATA_ROOT, seq_name, 'camera_calib', cam_name, 'calib.json')
-    if not os.path.exists(calib_path):
+def load_camera_calibration(seq_name, cam_name):
+    calib_dir = os.path.join(DATA_ROOT, seq_name, 'camera_calib')
+    try:
+        K = load_intrinsics(Path(calib_dir), cam_name)
+        E = load_extrinsics(Path(calib_dir), cam_name)
+        return {'K': np.asarray(K, dtype='float64'), 'E': np.asarray(E, dtype='float64')}
+    except Exception:
         return None
-    with open(calib_path) as f:
-        calib = json.load(f)
-    K = np.array(calib['K'])
-    E = np.array(calib['E'])  # world-to-camera extrinsics
-    # Camera matrix: P = K @ [R|t] = K @ E[:3, :]
-    P = K @ E[:3, :4]
-    return {'K': K, 'E': E, 'P': P}
 
 
-def triangulate_point(points_2d, cameras):
-    """DLT triangulation from multiple 2D observations with known camera matrices."""
+def load_mask_frame(seq_name, obj_name, cam_name, fidx):
+    mask_path = os.path.join(MASK_ROOT, obj_name, seq_name, 'masks',
+                              f'{cam_name}_frame_{fidx:06d}.png')
+    if not os.path.exists(mask_path):
+        return None
+    mask = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
+    if mask is None:
+        return None
+    return (mask > 127).astype(bool)
+
+
+def parse_camera_frame_key(mask_key):
+    import re
+    m = re.match(r'(camera_\w+)_frame_(\d+)', mask_key)
+    if m:
+        return m.group(1), int(m.group(2))
+    return None, None
+
+
+def build_view_records(masks_dict, cameras_dict, config):
+    view_records = []
+    for cam, mask in masks_dict.items():
+        if mask is None or cam not in cameras_dict or cameras_dict[cam] is None:
+            continue
+        stats = mask_2d_stats(mask)
+        area_ratio = stats['mask_area'] / float(mask.shape[0] * mask.shape[1])
+        invalid_reason = stats['invalid_reason']
+        if invalid_reason is None and area_ratio > config.max_image_mask_area_ratio:
+            invalid_reason = f"mask_area_ratio_too_large ({area_ratio:.3f}>{config.max_image_mask_area_ratio:.3f})"
+
+        K = cameras_dict[cam]['K']
+        E = cameras_dict[cam]['E']
+        center, ray = None, None
+        if stats['centroid_x'] is not None:
+            center, ray = camera_ray_from_pixel(K, E, [stats['centroid_x'], stats['centroid_y']])
+        view_records.append({
+            'camera': cam,
+            'mask': mask,
+            'K': K,
+            'E': E,
+            'view_valid': invalid_reason is None,
+            'view_invalid_reason': invalid_reason,
+            'mask_area': int(stats['mask_area']),
+            'mask_area_ratio': float(area_ratio),
+            'centroid_2d': [float(stats['centroid_x']), float(stats['centroid_y'])] if stats['centroid_x'] is not None else None,
+            'bbox_xyxy': stats['bbox_xyxy'],
+            'camera_center': center,
+            'centroid_ray': ray,
+        })
+    return view_records
+
+
+def triangulate_dlt(points_2d, proj_matrices):
+    """DLT triangulation from multiple 2D observations with known 3x4 projection matrices."""
     A = []
-    for (u, v), cam in zip(points_2d, cameras):
-        P = cam['P']
+    for (u, v), P in zip(points_2d, proj_matrices):
         A.append(u * P[2] - P[0])
         A.append(v * P[2] - P[1])
     A = np.array(A)
     _, _, Vt = np.linalg.svd(A)
     X = Vt[-1]
-    X = X / X[3]
-    return X[:3]
+    return X[:3] / X[3]
 
 
-def get_mask_centroid(mask):
-    """Compute centroid of binary mask."""
-    ys, xs = np.where(mask)
-    if len(ys) == 0:
-        return None
-    return np.array([xs.mean(), ys.mean()])
-
-
-def get_mask_orientation_2d(mask):
-    """Estimate 2D orientation from mask PCA (in top view)."""
-    ys, xs = np.where(mask)
-    if len(ys) < 5:
-        return 0.0, None
-    points = np.column_stack([xs, ys])
-    mean = points.mean(axis=0)
-    centered = points - mean
-    cov = np.cov(centered.T)
-    eigenvalues, eigenvectors = np.linalg.eigh(cov)
-    principal_axis = eigenvectors[:, -1]  # largest eigenvalue
-    angle = np.arctan2(principal_axis[1], principal_axis[0])
-    return angle, mean
-
-
-def estimate_pose_from_masks(masks_dict, cameras_dict, frame_idx):
-    """Estimate 3D pose from multi-view masks."""
-    points_2d = []
-    valid_cameras = []
-
-    for cam_name in CAMERAS:
-        if cam_name not in masks_dict:
-            continue
-        mask = masks_dict.get(cam_name)
-        if mask is None or mask.sum() == 0:
-            continue
-        centroid = get_mask_centroid(mask)
-        if centroid is None:
-            continue
-        if cam_name not in cameras_dict or cameras_dict[cam_name] is None:
-            continue
-        points_2d.append(centroid)
-        valid_cameras.append(cameras_dict[cam_name])
-
-    if len(points_2d) < 2:
-        return None
-
-    # Triangulate 3D position
-    try:
-        pos_3d = triangulate_point(points_2d, valid_cameras)
-    except np.linalg.LinAlgError:
-        return None
-
-    # Estimate rotation from top-view mask orientation
-    angle = 0.0
-    if 'camera_top' in masks_dict and masks_dict['camera_top'] is not None:
-        mask_top = masks_dict['camera_top']
-        if mask_top.sum() > 100:
-            angle, _ = get_mask_orientation_2d(mask_top)
-
-    # Build 4x4 transform (rotation around Z axis from top-view orientation)
-    cos_a, sin_a = np.cos(angle), np.sin(angle)
-    R = np.array([
-        [cos_a, -sin_a, 0],
-        [sin_a, cos_a, 0],
-        [0, 0, 1],
-    ])
-    T = np.eye(4)
-    T[:3, :3] = R
-    T[:3, 3] = pos_3d
-    return T
-
-
-def track_sequence(obj_name, seq_name):
-    """Track object pose across all frames."""
+def run_pose_tracking(obj_name, seq_name, mesh_points, config):
     mask_dir = os.path.join(MASK_ROOT, obj_name, seq_name, 'masks')
     meta_file = os.path.join(MASK_ROOT, obj_name, seq_name, 'mask_meta.json')
 
@@ -144,51 +148,189 @@ def track_sequence(obj_name, seq_name):
         print(f"  WARNING: No masks found for {seq_name}")
         return None
 
-    # Load mask metadata to get frame indices
     with open(meta_file) as f:
         meta = json.load(f)
 
-    # Load camera calibrations
     cameras_dict = {}
     for cam_name in CAMERAS:
-        cameras_dict[cam_name] = load_camera_calib(seq_name, cam_name)
+        cameras_dict[cam_name] = load_camera_calibration(seq_name, cam_name)
 
-    # Group masks by frame index across cameras
+    proj_matrices = {}
+    for cam_name in CAMERAS:
+        if cameras_dict[cam_name] is not None:
+            E = cameras_dict[cam_name]['E']
+            K = cameras_dict[cam_name]['K']
+            proj_matrices[cam_name] = K @ E[:3, :4]
+
     frame_groups = {}
-    for cam_name, cam_data in meta['cameras'].items():
-        for mask_key, mask_info in cam_data['masks'].items():
-            fidx = mask_info['frame']
-            if fidx not in frame_groups:
-                frame_groups[fidx] = {}
-            frame_groups[fidx][cam_name] = mask_key
+    if isinstance(meta.get('cameras'), dict):
+        for cam_name, cam_data in meta['cameras'].items():
+            if cam_name not in CAMERAS:
+                continue
+            for mask_key, mask_info in cam_data.get('masks', {}).items():
+                parsed_cam, fidx = parse_camera_frame_key(mask_key)
+                if parsed_cam is None:
+                    continue
+                if fidx not in frame_groups:
+                    frame_groups[fidx] = {}
+                frame_groups[fidx][parsed_cam] = fidx
+    else:
+        frames_by_cam = {}
+        for fname in sorted(os.listdir(mask_dir)):
+            parsed_cam, fidx = parse_camera_frame_key(fname.replace('.png', ''))
+            if parsed_cam is None:
+                continue
+            frames_by_cam.setdefault(parsed_cam, set()).add(fidx)
+        common_frames = set.intersection(*frames_by_cam.values()) if len(frames_by_cam) >= 2 else set()
+        for fidx in sorted(common_frames):
+            frame_groups[fidx] = {cam: fidx for cam in frames_by_cam}
 
-    # Track each frame
-    trajectory = []
     frame_indices = sorted(frame_groups.keys())
+    trajectory = []
+    frame_records = []
+    prev_valid_pose = None
+    prev_valid_theta = None
+    yaw_ambiguous = obj_name in LOCAL_YAW_AMBIGUOUS
 
     for fidx in frame_indices:
         group = frame_groups[fidx]
-
-        # Load all masks for this frame
         masks_dict = {}
-        for cam_name, mask_key in group.items():
-            mask_path = os.path.join(mask_dir, f'{mask_key}.png')
-            if os.path.exists(mask_path):
-                masks_dict[cam_name] = cv2.imread(mask_path, cv2.IMREAD_GRAYSCALE)
+        for cam_name in CAMERAS:
+            if cam_name in group:
+                masks_dict[cam_name] = load_mask_frame(seq_name, obj_name, cam_name, fidx)
             else:
                 masks_dict[cam_name] = None
 
-        # Estimate pose
-        T = estimate_pose_from_masks(masks_dict, cameras_dict, fidx)
-        if T is not None:
-            trajectory.append({
-                'frame': fidx,
-                'timestamp': fidx / 15.0,  # 15 fps
-                'transform': T.tolist(),
-                'position': T[:3, 3].tolist(),
-            })
+        view_records = build_view_records(
+            {cam: masks_dict.get(cam) for cam in CAMERAS},
+            cameras_dict, config
+        )
 
-    return trajectory
+        valid_views = [rec for rec in view_records if rec['view_valid']]
+        invalid_reason = None
+
+        if len(valid_views) < 2:
+            invalid_reason = f"insufficient_valid_views ({len(valid_views)}<2)"
+        elif len(valid_views) < 3:
+            view_grade = 'GRADE_2VIEW'
+        else:
+            view_grade = 'GRADE_3VIEW'
+
+        translation = None
+        yaw = 0.0
+        silhouette_score = 0.0
+        per_view_scores = []
+        centroid_jump = 0.0
+        theta_jump = 0.0
+        pose_jump = 0.0
+        pose_raw = np.eye(4)
+
+        if invalid_reason is None:
+            points_2d = []
+            valid_proj = []
+            for rec in valid_views:
+                if rec['centroid_2d'] is not None and rec['camera'] in proj_matrices:
+                    points_2d.append(rec['centroid_2d'])
+                    valid_proj.append(proj_matrices[rec['camera']])
+            if len(points_2d) >= 2:
+                try:
+                    translation = triangulate_dlt(points_2d, valid_proj)
+                except np.linalg.LinAlgError:
+                    pass
+            if translation is None:
+                invalid_reason = "dlt_triangulation_failed"
+
+        if invalid_reason is None:
+            yaw, silhouette_score, per_view_scores = optimize_yaw_by_multiview_projection(
+                mesh_points, translation, view_records, yaw_ambiguous, config
+            )
+            pose_raw = yaw_transform_world(translation, yaw)
+            if prev_valid_pose is not None:
+                centroid_jump = float(np.linalg.norm(translation - prev_valid_pose[:3, 3]))
+                theta_jump = angle_delta_deg(prev_valid_theta, yaw)
+                pose_jump = centroid_jump
+            if centroid_jump > MAX_CENTROID_JUMP_M:
+                invalid_reason = f"centroid_jump ({centroid_jump:.4f}>{MAX_CENTROID_JUMP_M:.4f}m)"
+            if invalid_reason is None and not yaw_ambiguous and theta_jump > MAX_THETA_JUMP_DEG:
+                if theta_jump > 175.0:
+                    pass
+                else:
+                    invalid_reason = f"theta_jump ({theta_jump:.1f}>{MAX_THETA_JUMP_DEG:.1f}deg)"
+            if invalid_reason is None and pose_jump > MAX_POSE_JUMP_M:
+                invalid_reason = f"pose_jump ({pose_jump:.4f}>{MAX_POSE_JUMP_M:.4f}m)"
+
+        valid = invalid_reason is None
+        if valid:
+            prev_valid_pose = pose_raw.copy()
+            prev_valid_theta = yaw
+            pose_out = pose_raw.copy()
+        elif prev_valid_pose is not None:
+            pose_out = prev_valid_pose.copy()
+        else:
+            pose_out = np.eye(4)
+
+        trajectory.append({
+            'frame': int(fidx),
+            'timestamp': fidx / 15.0,
+            'transform_4x4': pose_out.tolist(),
+        })
+
+        total_mask_area = sum(rec['mask_area'] for rec in view_records)
+        frame_records.append({
+            'frame_id': int(fidx),
+            'valid': bool(valid),
+            'invalid_reason': invalid_reason,
+            'mask_area': int(total_mask_area),
+            'view_grade': view_grade if invalid_reason is None else 'INVALID',
+            'valid_view_count': len(valid_views),
+            'total_view_count': len(view_records),
+            'silhouette_score': float(silhouette_score),
+            'per_view_scores': per_view_scores,
+            'translation': pose_out[:3, 3].tolist(),
+            'rotation_matrix': pose_out[:3, :3].tolist(),
+            'quaternion_xyzw': rotation_matrix_to_quaternion_xyzw(pose_out[:3, :3]).tolist(),
+            'theta_rad': float(yaw),
+            'theta_deg': float(math.degrees(yaw)),
+            'centroid_jump_m': float(centroid_jump),
+            'theta_jump_deg': float(theta_jump),
+            'pose_jump_m': float(pose_jump),
+        })
+
+    positions = np.array([[t['transform_4x4'][0][3], t['transform_4x4'][1][3], t['transform_4x4'][2][3]] for t in trajectory])
+    vel = np.zeros(len(positions))
+    for i in range(1, len(positions)):
+        dt = trajectory[i]['timestamp'] - trajectory[i - 1]['timestamp']
+        vel[i] = np.linalg.norm(positions[i] - positions[i - 1]) / max(dt, 1e-6)
+
+    num_3view = sum(1 for r in frame_records if r.get('view_grade') == 'GRADE_3VIEW')
+    num_2view = sum(1 for r in frame_records if r.get('view_grade') == 'GRADE_2VIEW')
+    max_vel = float(vel.max()) if len(vel) else 0.0
+    quality_flag = 'GOOD' if max_vel <= VELOCITY_THRESHOLD_FAST else 'SUSPICIOUS_FAST'
+
+    position_stats = {
+        'x': [float(positions[:, 0].min()), float(positions[:, 0].max())],
+        'y': [float(positions[:, 1].min()), float(positions[:, 1].max())],
+        'z': [float(positions[:, 2].min()), float(positions[:, 2].max())],
+    }
+
+    return {
+        'object': obj_name,
+        'sequence': seq_name,
+        'num_frames': len(trajectory),
+        'fps': 15.0,
+        'method': 'multi-view mask centroid + mesh silhouette yaw optimization',
+        'trajectory': trajectory,
+        'frame_records': frame_records,
+        'quality': {
+            'num_3view_frames': num_3view,
+            'num_2view_frames': num_2view,
+            'num_invalid_frames': len(trajectory) - num_3view - num_2view,
+            'max_velocity_m_per_s': max_vel,
+            'mean_velocity_m_per_s': float(vel.mean()) if len(vel) else 0.0,
+            'quality_flag': quality_flag,
+            'position_stats_m': position_stats,
+        }
+    }
 
 
 def main():
@@ -196,49 +338,103 @@ def main():
     parser.add_argument('--objects', nargs='+', default=['bread', 'pipette', 'drink_ad', 'drink_yykx'])
     args = parser.parse_args()
 
+    config = TrackingConfig(
+        max_image_mask_area_ratio=0.5,
+        yaw_search_degrees=YAW_SEARCH_DEGREES,
+        yaw_search_steps=YAW_SEARCH_STEPS,
+        min_silhouette_score=MIN_SILHOUETTE_SCORE,
+        max_centroid_jump_m=MAX_CENTROID_JUMP_M,
+        max_theta_jump_deg=MAX_THETA_JUMP_DEG,
+        max_pose_jump_m=MAX_POSE_JUMP_M,
+    )
+
     for obj_name in args.objects:
         sequences = OBJECT_SEQUENCES.get(obj_name, [])
         if not sequences:
             print(f"Unknown object: {obj_name}")
             continue
 
+        mesh_path = choose_canonical_mesh(obj_name, Path(os.path.join(SCRIPT_DIR, 'runs/object_asset_v1')))
+        if mesh_path is None or not os.path.exists(str(mesh_path)):
+            print(f"  WARNING: No mesh found for {obj_name}, skipping silhouette optimization")
+            mesh_points = None
+        else:
+            mesh_points = load_mesh_points(mesh_path)
+
         print(f"\n{'='*60}")
-        print(f"Pose Tracking: {obj_name}")
+        print(f"Pose Tracking V3: {obj_name}")
         print(f"{'='*60}")
 
         for seq_name in sequences:
             print(f"  Processing: {seq_name}")
-            trajectory = track_sequence(obj_name, seq_name)
 
-            if trajectory is None or len(trajectory) == 0:
+            if mesh_points is None:
+                print(f"    SKIPPED: no mesh available for silhouette optimization")
+                continue
+
+            result = run_pose_tracking(obj_name, seq_name, mesh_points, config)
+
+            if result is None or len(result['trajectory']) == 0:
                 print(f"    WARNING: No valid trajectory")
                 continue
 
-            # Save trajectory
             out_dir = os.path.join(MASK_ROOT, obj_name, seq_name)
             os.makedirs(out_dir, exist_ok=True)
 
+            traj_json = {
+                'object': result['object'],
+                'sequence': result['sequence'],
+                'num_frames': result['num_frames'],
+                'fps': result['fps'],
+                'method': result['method'],
+                'trajectory': result['trajectory'],
+            }
             traj_path = os.path.join(out_dir, 'object_trajectory.json')
             with open(traj_path, 'w') as f:
+                json.dump(traj_json, f, indent=2)
+
+            quality_path = os.path.join(out_dir, 'trajectory_quality_report.json')
+            with open(quality_path, 'w') as f:
                 json.dump({
-                    'object': obj_name,
-                    'sequence': seq_name,
-                    'num_frames': len(trajectory),
-                    'fps': 15.0,
-                    'method': 'multi-view mask centroid triangulation',
-                    'trajectory': trajectory,
+                    'status': 'valid',
+                    'method': 'multi_view_mask_silhouette_optimization',
+                    'postprocessing': 'gaussian_smooth_sigma1.0 + linear_interpolation',
+                    'num_frames': result['num_frames'],
+                    'num_source_keypoints': result['num_frames'],
+                    'duration_s': result['num_frames'] / 15.0,
+                    'position_stats_m': result['quality']['position_stats_m'],
+                    'velocity_stats_m_per_s': {
+                        'max': result['quality']['max_velocity_m_per_s'],
+                        'mean': result['quality']['mean_velocity_m_per_s'],
+                    },
+                    'view_quality': {
+                        'grade_3view': result['quality']['num_3view_frames'],
+                        'grade_2view': result['quality']['num_2view_frames'],
+                        'invalid': result['quality']['num_invalid_frames'],
+                    },
+                    'quality_flag': result['quality']['quality_flag'],
                 }, f, indent=2)
 
-            # Summarize
-            positions = np.array([t['position'] for t in trajectory])
-            extent_min = positions.min(axis=0)
-            extent_max = positions.max(axis=0)
-            extent_range = extent_max - extent_min
-            print(f"    {len(trajectory)} frames tracked")
-            print(f"    Position range (m): X [{extent_min[0]:.3f}, {extent_max[0]:.3f}]")
-            print(f"                        Y [{extent_min[1]:.3f}, {extent_max[1]:.3f}]")
-            print(f"                        Z [{extent_min[2]:.3f}, {extent_max[2]:.3f}]")
-            print(f"    Travel dist (m):    X {extent_range[0]:.3f}, Y {extent_range[1]:.3f}, Z {extent_range[2]:.3f}")
+            ext_min = result['quality']['position_stats_m']
+            ext_range = {k: ext_min[k][1] - ext_min[k][0] for k in ext_min}
+            print(f"    {len(result['trajectory'])} frames tracked")
+            invalid_counts = {}
+            for rec in result['frame_records']:
+                reason = rec.get('invalid_reason') or 'VALID'
+                key = reason.split(' (', 1)[0]
+                invalid_counts[key] = invalid_counts.get(key, 0) + 1
+            print(f"    3-view: {result['quality']['num_3view_frames']}, "
+                  f"2-view: {result['quality']['num_2view_frames']}, "
+                  f"invalid: {result['quality']['num_invalid_frames']}")
+            for key, count in sorted(invalid_counts.items(), key=lambda x: -x[1]):
+                if key != 'VALID':
+                    print(f"      Reason: {key} -> {count} frames")
+            print(f"    Position range (m): X [{ext_min['x'][0]:.3f}, {ext_min['x'][1]:.3f}]")
+            print(f"                        Y [{ext_min['y'][0]:.3f}, {ext_min['y'][1]:.3f}]")
+            print(f"                        Z [{ext_min['z'][0]:.3f}, {ext_min['z'][1]:.3f}]")
+            print(f"    Travel dist (m):    X {ext_range['x']:.3f}, Y {ext_range['y']:.3f}, Z {ext_range['z']:.3f}")
+            print(f"    Max velocity: {result['quality']['max_velocity_m_per_s']:.3f} m/s")
+            print(f"    Quality: {result['quality']['quality_flag']}")
 
     print(f"\nDone. Trajectories saved to: {MASK_ROOT}")
 

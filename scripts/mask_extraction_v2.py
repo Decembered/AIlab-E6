@@ -22,7 +22,7 @@ from segment_anything import sam_model_registry, SamPredictor
 CKPT_PATH = os.path.expanduser('~/.cache/sam/sam_vit_b_01ec64.pth')
 MODEL_TYPE = 'vit_b'
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
-FRAME_STRIDE = 15  # process ~1 frame per second at 15fps
+FRAME_STRIDE = 5  # process ~3 frames per second at 15fps
 
 DATA_ROOT = os.environ.get('HO_TRACKER_DATA', '/mnt/workspace/Hackthon/data/human_demo')
 OUT_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'outputs', 'mask_pose')
