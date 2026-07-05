@@ -6,6 +6,10 @@ tmp_visualization/
 tmp_visualization_runs/
 third_party/
 
+# Keep curated GitHub-safe videos under media/.
+!media/
+!media/**
+
 # Python caches
 __pycache__/
 *.py[cod]
@@ -17,11 +21,12 @@ __pycache__/
 *.onnx
 *.task
 
-# Videos and raw media
+# Videos and raw media outside curated media/
 *.mp4
 *.mkv
 *.avi
 *.mov
+!media/**/*.mp4
 
 # Local secrets
 .env

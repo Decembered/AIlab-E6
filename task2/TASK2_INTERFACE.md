@@ -2,7 +2,7 @@
 
 This folder contains the Task2 hand reconstruction and trajectory recovery pipeline for Video2Motion2Action.
 
-Committed contents are code, environment files, documentation, and reports only. Raw challenge videos, extracted frames, generated outputs, logs, third-party source trees, and model weights are intentionally excluded.
+Committed contents include code, environment files, documentation, reports, and a curated GitHub-safe visualization set under `media/`. Raw challenge videos, extracted frames, generated full outputs, logs, third-party source trees, and model weights are intentionally excluded.
 
 ## Folder Layout
 
@@ -12,6 +12,7 @@ Committed contents are code, environment files, documentation, and reports only.
 - `docs/`: SAM2 and HaMeR extension plans.
 - `reports/`: method notes, delivery index, quality reports, and result summaries.
 - `models/`: placeholder README files describing where to place MANO, MediaPipe, SAM2, and HaMeR files.
+- `media/`: selected action visualization videos small enough for normal GitHub storage.
 
 ## Data To Fill In
 
